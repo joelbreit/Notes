@@ -147,6 +147,8 @@ root_directory (/)
 
 **concatenate** (`cat`) - Outputs the contents of a file
 - `cat <file>` - Displays the contents of a file
+- Flags
+  - `-n` - Number lines
 
 **filter** (`grep`) - Search for patterns in text
 - `grep <pattern> <file>` - Searches for a pattern in a file
@@ -192,6 +194,72 @@ root_directory (/)
   - `chmod 755 <file>` - All permission for owner, read/execute for others
   - `chmod 644 <file>` - Read/write for owner, read for group and others
 
+**change owner** (`chown`) - Change the owner of a file or directory
+- `chown <owner> <file>` - Changes the owner of a file
+
+### Networking
+
+**ping** (`ping`) - Send a packet to a network host
+- `ping <host>` - Sends a packet to a network host
+- `ping -c <count> <host>` - Sends a specific number of packets to a network host
+- `ping google.com` - Pings google.com
+- `ping 8.8.8.8` - Pings Google's DNS server
+- Flags
+  - `-c` - Number of packets to send
+  - `-i` - Interval between packets (in seconds)
+  - `-t` - TTL (time to live)
+  - `-s` - Packet size
+  - `-W` - Timeout (in seconds)
+  - `-q` - Quiet mode
+  - `-v` - Verbose mode
+
+**curl** (`curl`) - Transfer data from or to a server
+- "**Client URL**" or "**Curl URL Request Library**"
+- `curl <url>` - Downloads the contents of a URL
+- `curl -O <url>` - Downloads the contents of a URL and saves it with the same name
+- `curl -o <output> <url>` - Downloads the contents of a URL and saves it with a specific name
+- Example
+```bash
+curl -X POST https://api.example.com/users \
+     -H "Content-Type: application/json" \
+     -d '{"name": "Joel", "age": 28}'
+```
+- Flags
+  - `-O` - Save with the same name
+  - `-o` - Save with a specific name
+  - `-L` - Follow redirects
+  - `-I` - Show headers only
+  - `-H` - Add a header
+  - `-X` - HTTP method
+  - `-d` - Data to send in a POST request
+  - `-u` - User and password
+  - `-v` - Verbose mode
+
+**secure shell** (`ssh`) - Securely connect to a remote server
+- `ssh <user>@<remote_host>` - Connects to a remote server
+- `ssh -p <port> <user>@<remote_host>` - Connects to a remote server on a specific port
+
+**secure copy** (`scp`) - Securely copy files to or from a remote server
+- `scp <source> <destination>` - Copies a file to or from a remote server
+- `scp -r <source> <destination>` - Copies a directory to or from a remote server
+
+**ssh-keygen** (`ssh-keygen`) - Generate an SSH key pair
+- `ssh-keygen` - Creates a public-private key pair.
+  - Default type: RSA 3072-bit
+  - Private key: ~/.ssh/id_rsa
+  - Public key: ~/.ssh/id_rsa.pub
+- `ssh-keygen -t <type> -b <bits> -C <comment> -f <file>` - Creates a key pair with specific options
+- Flags
+  - `-t` - Type of key (rsa, dsa, ecdsa, ed25519)
+  - `-b` - Number of bits in the key
+  - `-C` - Comment
+  - `-f` - File name
+
+**ssh-copy-id** (`ssh-copy-id`) - Copy an SSH key to a remote server
+- `ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote_host` Appends the public key to ~/.ssh/authorized_keys on remote_host, allowing password-less login
+
+
+
 ### Process Management
 
 **process status** (`ps`) - Display information about processes
@@ -216,23 +284,15 @@ root_directory (/)
 **htop** (`htop`) - Enhanced top with colors and more
 - `htop` - Displays a dynamic view of system processes
 
-
-
 **kill** (`kill`) - Terminate a process
 
 ### Special Commands
-
-<!-- **time** - Measure the time a command takes to run
-- `time <command>`
-**man** - Display the manual for a command
-- `man <command>`
-- Only works for GNOME?* -->
-
 
 **clear** (`clear`) - Clear the terminal screen
 
 **time** (`time`) - Measure the time a command takes to run
 - `time <command>` - Measures the time a command takes
+
 **man** (`man`) - Display the manual for a command
 - `man <command>` - Displays the manual for <command>
 - Used in UNIX-based systems, not included in GitBash
@@ -240,23 +300,6 @@ root_directory (/)
 
 ## To Add
 
-* `touch`
-* `cp`
-* `mv`
-* `rm` / `rmdir`
-* `cat`
-* `grep`
-* `head`
-* `tail`
-* `chmod`
-* `chown`
-* `ps`
-* `kill`
-* `top`
-* `curl`
-* `ssh`
-* `scp`
-* `ping`
 * `sort`
 * `uniq`
 * `wc`
