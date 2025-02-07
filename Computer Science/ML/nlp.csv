@@ -1,0 +1,35 @@
+Term,Definition
+text normalization,converting text into a consistent form that can be used for further processing
+stemming,removing prefixes and suffixes of words for simplification
+sentence segmentation,"breaking up a text into individual sentences, using cues like periods or exclamation points"
+regular expressions,a language for specifying text search strings
+corpus,the entirety of a collection of text
+anchors,"special characters in a regular expression for specifying particular places such as `^` and `$` for the beginning and end of a line, respectively"
+disjunction,"regex operator for specifying alternatives, using `|` to separate them"
+greedy matching,regex matching that tries to match as much as possible
+non-greedy matching,regex matching that tries to match as little as possible
+"Kleene star (""cleany star"")",the `*` operator in regex for matching zero or more occurrences of a pattern
+"Kleene plus (""cleany plus"")",the `+` operator in regex for matching one or more occurrences of a pattern
+substitution,replacing a matched pattern with another pattern
+capture group,a part of a regex pattern that is enclosed in parentheses and can be referred to later
+register,a numbered list of capture groups in a regex pattern
+non-capturing group,a group in a regex pattern that is not stored in a register e.g. `(?:pattern)`
+lookahead assertion,a regex operator for matching a pattern only if it is followed by another pattern e.g. `(?=pattern)`
+zero-width assertion,a regex operator for matching a pattern without consuming any characters
+negative lookahead assertion,a regex operator for matching a pattern only if it is not followed by another pattern e.g. `(?!pattern)`
+utterance,the spoken equivalent of a sentence
+lemma,"a set of words that have the same root form (e.g. ""run"", ""ran"", ""running"")"
+wordform,"a specific word in a lemma (e.g. ""running"")"
+token,a unit of text that can be a word or a part of a word
+tokenization,the task of breaking up text into subparts
+clitic,"a word that cannot stand alone and is treated as part of another word (e.g. 'm, 's, and n't, in I'm, he's, and can't)"
+morpheme,"the smallest meaning-bearing unit of text (e.g. ""un-"", ""break"", ""-able"" for ""unbreakable"")"
+byte-pair encording / BPE algorithm,a method for tokenizing text by iteratively merging the most frequent pairs of tokens into a single token (starting with characters) until a desired vocabulary size is reached
+word normalization,the task of reducing words/tokens to a standard format
+case folding,converting all text to lowercase
+lemmatization,"the task of determining that two words have the same root (the words am, are, and is have the shared lemma be)"
+morphology,branch of linguistics studying the way words are built up from smaller meaning-bearing units
+stems,the root morphemes of words
+affixes,morphemes that add additional meaning to a word
+coreference,the task of deciding whether two strings refer to the same entity
+edit distance,a measurement of the number of operations needed to transform one string into another

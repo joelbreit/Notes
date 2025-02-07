@@ -1,0 +1,32 @@
+the distributional hypothesis	idea that words that occur in similar contexts tend to have similar meanings
+word sense	a particular meaning of a word in a specific context
+polysemous	words with multiple word senses like "bank" or "bat"
+principle of contrast	idea that no two words have exactly the same meaning
+lexical semantics	the linguistic study of word meaning
+semantic field	a set of words related by topic (or semantic domain)
+hypernymy	the relationship between words where one word is more general than another ("is a" relationship)
+meronymy	the relationship between words where one word is a part of another (part-whole relationship)
+semantic frame	a set of words that denote aspects of a particular type of event like a commercial transaction
+connotation	the affective (emotional or cultural) association of a word
+valence dimension	the positive or negative emotional charge of a word
+arousal dimension	the intensity of the emotional charge of a word
+dominance dimension	the degree of control or power associated with a word
+representation learning	ML technique where the system automatically discovers the features or representations needed for a task from the raw data instead of manually crafting features
+feature engineering	ML process that uses domain knowledge to identify the most relevant aspects of the data
+vector semantics	NLP method of representing word meanings as vectors of numbers in a high-dimensional space
+embeddings	representations of discrete data, like words, as continuous vectors that capture semantic meaning
+static embeddings	word embeddings represented by a single fixed vector, regardless of the context in which the word appears
+contexual embeddings	advanced embeddings that generate different vectors for a word depending on its context
+sparse vector	a vector with mostly zero values
+dense vector	a vector with many non-zero values
+similarity metric	a measure of how alike two vectors are
+vector magnitude	the length of a vector, calculated as the square root of the sum of the squares of its values
+dot product/inner product	the sum of the products of the corresponding elements of two vectors
+parallel/collinear vectors	vectors that point in the same direction or lie on the same line
+cosine metric	a vector similarity metric that ignores vector magnitude that measures the angle between them (1 when they point in the same direction (colinear), -1 when they point in opposite directions (negatively parallel), 0 when they are orthogonal)
+formula for cosine of vectors	(v1 • v2) / (|v1| * |v2|)
+tf-idf (term frequency - inverse document frequency) weighting	a simple method for weighting the importance of words in a document based on their frequency in the document and their rarity in the corpus
+formula for idf of a term	log(10) (number of documents in the collection / number of documents containing the term)
+formula for tf-idf	tf * idf ()
+pointwise mutual information	a measure of how much more likely two words are to co-occur than if they were independent
+centroid	the multidimensional version of the mean - the single vector that has the minimum sum of squared distances to each vector in a set

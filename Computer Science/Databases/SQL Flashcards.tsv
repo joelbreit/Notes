@@ -1,0 +1,35 @@
+
+create a table based on the structure of another table	`CREATE TABLE new_table LIKE existing_table;`
+creates a table that exists only for the duration of the session	`CREATE TEMPORARY TABLE table_name (column1 datatype, column2 datatype, ...);`
+fetch all data from a table	`SELECT * FROM table_name;`
+fetch id and name columns from the city table	`SELECT id, name FROM city;`
+fetch city names sorted by the rating column in ascending order	`SELECT name FROM city ORDER BY rating [ASC];`
+fetch city names sorted by the rating column in descending order	`SELECT name FROM city ORDER BY rating DESC;`
+fetch a column with an alias in the result set	`SELECT name AS city_name FROM city;`
+get names from city and country tables using table aliases	`SELECT ci.name, co.name FROM city [AS] ci JOIN country [AS] co ON c.country_id = co.id;`
+fetch names of cities that have a rating above 3	`SELECT name FROM city WHERE rating > 3;`
+fetch names of cities that are neither Berlin nor Madrid	`SELECT name FROM city WHERE name != 'Berlin' AND name <> 'Madrid';`
+fetch names of cities that start with a 'P' or end with an 's'	`SELECT name FROM city WHERE name LIKE 'P%' OR name LIKE '%s';`
+fetch names of cities that start with any letter followed by 'ublin'	`SELECT name FROM city WHERE name LIKE '_ublin';`
+fetch names of cities that have a population between 500K and 5M	`SELECT name FROM city WHERE population BETWEEN 500000 AND 5000000;`
+fetch names of cities that don't miss a rating value	`SELECT name FROM city WHERE rating IS NOT NULL;`
+fetch names of cities that are in countries with IDs 1, 4, 7, or 8	`SELECT name FROM city WHERE country_id IN (1, 4, 7, 8);`
+return rows that have matching values in both tables	`SELECT * FROM table1 [INNER] JOIN table2 ON table1.column_name = table2.column_name;`
+return all rows from the first table with corresponding rows from the second with nulls where the second has no match	`SELECT * FROM table1 LEFT JOIN table2 ON table1.column_name = table2.column_name;`
+return all rows from the second table with corresponding rows from the first with nulls where the first has no match	`SELECT * FROM table1 RIGHT JOIN table2 ON table1.column_name = table2.column_name;`
+return all rows from both tables with nulls where there is no match in one of the tables	`SELECT * FROM table1 FULL [OUTER] JOIN table2 ON table1.column_name = table2.column_name;`
+return all possible combinations of rows from both tables	`SELECT * FROM table1 [CROSS JOIN] table2;`
+find out number of cities	`SELECT COUNT(*) FROM city;`
+find out the number of cities with non-null ratings	`SELECT COUNT(rating) FROM city;`
+find out the number of distinctive country values	`SELECT COUNT(DISTINCT country_id) FROM city;`
+find out the smallest and the greatest country populations	`SELECT MIN(population), MAX(population) FROM city;`
+find out the total population of cities in respective countries	`SELECT country_id, SUM(population) FROM city GROUP BY country_id;`
+find out the average rating for cities in respective countries if the average is above 3.0	`SELECT country_id, AVG(rating) FROM city GROUP BY country_id HAVING AVG(rating) > 3.0;`
+find cities with the same rating as Paris	`SELECT name FROM city WHERE rating = (SELECT rating FROM city WHERE name = 'Paris');`
+find cities in countries that have a population above 20M	`SELECT name FROM city WHERE country_id IN (SELECT id FROM country WHERE population > 20000000);`
+find cities with a population greater than the average population in the country	`SELECT name FROM city [AS] main_city WHERE population > (SELECT AVG(population) FROM city [AS] average_city WHERE main_city.country_id = average_city.country_id);`
+find countries that have at least one city	`SELECT name FROM country WHERE EXISTS (SELECT * FROM city WHERE country_id = country.id);`
+return admin emails together with user emails removing duplicates	`SELECT email FROM admin UNION SELECT email FROM user;`
+return admin emails together with user emails including duplicates	`SELECT email FROM admin UNION ALL SELECT email FROM user;`
+return admin emails that are not in the user table	`SELECT email FROM admin EXCEPT SELECT email FROM user;`
+return admin emails that are also in the user table	`SELECT email FROM admin INTERSECT SELECT email FROM user;`

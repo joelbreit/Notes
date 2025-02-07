@@ -1,0 +1,12 @@
+# YAML file for vocabulary words, definitions, examples, close synonyms, and tags, date added, pronunciation, etymology, and other notes
+
+# Example:
+term: "abase"
+definition: "to lower in rank, office, prestige, or esteem"
+example: "The king ____ himself before the Pope."
+synonyms: "degrade, demean, humiliate, disgrace"
+tags: "verb, formal, literary"
+date_added: "2021-01-01"
+pronunciation: "uh-BEYS"
+etymology: "from Old French abaisser, from Vulgar Latin bassiare, from bassus 'low'"
+notes: "The word is often used in a formal or literary context."
