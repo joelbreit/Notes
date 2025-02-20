@@ -224,6 +224,16 @@ Flashcards should work both ways
 68. **serialize**: converting data into a format that can be stored or transmitted
 69. **hashing**: converting data into a fixed-size string of bytes
 70. **deliminate**: *to separate or distinguish between two or more items*
+71. **ordinal**: (of a data type) able to be counted and having a natural order
+72. **enumerable**: *able to be counted or listed*
+73. **immutable**: *unchanging over time or unable to be changed*
+74. **mutable**: *able to be changed or modified*
+75. **iterable**: *able to be iterated over or looped through*
+76. **iterative**: *repeating a process to achieve a desired result*
+77. **iterate**: *to perform a process repeatedly to achieve a desired result*
+78. **iterable**: able to be looped through
+79. **recursive**: *a function that calls itself to solve a problem*
+80. **deprecate**: end development on and discourage the use of software
 
 Common Lingo
 

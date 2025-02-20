@@ -96,6 +96,12 @@ Uninitialize a Git repo
 **move** - Move or rename a file so that Git tracks the move
 - `git mv [old_file] [new_file]`
 
+**clone** - Clone a remote repository
+- `git clone [repo_url] [directory]`
+- `git clone [repo_url]` - Clone into a directory with the same name as the repo
+- Clone from one local repo to another
+  - `git clone /path/to/repo /path/to/destination`
+
 ## Esoteric Commands I Like
 
 Display the name, commit hash, and date of every tag in the repo:
@@ -115,3 +121,4 @@ Show all authors of the repo sorted by number of commits:
 - [ ] reset
 - [ ] rev-parse
 - [x] git command for moving a file and tracking that move in the history
+- [ ] "Rebase onto" vs "Merge into" vs "Fast-forward to"

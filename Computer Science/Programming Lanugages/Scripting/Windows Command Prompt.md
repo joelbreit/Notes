@@ -14,3 +14,5 @@
 | `rmdir`      | `rmdir`                | `rmdir`      |
 | `rm`         | `del`                  | `rm`         |
 | `cp`         | `copy`                 | `cp`         |
+
+Check name of hardware running Windows: `wmic computersystem get model, name, manufacturer`

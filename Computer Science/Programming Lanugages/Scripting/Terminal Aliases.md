@@ -65,3 +65,27 @@ alias grep='grep --color=auto' # Colorize grep output
 mkcd() { mkdir -p "$1" && cd "$1"; }  # Create and enter a directory
 ```
 
+Pretty-print ping output:
+
+```bash
+pping() {
+    ping -t $1 | awk '
+    /Request timed out/ {
+        printf "\033[31m" $0 "\033[0m\n"; # red
+    }
+    /Destination host unreachable/ {
+        printf "\033[31m" $0 "\033[0m\n"; # red
+    }
+    /time/ {
+        if ($1 == "Request") {
+            printf "";
+        } else if ($5 == "time<1ms") {
+            printf "\033[32m" $0 "\033[0m\n"; # green
+        } else if ($5 == "time=1ms") {
+            printf "\033[33m" $0 "\033[0m\n"; # yellow
+        } else {
+            printf "\033[35m" $0 "\033[0m\n"; # orange
+        }
+    }'
+}
+```

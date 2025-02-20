@@ -38,11 +38,14 @@ root_directory (/)
 6. **`~`** - Symbol representing the home directory in a command
 7. **Environment Variables** - Named values referenceable when prefixed with `$`
 8. **Order of Operations** - Commands are run in the order they are written unless grouped with parentheses `()`
+9. **Backticks** - The `` ` `` character used to execute a command within a command - replaced with the output of the command
 
 ### Other
 
 1. **full-screen mode / curses mode** - Mode entered by some commands that can be navigated around and exited with the `q` key
 2. **pager mode** - a paged display of long command outputs
+3. **standard input/output/error (stdin/stdout/stderr)** - The default input/output/error streams for a command
+   1. **stdin** - The input stream for a command
 
 ## Commands
 
@@ -101,29 +104,18 @@ root_directory (/)
 - `cd ~` - Changes to the home directory
 - `cd /` - Changes to the root directory
 
-**find** (`find`) - Search for files in a directory hierarchy
-- Find can search for files by file name, file type, file size, and more and can execute commands on found files like deleting them or printing their contents
-- `find <directory> <criteria>`
-- Flags
-  - `-name` - Find files by name rather than by full path/to/file
-  - `-type` - Find files by type
-  - `-size` - Find files by size
-  - `-exec` - Execute a command on found files
-  - `-delete` - Delete found files
-- `find . -name "filename.txt"` - Find files within the current directory by name
-- `find . -iname "filename.txt"` - Find files within the current directory by name case-insensitive
-- `find . -type f` - Find files within the current directory
-- `find . -type d` - Find directories within the current directory
-
 **less** (`less`) - View the contents of a file
 - `less <file>` - View the contents of a file
+
 **echo** (`echo`) - Print text to the terminal
 - `echo <text>` - Prints text to the terminal
 - `echo $<variable>` - Prints the value of a variable to the terminal
 - `echo -n <text>` - Prints text to the terminal without a newline
 - `echo -e <text>` - Interprets backslash escapes in text
+
 **touch** (`touch`) - Create a new file
 - `touch <file>` - Creates a new file with this name
+
 **copy** (`cp`) - Copy files and directories
 - `cp <source> <destination>` - Copies a file or directory to a new location
 - `cp -r <source> <destination>` - Copies a directory and its contents to a new location
@@ -149,17 +141,6 @@ root_directory (/)
 - `cat <file>` - Displays the contents of a file
 - Flags
   - `-n` - Number lines
-
-**filter** (`grep`) - Search for patterns in text
-- `grep <pattern> <file>` - Searches for a pattern in a file
-- Flags
-  - `-i` - Case-insensitive
-  - `-v` - Invert match
-  - `-n` - Show line numbers
-  - `-c` - Show count of matches
-  - `-r` - Recursive (when specifying a directory instead of a file)
-  - `-l` - Show only filenames
-  - `-E` (or use `egrep`) - Use extended regular expressions
 
 **peak** (`head` / `tail`) - Display the beginning or end of a file
 - `head <file>` - Displays the beginning of a file
@@ -196,6 +177,99 @@ root_directory (/)
 
 **change owner** (`chown`) - Change the owner of a file or directory
 - `chown <owner> <file>` - Changes the owner of a file
+
+### Search Commands
+
+**filter** (`grep`) - Search for patterns in text
+- `grep <pattern> <file>` - Searches for a pattern in a file
+- Flags
+  - `-i` - Case-insensitive
+  - `-v` - Invert match
+  - `-n` - Show line numbers
+  - `-c` - Show count of matches
+  - `-r` - Recursive (when specifying a directory instead of a file)
+  - `-l` - Show only filenames
+  - `-E` (or use `egrep`) - Use extended regular expressions
+
+**find** (`find`) - Search for files in a directory hierarchy
+- Find can search for files by file name, file type, file size, and more and can execute commands on found files like deleting them or printing their contents
+- `find <directory> <criteria>`
+- `find <directory> <type> <flags> <pattern>`
+- Flags
+  - `-name` - Find files by name rather than by full path/to/file
+  - `-type` - Find files by type
+  - `-size` - Find files by size
+  - `-exec` - Execute a command on found files
+  - `-delete` - Delete found files
+- `find . -name "filename.txt"` - Find files within the current directory by name
+- `find . -iname "filename.txt"` - Find files within the current directory by name case-insensitive
+- `find . -type f` - Find files within the current directory
+- `find . -type d` - Find directories within the current directory
+
+**locate** (`locate`) - Find files by name
+- `locate <pattern>` - Finds files by name
+- `updatedb` - Updates the database used by locate
+- `locate -i <pattern>` - Case-insensitive search
+- `locate -c <pattern>` - Shows the count of matches
+- `locate -r <pattern>` - Uses regex for the search
+- `locate -S` - Shows statistics about the database
+- `locate -d <database>` - Uses a specific database
+- `locate -e <pattern>` - Shows only existing files
+- `locate -L <pattern>` - Shows only symbolic links
+- `locate -b <pattern>` - Shows only directories
+- `locate -r '^/bin'` - Finds files starting with `/bin`
+- `locate -r '/bin$'` - Finds files ending with `/bin`
+- `locate -r '/bin'` - Finds files containing `/bin`
+- `locate -r '/bin.*sh'` - Finds files starting with `/bin` and ending with `sh`
+
+**whereis** (`whereis`) - Locate the binary, source, and manual page files for a command
+- `whereis <command>` - Finds the binary, source, and manual page files for a command
+- Flags
+  - `-b` - Binary
+  - `-m` - Manual
+  - `-s` - Source
+
+**which** (`which`) - Locate a command
+- `which <command>` - Finds the path of a command
+- `which -a <command>` - Finds all instances of a command
+- `which -s <command>` - Silent mode (only returns exit status)
+- `which -v <command>` - Verbose mode (shows a description of the command)
+
+**sort** (`sort`) - Sort lines of text
+- `sort <file>` - Sorts the lines of a file
+- `<command> | sort` - Sorts the output of a command
+- Flags
+  - `-r` - Reverse order
+  - `-n` - Numerical sort (e.g. 1, 2, 10)
+  - `-u` - Unique (remove duplicates)
+  - `-f` - Case-insensitive sort
+- `sort` can be used to sort text with columns (like csv/tsv)
+- `sort -t, -k2 -n` - Sorts a csv file by the second column numerically
+  - Column sorting flags
+    - `-k` - Sort by key
+    - `-t` - Specify a delimiter
+
+**uniq** (`uniq`) - Report or omit repeated lines
+- `uniq <file>` - Removes duplicate lines from a file
+- `<command> | uniq` - Removes duplicate lines from the output of a command
+- Note: `uniq` only removes consecutive duplicates - sort before using
+- Flags
+  - `-c` - Count the number of occurrences
+  - `-d` - Only show duplicates
+  - `-u` - Only show unique lines
+  - `-i` - Case-insensitive comparison
+  - `-f` - Ignore the first n fields (columns)
+
+**wc** (`wc`) - Print newline, word, and byte counts for each file
+- `wc <file>` - Prints the number of lines, words, and bytes in a file
+- `<command> | wc` - Prints the number of lines, words, and bytes in the output of a command
+- Flags
+  - `-l` - Lines
+  - `-w` - Words
+  - `-c` - Bytes
+  - `-m` - Characters (multi-byte characters are counted as one)
+
+
 
 ### Networking
 
@@ -285,6 +359,10 @@ curl -X POST https://api.example.com/users \
 - `htop` - Displays a dynamic view of system processes
 
 **kill** (`kill`) - Terminate a process
+- `kill <pid>` - Terminates a process
+- `kill -9 <pid>` - Forcefully terminates a process
+- Flags
+  - `-9` - Forceful termination
 
 ### Special Commands
 
@@ -307,6 +385,7 @@ curl -X POST https://api.example.com/users \
 * `history`
 * `alias`
 * `source`
+* `apt-get` / `apt`
 * `export`
 * `which`
 * `ipconfig`
@@ -317,6 +396,7 @@ curl -X POST https://api.example.com/users \
 * `tee`
 * `vim`
 * `nano`
+* `shutdown`
 
 ### New
 
@@ -343,7 +423,7 @@ curl -X POST https://api.example.com/users \
 
 Count the total number of lines in a project (directory and subdirectories) from all files of a certain type (in this case, C, C++, and C# files)
 ```bash
-find . -type f \( -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" -o -name "*.cs" \) -exec wc -l {} \; | awk '{total += $1} END {print total}'`
+find . -type f \( -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" -o -name "*.cs" \) -exec wc -l {} \; | awk '{total += $1} END {print total}'
 ```
 * To count by file, remove the awk part:
 ```bash
