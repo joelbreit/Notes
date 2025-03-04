@@ -52,6 +52,21 @@ Flashcards should work both ways
 
 ## Programming Concepts
 
+### Memory Management Models
+
+1. **stack** - region of memory that grows and shrinks automatically as functions are called and return
+2. **heap** - flexible region of memory for objects that outlive their immediate scope, *requiring explicit freeing (manual memory) or runtime tracking (GC, ARC, etc.)*
+3. **reference counting** - a garbage collection technique that counts the number of references to an object and deallocates it when the count reaches zero
+4. **unique pointer** - a smart pointer that owns the object it points to and deallocates the object when it goes out of scope
+5. **shared pointer** - a smart pointer that uses reference counting and deallocates the object when the count reaches zero
+6. **weak reference** - a reference that does not prevent its subject from being deallocated
+7.  **ownership memory model** - a memory management model where objects have a single owner that is responsible for deallocating them (Rust)
+8.  **reference cycle** - a situation where two or more objects reference each other, preventing them from being deallocated
+9.  **manual memory management** - a memory management model where the programmer is responsible for allocating and deallocating memory (C)
+10. **garbage collection** - memory management via a background process that automatically finds and frees unused (unreachable) memory (Java, Python)
+11. **automatic reference counting (ARC)** - a garbage collection technique primarily relies on reference counting to free up memory (Swift)
+12. **resource acquisition is initialization (RAII)** - a programming idiom where cleanup of resources is tied to the lifespan of an object
+
 ### Programming Paradigms
 
 1. **(programming) paradigm** - a fundamental style or approach to writing and organizing code, defining how problems are structured and solved
