@@ -125,9 +125,60 @@ Casting:
 
 Reserved words:
 
-```cpp
-alignas alignof asm auto bool break case catch char class const constexpr continue decltype default delete do double dynamic_cast else enum explicit extern false float for friend goto if inline int long mutable namespace new noexcept nullptr operator private protected public register reinterpret_cast return short signed sizeof static struct switch template this throw true try typedef typeid typename union unsigned using virtual void volatile wchar_t while
-```
+### **Most Used / Most Important**
+1. `int` – Fundamental data type
+2. `return` – Essential for function results
+3. `if` – Core control structure
+4. `else` – Used with `if`
+5. `for` – Most common loop type
+6. `while` – Another key loop
+7. `void` – Function return type
+8. `bool` – Fundamental type for logic
+9. `true` / `false` – Boolean literals
+10. `const` – Used extensively for immutability
+11. `static` – Important for memory and linkage
+12. `namespace` – Essential in modern C++
+13. `using` – Critical for managing scope
+14. `class` – Core to OOP in C++
+15. `struct` – Similar to `class` but used for plain data structures
+16. `public` / `private` / `protected` – Access control in classes
+17. `auto` – Type inference, widely used in modern C++
+18. `new` / `delete` – Manual memory management (less used with smart pointers)
+19. `nullptr` – Replaces `NULL` in modern C++
+20. `this` – Refers to current instance in class methods
+21. `operator` – Overloading operators
+22. `enum` – Defining named constants
+
+### **Moderately Used**
+23. `switch` / `case` / `default` – Alternative to `if-else`
+24. `break` – Often used in loops and `switch`
+25. `continue` – Controls loop execution
+26. `do` – Used with `while`
+27. `sizeof` – Gets type size, common in low-level code
+28. `dynamic_cast` / `static_cast` / `reinterpret_cast` / `const_cast` – Used in casting
+29. `template` – Foundation of generic programming
+30. `typename` – Used in templates
+31. `friend` – Grants special access to private members
+32. `explicit` – Prevents implicit conversions
+33. `virtual` – Essential for polymorphism
+34. `override` – Enforces correct overriding in inheritance
+35. `final` – Prevents further inheritance
+36. `try` / `catch` / `throw` – Exception handling
+37. `volatile` – Important in embedded systems
+38. `register` – Mostly ignored by modern compilers
+39. `mutable` – Allows modification of `const` members
+
+### **Rarely Used**
+40. `goto` – Generally avoided
+41. `alignas` / `alignof` – Memory alignment
+42. `thread_local` – Thread storage specifier
+43. `decltype` – Used for type deduction
+44. `noexcept` – Marks functions that don’t throw exceptions
+45. `constexpr` – Compile-time constants
+46. `static_assert` – Compile-time assertions
+47. `export` – Almost never used
+48. `co_await` / `co_yield` / `co_return` – Coroutine keywords (C++20)
+
 
 ## Data Types
 
@@ -301,3 +352,7 @@ delete ptr;
 - [ ] How do templates work?
 - [ ] What's the best way to handle exceptions?
 - [ ] When to use pointers vs references?
+- [ ] `WaitForSingleObject` vs `WaitForMultipleObjects`?
+- [ ] `ReleaseMutex`
+- [ ] Enum syntax
+  - [ ] ::

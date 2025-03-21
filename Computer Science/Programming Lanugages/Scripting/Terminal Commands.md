@@ -332,6 +332,9 @@ curl -X POST https://api.example.com/users \
 **ssh-copy-id** (`ssh-copy-id`) - Copy an SSH key to a remote server
 - `ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote_host` Appends the public key to ~/.ssh/authorized_keys on remote_host, allowing password-less login
 
+**Address Resolution Protocol** (`arp`) - Display and modify the IP-to-MAC address translation tables
+- `arp` - Displays the ARP cache
+- `arp -a` - Displays the ARP cache for all devices
 
 
 ### Process Management
@@ -428,6 +431,11 @@ find . -type f \( -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" -
 * To count by file, remove the awk part:
 ```bash
 find . -type f \( -name "*.txt" -o -name "*.md" \) -exec wc -l {} \;
+```
+
+Count the number of occurances of a word in a directory:
+```bash
+grep -r "word" . | wc -l
 ```
 
 ## Unclear

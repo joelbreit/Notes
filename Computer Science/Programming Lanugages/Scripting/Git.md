@@ -102,6 +102,12 @@ Uninitialize a Git repo
 - Clone from one local repo to another
   - `git clone /path/to/repo /path/to/destination`
 
+**remote** - Manage remote repositories
+- `git remote [flags] [remote_name] [remote_url]`
+- `git remote -v` - List remote repositories
+- `git remote add [remote_name] [remote_url]` - Add a remote repository
+- `git remote remove [remote_name]` - Remove a remote repository
+
 ## Esoteric Commands I Like
 
 Display the name, commit hash, and date of every tag in the repo:
