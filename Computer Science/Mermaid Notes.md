@@ -94,3 +94,47 @@ pie
     "Magnesium" : 10.01
     "Iron" : 5
 ```
+
+- User Journey
+
+```mermaid
+journey
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me, Cat
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me, Cat
+```
+
+- Entity Relationship Diagram
+
+```mermaid
+erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    LINE-ITEM }|..|{ PRODUCT : includes
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+    CUSTOMER }|--|| PAYMENT : makes
+```
+
+- Git graph
+
+```mermaid
+---
+title: Example Git diagram
+---
+gitGraph
+   commit
+   commit
+   branch develop
+   checkout develop
+   commit
+   commit
+   checkout main
+   merge develop
+   commit
+   commit
+```

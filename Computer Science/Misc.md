@@ -37,6 +37,10 @@ It works on physical ports between 2 devices rather than over a network.
 
 It sends data one bit at a time, over a single wire, unencrypted, without error-checking, and at a relatively slow speed.
 
+## .NET
+
+**NuGet** - package manager for .NET
+
 ## Need to clarify
 
 - USB virtual port?

@@ -2,61 +2,61 @@
 
 ## Vocab
 
-**shallow equality**: operation that checks if two references point to the same object in memory
+**shallow equality** - operation that checks if two references point to the same object in memory
 
-**reference equality**: operation that checks if two references point to the same object in memory
+**reference equality** - operation that checks if two references point to the same object in memory
 
-**value equality**: operation that checks if two objects have the same value
+**value equality** - operation that checks if two objects have the same value
 
-**the heap**: memory area where objects are stored
+**the heap** - memory area where objects are stored
 
-**the stack**: Memory area where method calls and local variables are stored. Each thread has its own stack, so local variables are thread-safe.
+**the stack** - memory area where method calls and local variables are stored. Each thread has its own stack, so local variables are thread-safe.
 
-**method area**: memory shared by all threads where class metadata, static variables, and constants are stored
+**method area** - memory shared by all threads where class metadata, static variables, and constants are stored
 
-**visibility**: the guarantee that changes made by one thread are visible to other threads
+**visibility** - the guarantee that changes made by one thread are visible to other threads
 
-**atomicity**: the guarantee that an operation either completes fully or not at all and cannot be interrupted
+**atomicity** - the guarantee that an operation either completes fully or not at all and cannot be interrupted
 
-**volatile variables**: variables that are stored in main memory and not in the thread's stack to ensure visibility (but not atomicity) across threads
+**volatile variables** - variables that are stored in main memory and not in the thread's stack to ensure visibility (but not atomicity) across threads
 
-**lock/monitor**: a synchronization mechanism put on a synchronized element while a thread is accessing it to ensure other threads don't interfere
+**lock/monitor** - a synchronization mechanism put on a synchronized element while a thread is accessing it to ensure other threads don't interfere
 
-**syncronized blocks/methods**: blocks of code that are executed by only one thread at a time
+**syncronized blocks/methods** - blocks of code that are executed by only one thread at a time
 
-**final variables**: variables that cannot be reassigned
+**final variables** - variables that cannot be reassigned
 
-**final static variable**: a constant that is shared across all instances of a class
+**final static variable** - a constant that is shared across all instances of a class
 
-**final method**: a method that cannot be overridden by subclasses
+**final method** - a method that cannot be overridden by subclasses
 
-**final class**: a class that cannot
+**final class** - a class that cannot be subclassed
 
-**reentrant lock**: if a thread already holds a lock, it can re-claim the same synchronized block or method without being blocked
+**reentrant lock** - if a thread already holds a lock, it can re-claim the same synchronized block or method without being blocked
 
-**checked exceptions**: exceptions that must be caught or declared in the method signature for exceptions that are expected
+**checked exceptions** - exceptions that must be caught or declared in the method signature for exceptions that are expected
 
-**encapsulation**: the bundling of data and methods that operate on that data into a single unit
+**encapsulation** - the bundling of data and methods that operate on that data into a single unit
 
-**inheritance**: the ability of a class to inherit fields and methods from another class
+**inheritance** - the ability of a class to inherit fields and methods from another class
 
-**polymorphism**: the ability of an object to be used in multiple roles like a subclass being used as its superclass or an interface being used as its implementing class
+**polymorphism** - the ability of an object to be used in multiple roles like a subclass being used as its superclass or an interface being used as its implementing class
 
-**abstraction**: the process of hiding the implementation details and showing only the functionality to the user
+**abstraction** - the process of hiding the implementation details and showing only the functionality to the user
 
-**Lock interface**: Java interface that provides more fine-grained control over for protecting shared resources in a multithreaded environment
+**Lock interface** - Java interface that provides more fine-grained control over for protecting shared resources in a multithreaded environment
 
-**Thread class**: Java class that can be extended to provide start(), run(), join(), sleep(), and interrupt() methods
+**Thread class** - Java class that can be extended to provide start(), run(), join(), sleep(), and interrupt() methods
 
-**Runnable interface**: Java interface that can be implemented to provide a run() method for a thread
+**Runnable interface** - Java interface that can be implemented to provide a run() method for a thread
 
 ## Java Concepts
 
 ### Different kinds of equivalence
 
-- **shallow equality**: `==` operator
+- **shallow equality** - `==` operator
   - Checks for reference equality (whether two references point to the same object in memory)
-- **value equality**: `equals()` method
+- **value equality** - `equals()` method
   - Checks for value equality (whether two objects have the same value)
 - the `.equals()` method is inherited from the `Object` class and can be overridden in subclasses
 
@@ -88,7 +88,7 @@ public int hashCode() {
 
 ### Java Memory Model
 
-- **volatile variables**: variables that are stored in main memory and not in the thread's stack
+- **volatile variables** - variables that are stored in main memory and not in the thread's stack
   - Ensures visibility but not atomicity across threads
 
 ```java
@@ -97,11 +97,11 @@ public class SharedObject {
 }
 ```
 
-- **happens-before relationshipt**: guarantees memory visibility and ordering of operations across threads
+- **happens-before relationshipt** - guarantees memory visibility and ordering of operations across threads
   - Acquiring a lock happens-before releasing the same lock
   - A write to a volatile variable happens-before any subsequent reads of that variable
 
-- **synchronized blocks/methods**: blocks of code that are executed by only one thread at a time
+- **synchronized blocks/methods** - blocks of code that are executed by only one thread at a time
   - Used to ensure atomicity and visibility across threads
 
 ```java
@@ -131,11 +131,11 @@ public class SharedObject {
 
 ### Final Keyword
 
-- **final variables**: variables that cannot be reassigned
+- **final variables** - variables that cannot be reassigned
   - Must be initialized at declaration or in the constructor
-- **final static variable**: a constant that is shared across all instances of a class
-- **final method**: a method that cannot be overridden by subclasses
-- **final class**: a class that cannot be subclassed
+- **final static variable** - a constant that is shared across all instances of a class
+- **final method** - a method that cannot be overridden by subclasses
+- **final class** - a class that cannot be subclassed
 
 ### Thread Joining
 

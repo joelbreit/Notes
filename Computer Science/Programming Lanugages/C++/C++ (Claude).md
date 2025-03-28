@@ -2,18 +2,26 @@
 
 ## Table of Contents
 
-- [Vocabulary](#vocabulary)
-- [Concepts](#concepts)
-- [Syntax](#syntax)
-- [Data Types](#data-types)
-- [Modifiers](#modifiers)
-- [Control Flow](#control-flow)
-- [Data Structures](#data-structures)
-- [Functions](#functions)
-- [Object Orientation](#object-orientation)
-- [Common Tasks](#common-tasks)
-- [Naming Conventions](#naming-conventions)
-- [Thoughts](#thoughts)
+- [C++ Notes](#c-notes)
+  - [Table of Contents](#table-of-contents)
+  - [Vocabulary](#vocabulary)
+  - [Concepts](#concepts)
+  - [Notes](#notes)
+    - [Libraries](#libraries)
+  - [Syntax](#syntax)
+  - [Data Types](#data-types)
+  - [Modifiers](#modifiers)
+  - [Control Flow](#control-flow)
+  - [Data Structures](#data-structures)
+  - [Functions](#functions)
+  - [Object Orientation](#object-orientation)
+  - [Common Tasks](#common-tasks)
+  - [Naming Conventions](#naming-conventions)
+  - [More](#more)
+    - [Preprocessor Directives](#preprocessor-directives)
+  - [Thoughts](#thoughts)
+    - [Positives](#positives)
+    - [Negatives](#negatives)
 
 ## Vocabulary
 
@@ -246,6 +254,16 @@ string result = str1 + str2;  // Concatenation
 - Variables: camelCase
 - Constants: UPPER_CASE
 - Private members: m_prefixed or _prefixed
+
+## More
+
+### Preprocessor Directives
+
+Preprocessor directives start with `#` and are processed before compilation effectively transorming the source code before it is compiled.
+
+- `#include` - Include header file
+- `#define` - Define a macro
+- `#ifdef`, `#ifndef`, `#else`, `#endif` - Conditional compilation
 
 ## Thoughts
 
