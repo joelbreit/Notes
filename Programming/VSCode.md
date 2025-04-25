@@ -1,7 +1,27 @@
-# VSCode Extensions
+# VSCode Notes
+
+### List all **non-default (user-defined)** settings in Visual Studio Code:
+
+1. Open the **Command Palette** (`Ctrl+Shift+P` or `Cmd+Shift+P` on macOS).
+2. Type and select:  
+   **Preferences: Open Settings (JSON)**
+
+   This opens your `settings.json` file, which shows only the settings you've **explicitly changed** — these are the **non-default** ones.
+
+---
+
+### Export/Compare Settings and Extensions
+For a full export of your environment (settings + extensions):
+```bash
+code --list-extensions > extensions.txt
+code --export-default-configuration > config.json
+```
 
 
-## Extension Details
+## VSCode Extensions
+
+
+### Extension Details
 
 <!-- Identifier
 eamodio.gitlens
@@ -32,9 +52,9 @@ Rainbow CSV:
     publisher: "mechatroner"
     extensionName: "rainbow-csv"
     version: "3.14.0"
-```yaml
+```
 
-## Commands
+### Commands
 
 Template:
 `https://marketplace.visualstudio.com/_apis/public/gallery/publishers/{publisher}/vsextensions/{extensionName}/{version}/vspackage`
