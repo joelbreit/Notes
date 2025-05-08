@@ -54,9 +54,12 @@ Rainbow CSV:
     version: "3.14.0"
 ```
 
-### Commands
+~~### Commands~~
 
-Template:
+> **TODO** - This just doesn't work for some reason. It consistently produces `The file is not a valid VSIX package.`
+
+
+~~Template~~:
 `https://marketplace.visualstudio.com/_apis/public/gallery/publishers/{publisher}/vsextensions/{extensionName}/{version}/vspackage`
 
 ```bash
@@ -66,4 +69,15 @@ curl -L -o gitlens.vsix https://marketplace.visualstudio.com/_apis/public/galler
 curl -L -o markdown-all-in-one.vsix https://marketplace.visualstudio.com/_apis/public/gallery/publishers/yzhang/vsextensions/markdown-all-in-one/3.6.2/vspackage
 # Rainbow CSV
 curl -L -o rainbow-csv.vsix https://marketplace.visualstudio.com/_apis/public/gallery/publishers/mechatroner/vsextensions/rainbow-csv/3.14.0/vspackage
+```
+
+```bash
+# publisher.extension and version you want
+PUB="ms-python"
+EXT="python"
+VER="2024.4.0"          # use 'latest' to always fetch newest
+
+curl -L \
+"https://marketplace.visualstudio.com/_apis/public/gallery/publishers/${PUB}/vsextensions/${EXT}/${VER}/vspackage" \
+-o "${PUB}.${EXT}-${VER}.vsix"
 ```

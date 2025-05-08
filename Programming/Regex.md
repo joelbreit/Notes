@@ -91,3 +91,8 @@ Quantifiers specify how many instances of a character, group, or character class
 \t([^\t]+,[^\t]+)\t
 \t"$1"\t
 ```
+
+Match all lines that don't contain a given pattern:
+```sh
+^(?!.*pattern).*$
+```
