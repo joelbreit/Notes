@@ -122,9 +122,50 @@ Show all authors of the repo sorted by number of commits:
 
 `git log --format='%an <%ae>' | sort | uniq -c | sort -nr`
 
+Display lines of code added/removed since a specific date, grouped by author, for specific file types:
+
+```bash
+git log --since="2025-01-01" --pretty=format:"author:%an" --numstat -- '*.cpp' '*.h' '*.cs' '*.md' | awk '
+/^author:/ {current_author=substr($0,8)}
+/^[0-9]/ {
+  added[current_author]+=$1
+  removed[current_author]+=$2
+}
+END {
+  printf "%-20s %10s %10s\n", "Author", "Added", "Removed"
+  for (a in added)
+    printf "%-20s %10d %10d\n", a, added[a], removed[a]
+}'
+```
+
+Ditto but with a date range:
+
+```bash
+git log \
+  --since="2025-01-01" \
+  --until="2025-02-01" \
+  --pretty=format:"author:%an" \
+  --numstat \
+  -- '*.cpp' '*.h' '*.cs' '*.md' \
+| awk '
+/^author:/ {
+  current_author=substr($0,8)
+}
+/^[0-9]/ {
+  added[current_author]+=$1
+  removed[current_author]+=$2
+}
+END {
+  printf "%-20s %10s %10s\n", "Author", "Added", "Removed"
+  for (a in added)
+    printf "%-20s %10d %10d\n", a, added[a], removed[a]
+}'
+```
+
 ## TODO
 
 - [ ] reset
 - [ ] rev-parse
 - [x] git command for moving a file and tracking that move in the history
 - [ ] "Rebase onto" vs "Merge into" vs "Fast-forward to"
+- [ ] `git rm {item} --cached`

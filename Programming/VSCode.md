@@ -4,7 +4,7 @@
 
 1. Open the **Command Palette** (`Ctrl+Shift+P` or `Cmd+Shift+P` on macOS).
 2. Type and select:  
-   **Preferences: Open Settings (JSON)**
+   **Preferences: Open User Settings (JSON)**
 
    This opens your `settings.json` file, which shows only the settings you've **explicitly changed** — these are the **non-default** ones.
 

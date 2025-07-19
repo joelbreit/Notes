@@ -427,6 +427,10 @@ curl -X POST https://api.example.com/users \
 Count the total number of lines in a project (directory and subdirectories) from all files of a certain type (in this case, C, C++, and C# files)
 ```bash
 find . -type f \( -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" -o -name "*.cs" \) -exec wc -l {} \; | awk '{total += $1} END {print total}'
+# or
+find . -type f \( -name "*.py" \) -exec wc -l {} \; | awk '{total += $1} END {print total}'
+# or
+find . -type f \( -name "*.js" -o -name "*.jsx" \) -exec wc -l {} \; | awk '{total += $1} END {print total}'
 ```
 * To count by file, remove the awk part:
 ```bash
