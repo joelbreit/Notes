@@ -2,6 +2,8 @@
 
 ## Terminology
 
+### Places in Git
+
 1. **local directory**: the saved files currently on your computer
 2. **staging area**: set of files that have been added but not committed; same as the index
 3. **index**: set of files that have been added but not committed; same as the staging area
@@ -18,6 +20,11 @@ graph TD
   C --> E[HEAD]
 ```
 
+### Other
+
+1. **WIP** - "Work In Progress"; signals that a commit is not final and might be updated later
+2. **Untracked** - "Untracked" just refers to files that are not in prior commits or the staging area. Everything else is "tracked" by Git.
+
 ## Configuration
 
 **Set user name and email**
@@ -27,17 +34,27 @@ git config --global user.name "Joel Breit"
 git config --global user.email "Joel@Breitest.com"
 ```
 
+**List config settings** - `git config list`
+
+**Get specific config settings (by name)**
+
+- `git config get [name]`
+- Ex: `git config get user.name`
+
 ## Commands
 
 **help**
 
 **init** - Initialize a new Git repo
+
 - `git init
 
 Uninitialize a Git repo
+
 - `rm -rf .git`
 
 **branch** - Edit or view branches
+
 - `git branch [flags] [branch_name]`
 - `git branch` - Display the current branch
 - Flags:
@@ -49,7 +66,24 @@ Uninitialize a Git repo
   - `-r`: List remote branches `git branch -r`
   - `-u`: Set upstream branch `git branch -u origin/master`
 
+**stash** - Temporarily save changes in the working directory
+- The stash is a stack of change sets that can be applied later
+- `git stash [command] [flags]`
+  - Commands:
+    - ~~`git stash`: Same as push, but deprecated~~
+    - ~~`git stash save [message]`: Same as push with -m, but deprecated~~
+    - `git stash push`: Save changes to the stash
+      - `-m` or `--message`: Add a message to the stash
+        - E.g. `git stash push -m "WIP: Fix bug in feature X"`
+      - `-u` or `--include-untracked`: Include untracked (new) files
+    - `git stash pop`: Apply the most recent stash and remove it
+    - `git stash apply`: Apply the most recent stash without removing it
+    - `git stash list`: List all stashes
+    - `git stash drop [stash@{n}]`: Remove a specific stash
+    - `git stash clear`: Remove all stashes
+
 **clean** - Remove untracked files
+
 - `git clean [flags]`
 - Flags:
   - `-d`: Remove untracked directories
@@ -58,6 +92,7 @@ Uninitialize a Git repo
   - `-n`: Dry run (show what would be removed)
 
 **log** - View commit history
+
 - `git log [flags]`
 - `git log --oneline --graph` - Show a graph of the commit history
 - Flags:
@@ -65,6 +100,7 @@ Uninitialize a Git repo
   - `--graph`: Show a graph of the commit history
 
 **tag** - Create, list, or delete tags
+
 - `git tag [flags] [tag_name] [commit]`
 - `git tag` - List tags
 - `git tag -a [tag_name] -m [message]` - Create an annotated tag
@@ -75,13 +111,14 @@ Uninitialize a Git repo
   - Git does not push tags by default
 - `git checkout [tag_name]` - Checkout a tag
 - Flags:
-  - `-a`: Create an annotated tag 
+  - `-a`: Create an annotated tag
   - `-m`: Message for (an annotated) tag
   - `-d`: Delete a tag
   - `-v`: Verify a tag
   - `-f`: Move a tag to a different commit
 
 **diff** - Show changes between commits, branches, etc.
+
 - `git diff [flags] [commit1] [commit2]`
 - `git diff` - diff between working directory and staging area
 - `git diff --cached` - diff between stage and last commit
@@ -94,15 +131,19 @@ Uninitialize a Git repo
   - `--stat`: Show statistics about changes
 
 **move** - Move or rename a file so that Git tracks the move
+
 - `git mv [old_file] [new_file]`
+- Git will usually detect moves automatically, but you won't see that until you at least stage the changes. It may also get confused if you move/rename a file and then edit it in the same commit, so this command is helpful then.
 
 **clone** - Clone a remote repository
+
 - `git clone [repo_url] [directory]`
 - `git clone [repo_url]` - Clone into a directory with the same name as the repo
 - Clone from one local repo to another
   - `git clone /path/to/repo /path/to/destination`
 
 **remote** - Manage remote repositories
+
 - `git remote [flags] [remote_name] [remote_url]`
 - `git remote -v` - List remote repositories
 - `git remote add [remote_name] [remote_url]` - Add a remote repository
@@ -166,6 +207,19 @@ END {
 
 - [ ] reset
 - [ ] rev-parse
-- [x] git command for moving a file and tracking that move in the history
 - [ ] "Rebase onto" vs "Merge into" vs "Fast-forward to"
 - [ ] `git rm {item} --cached`
+- [ ] Change sets - computed, not handled by Git (Git has blobs and deltas)
+- [ ] Object types in Git
+  - [ ] Blob
+  - [ ] Tree
+  - [ ] Commit
+  - [ ] Tag
+  - [ ] DAG
+  - [ ] SHA
+  - [ ] Deltas
+- [ ] Hunks
+- [ ] "Squash commits"
+- [ ] "Packed"
+- [ ] Cherry-picking
+- [ ] Garbage collection in git
