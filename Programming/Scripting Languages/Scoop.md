@@ -32,6 +32,10 @@ Scoop is a user-space package manager CLI for Windows.
 
 ## Examples
 
+```powershell
+scoop install go
+```
+
 ### Starship Prompt
 
 [Starship.md](./Starship.md)

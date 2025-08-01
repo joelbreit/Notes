@@ -17,6 +17,27 @@ code --list-extensions > extensions.txt
 code --export-default-configuration > config.json
 ```
 
+### Add Developer Command Prompt Profiles
+
+Add to settings.json:
+
+```json
+"terminal.integrated.profiles.windows": {
+    // ...
+    "DCP amd64": {
+        "path": [
+            "cmd.exe"
+        ],
+        "args": [ "/k", "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat", "amd64"]
+    },
+    "DCP x86": {
+        "path": [
+            "cmd.exe"
+        ],
+        "args": [ "/k", "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat", "x86"]
+    }
+}
+```
 
 ## VSCode Extensions
 
