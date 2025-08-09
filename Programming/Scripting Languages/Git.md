@@ -223,3 +223,5 @@ END {
 - [ ] "Packed"
 - [ ] Cherry-picking
 - [ ] Garbage collection in git
+- [ ] Rename a folder
+- [ ] Git hooks
