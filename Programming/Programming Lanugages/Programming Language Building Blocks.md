@@ -1,5 +1,7 @@
 # Programming Language Building Blocks
 
+## What I Want to Know About a New Language
+
 * Vibe
   * What portion of programmers use it?
   * What kind of programmers use it?
@@ -201,3 +203,70 @@
   * Concurrent programming
   * Distributed programming
   * Reactive programming
+
+## Notes Structure
+
+Syntax
+
+Vocabulary
+
+Reserved Words
+
+Variable declaration, initialization, and assignment
+
+Operators
+Arithmetic
+
+Relational
+
+Bitwise
+
+Logical
+
+Assignment
+
+Other
+
+Functions / Procedures
+
+Data Structures
+
+Decision making
+
+Loops
+
+Object Orientation
+Classes
+
+Access Specifiers
+
+Methods
+
+Constructors
+
+Operator Overloading
+
+Pointers
+
+Error Handling
+
+Other Aspects
+Comments
+
+Casting
+
+Boolean Values
+
+Null value(s)
+
+Naming Conventions
+
+Reserved Words
+
+File importing
+File reading/writing
+
+Typing
+Scope
+Whitespace
+Object orientation
