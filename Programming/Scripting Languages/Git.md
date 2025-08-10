@@ -90,6 +90,7 @@ Uninitialize a Git repo
   - `-f`: Force the clean
   - `-i`: Interactive mode
   - `-n`: Dry run (show what would be removed)
+  - `-x`: Remove ignored files as well
 
 **log** - View commit history
 
@@ -148,6 +149,15 @@ Uninitialize a Git repo
 - `git remote -v` - List remote repositories
 - `git remote add [remote_name] [remote_url]` - Add a remote repository
 - `git remote remove [remote_name]` - Remove a remote repository
+
+**fetch** - Download objects and refs from remote repository
+- Updates your local copy of a repo to match the remote. By default, it fetches all branches from the remote, and that can also be configured.
+- `git fetch [remote]`
+- `git fetch --all` - Fetch all remotes
+- `git fetch [remote] [branch]` - Fetch a specific branch from a remote
+- `git fetch --prune` - Remove any remote-tracking branches that no longer exist on the remote
+- `git fetch --tags` - Fetch all tags from the remote
+- `git fetch --prune-tags` - Remove any remote-tracking tags that no longer exist on the remote
 
 ## Esoteric Commands I Like
 
