@@ -173,7 +173,7 @@ Show all authors of the repo sorted by number of commits:
 
 `git log --format='%an <%ae>' | sort | uniq -c | sort -nr`
 
-Display lines of code added/removed since a specific date, grouped by author, for specific file types:
+Display lines of code added/removed **since a specific date**, grouped by author, for specific file types:
 
 ```bash
 git log --since="2025-01-01" --pretty=format:"author:%an" --numstat -- '*.cpp' '*.h' '*.cs' '*.md' | awk '

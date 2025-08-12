@@ -66,3 +66,11 @@ Install-Module posh-git -Scope CurrentUser
 code $PROFILE
 ```
 Add `Import-Module posh-git`
+
+## Commands I Find Useful
+
+Delete all .orig files from a repo
+
+```powershell
+Get-ChildItem -Path . -Filter *.orig -Recurse | Remove-Item
+```
