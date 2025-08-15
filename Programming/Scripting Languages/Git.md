@@ -159,6 +159,15 @@ Uninitialize a Git repo
 - `git fetch --tags` - Fetch all tags from the remote
 - `git fetch --prune-tags` - Remove any remote-tracking tags that no longer exist on the remote
 
+**bisect** - Find the commit that introduced a bug
+
+- `git bisect start` - Start bisecting
+- `git bisect bad` - Mark the current commit as bad
+- `git bisect good [commit]` - Mark a specific commit as good
+- `git bisect reset` - Reset bisecting
+- `git bisect run <script>` - Run a script to test if the commit is good or bad
+  - The **script** (e.g. ./test.sh) should exit with 0 if the commit is good, and 1 if the commit is bad.
+
 ## Esoteric Commands I Like
 
 Display the name, commit hash, and date of every tag in the repo:
