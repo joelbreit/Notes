@@ -42,7 +42,8 @@
 - An application can have multiple assemblies. An assembly can have multiple namespaces. A namespace can have multiple classes.
 - C# primitive types map to .NET types.
   - `int` -> `System.Int32`
-- 
+- Properties vs Fields
+  - C# likes to make class fields "properties" which specifically means, in C#, that they have getter and setter accessors... TODO
 
 ## Notes
 
@@ -63,6 +64,8 @@
   - Notated with `@` before the opening quote: `@"C:\Program Files\MyApp"`
   - Backslashes do not used to escape characters
   - Newlines can be included without using `\n`
+
+- Like in Java, all functions need to be defined within a class
 
 ### Libraries
 
@@ -433,6 +436,7 @@ if (string.IsNullOrEmpty(str))
 - [ ] attributes and reflection?
 - [ ] Tell me about LINQ and its syntax.
 - [ ] Other C family languages
+- [ ] Tell me about object initializers
 
 
 - [x] How do I get started compiling and running C# code in VSCode?

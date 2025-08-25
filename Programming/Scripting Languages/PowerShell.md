@@ -48,6 +48,14 @@ Commands:
 10. **Change Access/Permissions** - TODO
 11. **Pipe Commands Together** - TODO
 
+## More Commands
+
+**Tee-Object** - `<command> | Tee-Object -FilePath <file_path>`
+- Send output to both the console and a file at the same time.
+
+**Tree** - `tree TODO
+
+
 ## Notes About Paths
 
 - Windows paths are case-insensitive
