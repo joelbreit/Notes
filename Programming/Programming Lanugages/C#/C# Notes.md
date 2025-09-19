@@ -5,10 +5,14 @@
 - [C# Notes](#c-notes)
 	- [Table of Contents](#table-of-contents)
 	- [Vocabulary](#vocabulary)
+		- [Terminology](#terminology)
+			- [Class Parts](#class-parts)
+			- [Object Types](#object-types)
 	- [Concepts](#concepts)
 	- [Notes](#notes)
 		- [Libraries](#libraries)
 	- [Syntax](#syntax)
+		- [Static](#static)
 	- [Data Types](#data-types)
 	- [Modifiers](#modifiers)
 	- [Control Flow](#control-flow)
@@ -16,8 +20,10 @@
 		- [Arrays](#arrays)
 		- [Lists](#lists)
 		- [Enum](#enum)
-	- [Functions](#functions)
+	- [Methods](#methods)
+		- [Parameter Passing](#parameter-passing)
 	- [Object Orientation](#object-orientation)
+		- [Inheritance](#inheritance)
 	- [Common Tasks](#common-tasks)
 	- [Naming Conventions](#naming-conventions)
 	- [Thoughts](#thoughts)
@@ -37,6 +43,46 @@
 - **Namespace**: A way to organize and group related classes, interfaces, and other types in C#
 - **List**: Resizeable collection of elements that maintains order. Part of the `System` namespace and the go-to data structure in C#.
 
+### Terminology
+
+#### Class Parts
+
+- **member** refers to any property, method, or event that belongs to a class or struct
+- **field** - a variable that is declared directly in a class or struct
+- **property** - a field in a C# class that provides accessors
+- **method** - any class function (static or instance)
+
+#### Object Types
+
+- **reference type** - *a type that is accessed by reference, meaning that a variable of this type holds a reference to the memory location where the actual data is stored (e.g., classes, arrays, delegates, and strings)*
+- **value type** - *a type that is accessed by value, meaning that a variable of this type holds the actual data (e.g., primitive types like int, float, bool, and structs)*
+- **primitive type** - *a built-in data type that represents a single value (e.g., int, float, bool, char)*
+
+```mermaid
+graph LR
+    A[System.Object] --> B[Value Types<br/>System.ValueType]
+    A --> C[Reference Types]
+    
+    B --> D[Structs]
+    B --> E[Enums<br/>System.Enum]
+    
+    D --> F[Built-in Primitives<br/>int, bool, char, etc.]
+    D --> G[Custom Structs<br/>Point, DateTime]
+    D --> H[Nullable Value Types<br/>int?, bool?]
+    
+    C --> I[Classes]
+    C --> J[Interfaces]
+    C --> K[Arrays]
+    C --> L[Delegates]
+    C --> M[Records]
+    C --> N[Strings]
+    
+    I --> O[Abstract Classes]
+    I --> P[Sealed Classes]
+    I --> Q[Static Classes]
+    I --> R[Regular Classes]
+```
+
 ## Concepts
 
 - An application can have multiple assemblies. An assembly can have multiple namespaces. A namespace can have multiple classes.
@@ -44,6 +90,10 @@
   - `int` -> `System.Int32`
 - Properties vs Fields
   - C# likes to make class fields "properties" which specifically means, in C#, that they have getter and setter accessors... TODO
+- *Everything in C# is an object*. Even primitive types like `int` and `bool` inherit from `System.ValueType` which inherits from `System.Object`.
+  - Not even Java does this.
+  - `int`, `bool`, etc. are aliases for `System.Int32`, `System.Boolean`, etc.
+- Delegates are objects that represent functions. They can be passed around and invoked and are used for callbacks and event handling.
 
 ## Notes
 
@@ -66,6 +116,8 @@
   - Newlines can be included without using `\n`
 
 - Like in Java, all functions need to be defined within a class
+- Like in Java, `==` generally checks for **reference equality** for objects and value equality for primitive types, and `.Equals()` checks for **value equality** for objects (if overridden)
+  - However, `==` can be overloaded in C# which it does for example in the `string` class to check for value equality
 
 ### Libraries
 
@@ -89,9 +141,15 @@ Reserved words:
 abstract as base bool break byte case catch char checked class const continue decimal default delegate do double else enum event explicit extern false finally fixed float for foreach goto if implicit in int interface internal is lock long namespace new null object operator out override params private protected public readonly ref return sbyte sealed short sizeof stackalloc static string struct switch this throw true try typeof uint ulong unchecked unsafe ushort using virtual void volatile while
 ```
 
+### Static
+
+- As expected, `static` members (fields, methods, properties) belong to the class itself and not to instances of the class
+- Classes themselves can be `static` which means they cannot be instantiated and can only contain static members. The `Program` class is often static and the `Main` method for a program must be static.
+- Constructors can be `static` to specify that they are called once when the class is first used
+
 ## Data Types
 
-Primitive data types in C# are:
+Basic data types in C# are:
 
 - `int` - 32-bit signed integer
   - Also `uint`, `long`, `ulong`, `short`, `ushort`, `byte`, `sbyte` for signed/unsigned integers of different sizes
@@ -110,13 +168,9 @@ float pi = 3.14159F;
 decimal largeNum = 123456789012345678901234567890M;
 ```
 
-Pointers:
+~~Pointers:~~
 
-- When defining a pointer, use the `*` symbol after the type: `int* ptr`
-- To get the address of a variable, use the `&` symbol: `int* ptr = &num`
-- To get the value of a pointer, use the `*` symbol before the pointer: `int value = *ptr`
-- To get the address of a pointer, use the `&` symbol: `int** ptr2 = &ptr`
-- To get the value of a pointer to a pointer, use two `*` symbols: `int value = **ptr2`
+> You can use pointers in C# in a C/C++ style, but for the love of God don't do that.
 
 Unspecified types:
 
@@ -235,9 +289,9 @@ int code = (int)ResponseCodes.OK;
 Console.WriteLine(code); // 200
 ```
 
-## Functions
+## Methods
 
-Functions in C# are defined by their return type or `void` a la Java.
+Functions in C# are defined by their return type or `void` a la Java. All functions must be defined within a class, and are referred to as methods (like in Java).
 
 ```csharp
 int Add(int a, int b)
@@ -269,6 +323,20 @@ int Add(params int[] numbers)
 		sum += num;
 	}
 	return sum;
+}
+```
+
+### Parameter Passing
+
+**Summary**
+
+```csharp
+void Method(int val, ref int byRef, out int output, in int readOnly)
+{
+	val = 10;          // Modifies local copy only
+	byRef += 10;      // Modifies original variable
+	output = 20;      // Must assign before method ends
+	// readOnly += 10; // Error: cannot modify 'in' parameter
 }
 ```
 
@@ -321,7 +389,21 @@ var myCar = new Car(make: "Honda", year: 2020);  // Named arguments
 
 ## Object Orientation
 
-All types in C# are derived from the `object` type. The `object` type includes methods like `ToString()`, `Equals()`, and `GetHashCode()`.
+* All types in C# are derived from the `object` type. The `object` type includes methods like `ToString()`, `Equals()`, and `GetHashCode()`.
+* C# follows **single inheritance** (a class can only inherit from one base class)
+* C# classes can implement multiple interfaces
+
+### Inheritance
+
+* C# uses the `:` symbol to denote inheritance and interface implementation
+  * If subtyping from both, the base class comes first, then interfaces
+
+```csharp
+class Dog : Animal, IPet
+{
+	// Dog inherits from Animal and implements IPet
+}
+```
 
 ## Common Tasks
 
@@ -397,6 +479,7 @@ if (string.IsNullOrEmpty(str))
 - camelCase for local variables and method arguments.
 - UPPERCASE for constants.
 - _underscore for private fields.
+- Interfaces start with an I. e.g. `IAnimal`
 
 ## Thoughts
 
@@ -423,12 +506,6 @@ if (string.IsNullOrEmpty(str))
 
 - [x] What package manager(s) does C# use?
   - NuGet (for .NET)
-- [x] Is this necessary? `var names = new string[2] { "Alice", "Bob" };`
-  - Nope, Lists are more common
-- [x] How often are each of pointers, structs, and enums used in C#?
-  - Pointers are rarely used in C#.
-  - Structs are occasionally used.
-  - Enums are commonly used.
 - [x] Can arrays be resized in C#?
   - No, but Lists can be and are frequently used.
 - [x] Is it common to just usually include `using System` rather than specific parts like System.Collections.Generic?
@@ -437,6 +514,10 @@ if (string.IsNullOrEmpty(str))
 - [ ] Tell me about LINQ and its syntax.
 - [ ] Other C family languages
 - [ ] Tell me about object initializers
+- [ ] Tell me about events in C#
+- [ ] Records
+- [ ] Delegates
+- [ ] Use of structs vs classes
 
 
 - [x] How do I get started compiling and running C# code in VSCode?

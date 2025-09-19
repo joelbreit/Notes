@@ -91,13 +91,19 @@
     * Encouraged
     * Required
   * Multiple returns
-  * Default parameters
-  * Named parameters
-  * Optional parameters
-  * Parameter arrays
-  * Parameter types
   * Void functions
-  * Reference parameters
+  * Parameters
+    * Default parameters
+    * Named parameters
+    * Optional parameters
+    * Typed parameters
+    * Parameter arrays
+    * Parameter types
+    * Parameter scope and access
+      * Read-only parameters
+      * Pass-by-value parameters
+      * Pass-by-reference parameters
+      * Out parameters
 * Data structures
   * Are strings annoying?
   * Tuples
@@ -124,15 +130,18 @@
   * Find
   * Transform (apply function to each element)
   * Reverse
-* Classes
-  * Class declaration
-  * Static characteristics
-  * Object creation
-  * Use of static class characteristics
-  * Getters and setters
-  * Subclasses (not child classes)
-  * This/self
-* Inheritance
+* Custom Types
+  * Classes
+    * Class declaration
+    * Static characteristics
+    * Object creation
+    * Use of static class characteristics
+    * Getters and setters
+    * Subclasses (not child classes)
+    * This/self
+  * Structs
+  * Enums
+* Subtyping (Inheritance)
   * Abstract classes
   * Interfaces
   * Parent class

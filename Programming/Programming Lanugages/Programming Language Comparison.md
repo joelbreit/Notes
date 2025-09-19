@@ -15,11 +15,11 @@
 
 ### Negatives
 
-|                                       | JavaScript | Swift | Python | Java   | C++    | C#     |
-| ------------------------------------- | ---------- | ----- | ------ | ------ | ------ | ------ |
-| 1. *Requires* Semicolons              | No         | No    | No     | Yes    | Yes    | Yes    |
-| 2. Whitespace freaquently breaks code | No         | No    | Yes    | No     | No     | No     |
-|                                       | **0**      | **0** | **-1** | **-1** | **-1** | **-1** |
+|                                      | JavaScript | Swift | Python | Java   | C++    | C#     |
+| ------------------------------------ | ---------- | ----- | ------ | ------ | ------ | ------ |
+| 1. *Requires* Semicolons             | No         | No    | No     | Yes    | Yes    | Yes    |
+| 2. Whitespace frequently breaks code | No         | No    | Yes    | No     | No     | No     |
+|                                      | **0**      | **0** | **-1** | **-1** | **-1** | **-1** |
 
 ## Types
 
