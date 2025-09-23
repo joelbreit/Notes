@@ -24,6 +24,7 @@
 		- [Parameter Passing](#parameter-passing)
 	- [Object Orientation](#object-orientation)
 		- [Inheritance](#inheritance)
+		- [Properties](#properties)
 	- [Common Tasks](#common-tasks)
 	- [Naming Conventions](#naming-conventions)
 	- [Thoughts](#thoughts)
@@ -402,6 +403,43 @@ var myCar = new Car(make: "Honda", year: 2020);  // Named arguments
 class Dog : Animal, IPet
 {
 	// Dog inherits from Animal and implements IPet
+}
+```
+
+### Properties
+
+- Can be public or private
+  - Idiomatic to still use PascalCase for both public and private properties
+- Properties must have at least one accessor ( `get` and/or `set` OR `init` )
+  - Cannot have both `set` and `init` accessors
+- Properties can specify that they are `required` i.e. must be set during object initialization
+- Either accessor can have different access modifiers (e.g. public get, private set)
+- Most common use case is `public type Name { get; set; }` which sets default getters and setters
+- Custom logic can be added to accessors
+
+```csharp
+class Person
+{
+	private string _name; // backing field
+
+	public string Name
+	{
+		get { return _name; }
+		set
+		{
+			if (string.IsNullOrWhiteSpace(value))
+			{
+				throw new ArgumentException("Name cannot be empty");
+			}
+			_name = value;
+		}
+	}
+
+	public int Age { get; private set; } // public get, private set
+
+	public string Address { get; init; } // can only be set during initialization
+
+	public required string ID { get; set; } // must be set during initialization
 }
 ```
 
