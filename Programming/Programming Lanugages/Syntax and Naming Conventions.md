@@ -69,8 +69,8 @@
 - Tabs / Spaces
 - Indentation optional/required
 - Semicolon unused/optional/required
-- Braces used/optional/required
-- Braces style (K&R, Allman, etc.)
+- Braces/brackets used/optional/required
+- Braces/brackets style (K&R, Allman, etc.)
 
 # File Naming
 

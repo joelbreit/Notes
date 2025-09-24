@@ -187,10 +187,9 @@ These functions are used to perform calculations on a set of values and return a
 12. **set operations**: functions that combine the result sets of two or more SELECT statements with similar structures (UNION, UNION ALL, INTERSECT, EXCEPT)
 13. **alias**: a temporary name assigned to a table or column for the duration of a query
 14. **aggregate functions**: SQL operations used on a set of values to return a single value including SUM, AVG, COUNT, MIN, MAX
-
 15. **Constraint**: A rule applied to table columns to enforce data integrity. Common constraints include `NOT NULL`, `UNIQUE`, `PRIMARY KEY`, and `FOREIGN KEY`.
-
 16. **Trigger**: A stored procedure that automatically executes when a specified event occurs in the database, such as an `INSERT`, `UPDATE`, or `DELETE`.
+17. **projection**: *selecting specific columns from a table in a query*
 
 These are some foundational terms to help understand SQL's structure and concepts better.
 

@@ -27,6 +27,9 @@
 		- [Properties](#properties)
 	- [Common Tasks](#common-tasks)
 	- [Naming Conventions](#naming-conventions)
+	- [LINQ](#linq)
+		- [Commands](#commands)
+	- [Lambda Expressions](#lambda-expressions)
 	- [Thoughts](#thoughts)
 		- [Positives](#positives)
 		- [Negatives](#negatives)
@@ -119,6 +122,14 @@ graph LR
 - Like in Java, all functions need to be defined within a class
 - Like in Java, `==` generally checks for **reference equality** for objects and value equality for primitive types, and `.Equals()` checks for **value equality** for objects (if overridden)
   - However, `==` can be overloaded in C# which it does for example in the `string` class to check for value equality
+
+- **Delegates** - a type that represents a method with a specific parameter list and return type
+  - Built-in delegate types include `Action` (no return value) and `Func` (with return value)
+    - `Action<int, string>` represents a method that takes an `int` and a `string` and returns `void`
+	- `Func<int, string, bool>` represents a method that takes an `int` and a `string` and returns a `bool`
+  - Lambda expressions can be assigned to delegates
+  - You can create a method that takes a delegate as a parameter
+    - `void ProcessData(int data, Action<int> callback) { ... }`
 
 ### Libraries
 
@@ -519,26 +530,77 @@ if (string.IsNullOrEmpty(str))
 - _underscore for private fields.
 - Interfaces start with an I. e.g. `IAnimal`
 
+## LINQ
+
+- C# provides an SQL-like query syntax called LINQ (Language Integrated Query) to work with collections
+- Two syntaxes: Query syntax (SQL-like - rarely used) and Method syntax (fluent API with lambda expressions)
+- Works on any collection that implements `IEnumerable<T>`, including arrays, lists, and dictionaries
+
+- [x] => syntax
+- [x] Query syntax seems uncommon? - yup
+
+```csharp
+// Method syntax
+var adults = people
+    .Where(p => p.Age >= 18)
+    .OrderBy(p => p.Name)
+    .Select(p => p.Name);
+```
+
+### Commands
+
+* Filtering: `Where`
+* Projection: `Select`, `SelectMany`
+* Sorting: `OrderBy`, `OrderByDescending`
+* Aggregation: `Count`, `Sum`, `Average`, `Max`, `Min`
+* Grouping: `GroupBy`
+* Joining: `Join`, `GroupJoin`
+* Set operations: `Distinct`, `Union`, `Intersect`, `Except`
+
+- Unlike SQL, `Select()` statements can come after `Where()` statements
+
+## Lambda Expressions
+
+- Anonymous (unnamed) functions that can be defined inline
+
+- Syntax: 
+  - `(parameters) => expression` or
+  - `(parameters) => { statements }`
+
 ## Thoughts
 
 ### Positives
 
 - Ternary operator
-- `var` for type inference
-- Low level things like poiners and old school arrays available, but not common
+- `var` for type inference, but still strongly typed
+- ~~Low level things like pointers and old school arrays available, but not common~~ Don't use pointers.
 - Everything is an object / class
+  - No seriously, even more so than Java. That's kind of beautiful.
 - Namespaces for organization
 - (Block scope)
 - (Has switch statements)
-- Singlular, intuitive `foreach` loop
+- Singular, intuitive `foreach` loop
 - Allows for default values in function parameters
+- LINQ is pretty awesome
+- Properties make classes with getters and setters refreshingly simple
+- C# kind of has everything you could want in a language
+  - Syntactic sugar available but not necessary
+  - Full object-oriented features
+  - Provides the specificity that you expect from an OO language, but doesn't get in your way
+  - Type inference, but with type tracking
+  - Cross platform
 
 ### Negatives
 
 - Need to import for common print statements and data structures
-- The List data structure kind of sucks
-- No inline array definitions
-- Strings are immutable?!
+  - Just `using System;`, but you do generally need the Java-esque boilerplate
+- ~~The List data structure kind of sucks~~ I think I learned lists from something that gave way too much nuance upfront. In practice, they are exactly what you expect.
+- ~~No inline array definitions~~ `new int[] { 1, 2, 3 }`
+- ~~Strings are immutable?!~~ Not the variable, the string itself
+- It is rather a pain to just run some Hello World code. You need extra packages or a full project setup.
+- I prefer the naming conventions of Pascal = types, camel = everything objects, _underscore = private, UPPER = constants, but C# uses Pascal types, properties, and methods
+- I prefer K&R braces. Allman braces are idiomatic in C#. (but they do make quick comment-in/out changes easier)
+- Don't work as well with VSCode as web dev, Python, or Go in my experience
 
 ## Questions
 
@@ -556,6 +618,7 @@ if (string.IsNullOrEmpty(str))
 - [ ] Records
 - [ ] Delegates
 - [ ] Use of structs vs classes
+- [ ] `yield`
 
 
 - [x] How do I get started compiling and running C# code in VSCode?
