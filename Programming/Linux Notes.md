@@ -12,6 +12,31 @@
 - **Symlink** - *A symbolic link, or symlink, is a file that points to another file or directory*
 - **GNU** - *A recursive acronym for "GNU's Not Unix!", a free software operating system*
 
+## Standard Linux Directories
+
+/ - Root, top of filesystem hierarchy
+/bin - Binaries for CLI tools
+/boot - Files for booting the system
+/dev - Device files like hard drives
+/etc - Configuration files
+/home - User home directories
+/lib - Shared libraries
+/media - Removable media mount points
+/opt - Optional third-party software
+/root - Root user's home directory
+/run - Runtime data (PIDs, sockets)
+/sbin - System binaries (requires root)
+/srv - Service data (web servers, FTP)
+/sys - Virtual filesystem for hardware/kernel info
+/tmp - Temporary files
+/usr - User programs and data (most software)
+/var - Variable data (logs, caches, databases)
+
+- [ ] /mnt
+- [ ] /proc
+- [ ] /sbin
+- [ ] /srv
+
 ## TODO
 
 - [ ] symlinks
