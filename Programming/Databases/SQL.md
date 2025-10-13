@@ -61,13 +61,15 @@ These commands are used to manage transactions in the database.
 
 1. **WHERE**: clause for filtering rows in a result set
 2. **ORDER BY**: clause for sorting rows in a result set
+   1. Can only be used once in a query and must be the last clause
 3. **GROUP BY**: clause for grouping rows in a result set
 4. **HAVING**: clause for filtering groups in a result set
 5. **LIMIT**: clause for limiting the number of rows in a result set
+   1. SQL Server uses **TOP** instead of LIMIT
 6. **OFFSET**: clause for skipping a specified number of rows in a result set
 7. **JOIN**: clause for combining rows from two or more tables based on a related column between them
 8. **ON**: clause for specifying the join condition in a JOIN clause
-9. **AS**: clause for aliasing a column or table in a query
+9.  **AS**: clause for aliasing a column or table in a query
 10. **DISTINCT**: clause for returning only distinct values in a result set
 11. **LIKE**: clause for matching a pattern in a column
 12. 
@@ -89,12 +91,12 @@ These functions are used to perform calculations on a set of values and return a
 
 ## WHERE Clause Operators
 
-1. **=**: equal to
-2. **<>**: not equal to
-3. **<**: less than
-4. **>**: greater than
-5. **<=**: less than or equal to
-6. **>=**: greater than or equal to
+1. `=`: equal to
+2. `<>`: not equal to
+3. `<`: less than
+4. `>`: greater than
+5. `<=`: less than or equal to
+6. `>=`: greater than or equal to
 7. **BETWEEN**: between a range of values
 8. **LIKE**: matches a pattern
 9. **IN**: matches any value in a list
@@ -185,13 +187,43 @@ These functions are used to perform calculations on a set of values and return a
 10. **record/entry**: horizontal entity in a table that contains data for a single data item
 11. **correlated subquery**: a subquery that references a column from the outer query
 12. **set operations**: functions that combine the result sets of two or more SELECT statements with similar structures (UNION, UNION ALL, INTERSECT, EXCEPT)
+    1.  Set operations combine separate SELECT statements, so they go between complete queries
 13. **alias**: a temporary name assigned to a table or column for the duration of a query
 14. **aggregate functions**: SQL operations used on a set of values to return a single value including SUM, AVG, COUNT, MIN, MAX
 15. **Constraint**: A rule applied to table columns to enforce data integrity. Common constraints include `NOT NULL`, `UNIQUE`, `PRIMARY KEY`, and `FOREIGN KEY`.
 16. **Trigger**: A stored procedure that automatically executes when a specified event occurs in the database, such as an `INSERT`, `UPDATE`, or `DELETE`.
 17. **projection**: *selecting specific columns from a table in a query*
 
-These are some foundational terms to help understand SQL's structure and concepts better.
+## Notes
+
+Order of clauses in a SQL query:
+1. SELECT
+2. FROM
+   1. JOIN...ON
+3. WHERE
+   1. GROUP BY
+      1. HAVING
+4. ORDER BY
+5. LIMIT/TOP
+   1. OFFSET
+
+```SQL
+SELECT email 
+FROM admin
+WHERE EXISTS (
+    SELECT * 
+    FROM user 
+    WHERE admin.email = user.email
+);
+
+SELECT email
+FROM admin
+INTERSECT
+SELECT email
+FROM user;
+```
+
+## Questions
 
 - [ ] Indexes, views, object, causes, triggers, sequences, synonyms, schemas, domains, and users
 - [ ] ANY, ALL, SOME, EXISTS, and UNIQUE
@@ -205,3 +237,5 @@ These are some foundational terms to help understand SQL's structure and concept
 - [ ] CREATE FULLTEXT INDEX
 - [ ] All ALTER contexts
 - [ ] All NOT NULL contexts
+- [ ] Datatypes that IS, etc can be used
+- [ ] SQL Server naming conventions

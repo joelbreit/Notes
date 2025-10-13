@@ -34,6 +34,10 @@ Scoop is a user-space package manager CLI for Windows.
 
 ```powershell
 scoop install go
+scoop install python
+scoop install pandoc # For markdown to PDF/DOCX conversion
+scoop install tokei # For codebase statistics e.g. lines of code
+scoop install pwsh # PowerShell v7
 ```
 
 ### Starship Prompt
