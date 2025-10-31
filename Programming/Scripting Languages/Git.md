@@ -168,6 +168,18 @@ Uninitialize a Git repo
 - `git bisect run <script>` - Run a script to test if the commit is good or bad
   - The **script** (e.g. ./test.sh) should exit with 0 if the commit is good, and 1 if the commit is bad.
 
+**describe** - Show information about a specific commit
+- Outputs in the format: `<most_recent_tag>-<number_of_commits_since_tag>-g<abbreviated_commit_hash>`
+  - E.g. `v1.0-2-g9c1d2f3`
+- By default, it only considers annotated tags, but you can use `--tags` to consider all tags.
+- If no tags are found, it will output the abbreviated commit hash.
+- `git describe [flags] [commit]`
+- `git describe` - Describe the current commit
+- `git describe --tags` - Describe the current commit using all tags
+- `git describe --always` - Always output something, even if no tags are found
+- `git describe --dirty` - Append "-dirty" if the working directory has uncommitted changes
+- Best: `git describe --tags --always --dirty`
+
 ## Esoteric Commands I Like
 
 Display the name, commit hash, and date of every tag in the repo:
@@ -220,6 +232,12 @@ END {
   for (a in added)
     printf "%-20s %10d %10d\n", a, added[a], removed[a]
 }'
+```
+
+Tag the first commit in a repo:
+
+```bash
+git tag -a 0.0.0.0 $(git rev-list --max-parents=0 HEAD) -m "Initial commit"
 ```
 
 ## TODO

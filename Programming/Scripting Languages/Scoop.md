@@ -38,6 +38,8 @@ scoop install python
 scoop install pandoc # For markdown to PDF/DOCX conversion
 scoop install tokei # For codebase statistics e.g. lines of code
 scoop install pwsh # PowerShell v7
+scoop install dust # Disk usage analyzer
+scoop install btm # Better top - system monitor
 ```
 
 ### Starship Prompt
