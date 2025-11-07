@@ -31,6 +31,7 @@
 	- [LINQ](#linq)
 		- [Commands](#commands)
 	- [Lambda Expressions](#lambda-expressions)
+	- [Async/Await](#asyncawait)
 	- [Thoughts](#thoughts)
 		- [Positives](#positives)
 		- [Negatives](#negatives)
@@ -578,6 +579,18 @@ var adults = people
 - Syntax: 
   - `(parameters) => expression` or
   - `(parameters) => { statements }`
+
+## Async/Await
+
+- `async` keyword marks a method as asynchronous (allows use of `await` inside)
+  - Methods marked `async` may not have any `await` statements, but will generate a warning
+- `await` keyword pauses execution (of the current method) until the awaited task completes
+- Everything before an `await` statement in a method still runs synchronously
+- Asynchronous methods return `Task` or `Task<T>` for methods with return values
+  - `void` return type is only for event handlers
+  - `Task` represents an ongoing operation that can be awaited
+  - `Task<T>` represents an ongoing operation that returns a value of type `T` when awaited
+  - You must use one of these return types for `async` methods
 
 ## Thoughts
 
