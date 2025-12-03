@@ -24,8 +24,9 @@
 6. **M-Series VMs**: high-performance VMs good for big data and large DBs
 7. **N-Series VMs**: GPU-enabled VMs good for AI/rendering workloads
 8. **Premium SSD VM Storage**: most common general purpose VM storage type
-9. **Standard SSD VM Storage**: lower-cost, but cheaper VM storage type
-10. **Standard HDD VM Storage**: lowest-cost, but slowest VM storage type for archival use
+8. **Premium SSD v2 VM Storage**: faster general purpose VM storage type that cannot be used as OS disks
+9. **Standard SSD VM Storage**: lower-cost, but slower VM storage type good for web servers, light use, or dev/test
+10. **Standard HDD VM Storage**: lowest-cost, but slowest VM storage type good for backup, non-critical, or archival workloads
 11. **Ultra Disk VM Storage**: expensive high-IOPS VM storage type for specialized workloads
 12. **Reserved Instance VMs**: discounted VMs that you commit to using for 1-3 years
 13. **Spot VMs**: deeply discounted VMs that can be interrupted by Azure when capacity is needed
@@ -105,7 +106,7 @@ Blob, File, Queue, Table, Disk, Data Lake
 
 1.  **Storage Account**: top-level container that holds all your Azure storage services
 2.  **Azure Blob Storage**: Azure's mangaged object storage service for storing any file type
-3.  **Azure Files**: *fully managed file share service accessible via SMB and NFS protocols*
+3.  **Azure Files**: fully managed file share service accessible via SMB and NFS protocols; basically a NAS/shared-drive/Dropbox service in Azure
 4.  **Azure Queues**: storage service for storing messages between application components
 5.  **Azure Tables**: Azure's own NoSQL key-value storage service
 6.  **Azure Disks**: block storage service for Azure VMs; not managed via Storage Accounts
