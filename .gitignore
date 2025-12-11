@@ -1,2 +1,6 @@
 # MacOS Files
 .DS_Store
+
+# .NET Files
+bin/
+obj/
