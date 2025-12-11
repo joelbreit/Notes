@@ -121,3 +121,20 @@ Blob, File, Queue, Table, Disk, Data Lake
 15. **Cool Blob Storage Tier**: blob storage tier for data accessed less frequently than every 30 days
 16. **Cold Blob Storage Tier**: blob storage tier for data accessed less frequently than every 90 days
 17. **Archive Blob Storage Tier**: blob storage tier for data rarely accessed that may not be accessed right away with lowest storage cost/highest access cost
+18. **AzCopy**: command-line tool for copying data to/from Azure Blob and File storage
+19. **Azure Storage Explorer**: a desktop app for managing Azure Storage resources including blobs, files, queues, and tables
+20. **Azure File Sync**: service that allows you to centralize your file shares in Azure Files while keeping it consistent across on-premises servers
+21. **Azure Data Box**: physical device for transferring large amounts of data to Azure when network transfer is not feasible
+22. **Azure Migrate**: service for assessing and migrating on-premises servers, infrastructure, applications, and data to Azure
+
+- [ ] Load Banlancers
+- [ ] Front Door
+- [ ] Cosmos DB
+- [ ] Entra ID
+- [ ] RBAC
+- [ ] Azure Monitor
+- [ ] Log Analytics Workspace
+- [ ] Azure Blueprints
+- [ ] Pricing Calculator
+- [ ] TCO Calculator
+- [ ] Service Level Agreements (SLAs)
