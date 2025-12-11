@@ -50,6 +50,8 @@
 - **Executable**: Assemblies that can be run directly, use an `.exe` extension, and can utilize libraries
 - **Common Language Runtime (CLR)**: Environment that converts IL code into machine code for a specific platform
 - **Namespace**: A way to organize and group related classes, interfaces, and other types in C#
+- **Projection**: *transforming data from one form to another, often used in the context of LINQ to select specific properties or create new objects from existing data.*
+- **DTO (Data Transfer Object)**: *an object that carries data between processes, often used to encapsulate data for transfer over a network or between layers of an application.*
 
 ### Terminology
 
