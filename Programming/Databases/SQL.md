@@ -4,11 +4,11 @@ SQL is a language used to interact with databases. It is used to create, read, u
 
 ## Command Categories
 
-1. **Data Definition Language (DDL)**: Commands that define the structure of a database, including creating, altering, and dropping tables.
-2. **Data Manipulation Language (DML)**: Commands that manipulate data in a database, including inserting, updating, and deleting records.
-3. **Data Query Language (DQL)**: Commands that retrieve data from a database, including selecting, filtering, and sorting records.
-4. **Data Control Language (DCL)**: Commands that control access to data in a database, including granting and revoking permissions.
-5. **Transaction Control Language (TCL)**: Commands that manage transactions in a database, including committing and rolling back changes.
+1. **Data Definition Language (DDL)**: commands that define the structure of a database, e.g. creating, altering, and dropping tables
+2. **Data Manipulation Language (DML)**: commands that manipulate data in a database, e.g. inserting, updating, and deleting records
+3. **Data Query Language (DQL)**: commands that retrieve data from a database, e.g. selecting, filtering, and sorting records
+4. **Data Control Language (DCL)**: commands that control access to data in a database, e.g. granting and revoking permissions
+5. **Transaction Control Language (TCL)**: commands that manage transactions in a database, e.g. committing and rolling back changes
 
 ## Data Definition Language (DDL)
 

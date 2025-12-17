@@ -45,55 +45,55 @@
 
 ### Kubernetes Concepts
 
-1.  **Cluster**: a set of nodes that run containerized applications managed by Kubernetes
-2.  **Nodes**: the VMs that run your containerized applications in a Kubernetes cluster
-3.  **Pod**: the smallest deployable unit in Kubernetes that can contain one or more containers
-4.  **Sidecar**: a container that runs alongside the main application container (same storage volumes/localhost) in a pod to provide additional functionality like logging, monitoring, or networking
+26.  **Cluster**: a set of nodes that run containerized applications managed by Kubernetes
+27.  **Nodes**: the VMs that run your containerized applications in a Kubernetes cluster
+28.  **Pod**: the smallest deployable unit in Kubernetes that can contain one or more containers
+29.  **Sidecar**: a container that runs alongside the main application container (same storage volumes/localhost) in a pod to provide additional functionality like logging, monitoring, or networking
 
 ## Networking
 
-21. **Virtual Network (VNet)**: a logical isolation of the Azure cloud dedicated to your organization
-22. All Azure {{c1::VMs}} must be in a(n) {{c2::Virtual Network (VNet)}}
-23. **Address Space**: the overall IP address range available for a specific VNet
-24. **Subnets**: a logical partition of a VNet limited to a subset of the VNet's address space used for organization, isolation, and security
-25. Azure {{c1::VMs}} must have a {{c2::private IP address}}
-26. **VM Static IP Address**: a persistent IP address assigned to a VM for an extra cost
-27. **Azure DNS**: service that provides domain name resolution for Azure resources
+30. **Virtual Network (VNet)**: a logical isolation of the Azure cloud dedicated to your organization
+31. All Azure {{c1::VMs}} must be in a(n) {{c2::Virtual Network (VNet)}}
+32. **Address Space**: the overall IP address range available for a specific VNet
+33. **Subnets**: a logical partition of a VNet limited to a subset of the VNet's address space used for organization, isolation, and security
+34. Azure {{c1::VMs}} must have a {{c2::private IP address}}
+35. **VM Static IP Address**: a persistent IP address assigned to a VM for an extra cost
+36. **Azure DNS**: service that provides domain name resolution for Azure resources
 
 ### CIDR Notation
 
-28. **Classless Inter-Domain Routing (CIDR) Notation**: compact representation of IP subnets written as NetworkAddress/PrefixLength (e.g. 192.168.1.0/24)
-29. **Subnet Mask**: 32-bit value that marks which bits of an IPv4 address are the network portion (1s) and which are the host portion (0s) (e.g. 192.168.1.0/24 = 255.255.255.0)
-30. **Prefix Length**: the number of bits in the network portion of the address (e.g. 192.168.1.0/24 = 24)
-31. **Network Prefix**: the network portion of a CIDR notation (e.g. 192.168.1.0/24 = 192.168.1)
-32. **Fixed Bits**: the bits in the network portion of the address that do not change across a subnet (e.g. 192.168.1.0/24 = 192.168.1)
-33. **Free Bits**: the bits in the host portion of the address that can be used for addressing individual hosts (e.g. 151 in 192.168.1.151)
-34. **Network Address**: the first address in the subnet reserved for referring to the subnet itself (e.g. 192.168.1.0/24 = 192.168.1.0)
-35. **Broadcast Address**: the last address in the subnet used for broadcasting to all hosts in the subnet (e.g. 192.168.1.255/24)
-36. **Host Address Range**: the range of addresses available for use by hosts in the subnet (e.g. 192.168.1.1 to 192.168.1.254 for 192.168.1.0/24) N = 2^FreeBits - 2
-37. **192.168.1.0/24**: subnet used by most home routers
-38. **10.0.0.0/8**: subnet usually used in large corporate networks
-39. **172.16.0.0/12**: subnet often used for mid-sized internal LANs
-40. **127.0.0.1**: loopback IP address for localhost
+37. **Classless Inter-Domain Routing (CIDR) Notation**: compact representation of IP subnets written as NetworkAddress/PrefixLength (e.g. 192.168.1.0/24)
+38. **Subnet Mask**: 32-bit value that marks which bits of an IPv4 address are the network portion (1s) and which are the host portion (0s) (e.g. 192.168.1.0/24 = 255.255.255.0)
+39. **Prefix Length**: the number of bits in the network portion of the address (e.g. 192.168.1.0/24 = 24)
+40. **Network Prefix**: the network portion of a CIDR notation (e.g. 192.168.1.0/24 = 192.168.1)
+41. **Fixed Bits**: the bits in the network portion of the address that do not change across a subnet (e.g. 192.168.1.0/24 = 192.168.1)
+42. **Free Bits**: the bits in the host portion of the address that can be used for addressing individual hosts (e.g. 151 in 192.168.1.151)
+43. **Network Address**: the first address in the subnet reserved for referring to the subnet itself (e.g. 192.168.1.0/24 = 192.168.1.0)
+44. **Broadcast Address**: the last address in the subnet used for broadcasting to all hosts in the subnet (e.g. 192.168.1.255/24)
+45. **Host Address Range**: the range of addresses available for use by hosts in the subnet (e.g. 192.168.1.1 to 192.168.1.254 for 192.168.1.0/24) N = 2^FreeBits - 2
+46. **192.168.1.0/24**: subnet used by most home routers
+47. **10.0.0.0/8**: subnet usually used in large corporate networks
+48. **172.16.0.0/12**: subnet often used for mid-sized internal LANs
+49. **127.0.0.1**: loopback IP address for localhost
 
 ### Network Security
 
-41. **Network Security Groups (NSGs)**: free Azure VNet feature that controls inbound and outbound traffic for a subnet
-42. **Azure Firewall**: paid network filter as a service for controlling traffic across VNets
-43. **Azure Bastion**: managed service for secure RDP/SSH access to VMs without their public IP
+50. **Network Security Groups (NSGs)**: free Azure VNet feature that controls inbound and outbound traffic for a subnet
+51. **Azure Firewall**: paid network filter as a service for controlling traffic across VNets
+52. **Azure Bastion**: managed service for secure RDP/SSH access to VMs without their public IP
 
 ### Hybrid Networking
 
-44. **Virtual Network Peering**: VNet feature that allows you to connect VNets together over the Azure backbone network; more easily managed, cheaper, and faster than VPN
-45. **Azure VPN**: Azure method of connecting VNets together over the public internet (with encryption) using Virtual Network Gateway; more setup and worse performance, but available for compliance
-46. **Virtual Network Gateway**: VNet service that provides a connection to the internet
-47. **VPN Gateway**: term for hybrid networking in Azure using Virtual Network Gateway and VPN rather than ExpressRoute
-48. All Azure VPN configurations require a {{c1::local gateway}}, a {{c1::VPN Gateway}}, and a dedicated subnet called {{c2::GatewaySubnet}} that is used to host the gateway resources
-49. **Policy-Based VPN**: a routing method that uses static routing for connection to a single site that is more backwards compatible but does not support Point-to-Site VPNs
-50. **Route-Based VPN**: a routing method that uses dynamic routing for connection to 1 or more sites that supports Point-to-Site VPNs but is less backwards compatible
-51. **Site-to-Site (S2S) VPN**: VPN option for connecting an on-premises network to an Azure VNet
-52. **Point-to-Site (P2S) VPN**: VPN option for connecting a single device to an Azure VNet
-53. **ExpressRoute**: a paid direct connection from your on-premises network to Azure over a private connection; faster than VPN
+53. **Virtual Network Peering**: VNet feature that allows you to connect VNets together over the Azure backbone network; more easily managed, cheaper, and faster than VPN
+54. **Azure VPN**: Azure method of connecting VNets together over the public internet (with encryption) using Virtual Network Gateway; more setup and worse performance, but available for compliance
+55. **Virtual Network Gateway**: VNet service that provides a connection to the internet
+56. **VPN Gateway**: term for hybrid networking in Azure using Virtual Network Gateway and VPN rather than ExpressRoute
+57. All Azure VPN configurations require a {{c1::local gateway}}, a {{c1::VPN Gateway}}, and a dedicated subnet called {{c2::GatewaySubnet}} that is used to host the gateway resources
+58. **Policy-Based VPN**: a routing method that uses static routing for connection to a single site that is more backwards compatible but does not support Point-to-Site VPNs
+59. **Route-Based VPN**: a routing method that uses dynamic routing for connection to 1 or more sites that supports Point-to-Site VPNs but is less backwards compatible
+60. **Site-to-Site (S2S) VPN**: VPN option for connecting an on-premises network to an Azure VNet
+61. **Point-to-Site (P2S) VPN**: VPN option for connecting a single device to an Azure VNet
+62. **ExpressRoute**: a paid direct connection from your on-premises network to Azure over a private connection; faster than VPN
 
 ## Storage
 
@@ -104,28 +104,42 @@ Blob, File, Queue, Table, Disk, Data Lake
 - Like DynamoDB, Azure Tables is a managed NoSQL key-value store provided by Azure
 
 
-1.  **Storage Account**: top-level container that holds all your Azure storage services
-2.  **Azure Blob Storage**: Azure's mangaged object storage service for storing any file type
-3.  **Azure Files**: fully managed file share service accessible via SMB and NFS protocols; basically a NAS/shared-drive/Dropbox service in Azure
-4.  **Azure Queues**: storage service for storing messages between application components
-5.  **Azure Tables**: Azure's own NoSQL key-value storage service
-6.  **Azure Disks**: block storage service for Azure VMs; not managed via Storage Accounts
-7.  {{c1::Storage Accounts}} must have a globally unique name with containing only {{c2::lowercase letters and numbers}}
-8.  **Blob Storage File Address Format**: https://<storage_account_name>.blob.core.windows.net/<container_name>/<folder>(optional)/<blob_name>
-9.  **Block Blobs**: blob type for text or binary data up to about 4TB
-10. **Append Blobs**: blob type optimized for when data is frequently added to e.g. log files
-11. **Page Blobs**: blob type for random read/write operations up to 8TB often used for Azure VM disks
-12. **Online Blob Storage Tiers**: blob storage tiers that can be accessed immediately (hot, cool, and cold)
-13. **Offline Blob Storage Tiers**: blob storage tiers that require hours to access (archive)
-14. **Hot Blob Storage Tier**: blob storage tier for frequently accessed data with highest storage cost/lowest access cost
-15. **Cool Blob Storage Tier**: blob storage tier for data accessed less frequently than every 30 days
-16. **Cold Blob Storage Tier**: blob storage tier for data accessed less frequently than every 90 days
-17. **Archive Blob Storage Tier**: blob storage tier for data rarely accessed that may not be accessed right away with lowest storage cost/highest access cost
-18. **AzCopy**: command-line tool for copying data to/from Azure Blob and File storage
-19. **Azure Storage Explorer**: a desktop app for managing Azure Storage resources including blobs, files, queues, and tables
-20. **Azure File Sync**: service that allows you to centralize your file shares in Azure Files while keeping it consistent across on-premises servers
-21. **Azure Data Box**: physical device for transferring large amounts of data to Azure when network transfer is not feasible
-22. **Azure Migrate**: service for assessing and migrating on-premises servers, infrastructure, applications, and data to Azure
+63.  **Storage Account**: top-level container that holds all your Azure storage services
+64. **Azure Blob Storage**: Azure's mangaged object storage service for storing any file type
+65. **Azure Files**: fully managed file share service accessible via SMB and NFS protocols; basically a NAS/shared-drive/Dropbox service in Azure
+66. **Azure Queues**: storage service for storing messages between application components
+67. **Azure Tables**: Azure's own NoSQL key-value storage service
+68. **Azure Disks**: block storage service for Azure VMs; not managed via Storage Accounts
+69. {{c1::Storage Accounts}} must have a globally unique name with containing only {{c2::lowercase letters and numbers}}
+70. **Blob Storage File Address Format**: https://<storage_account_name>.blob.core.windows.net/<container_name>/<folder>(optional)/<blob_name>
+71. **Block Blobs**: blob type for text or binary data up to about 4TB
+72. **Append Blobs**: blob type optimized for when data is frequently added to e.g. log files
+73. **Page Blobs**: blob type for random read/write operations up to 8TB often used for Azure VM disks
+74. **Online Blob Storage Tiers**: blob storage tiers that can be accessed immediately (hot, cool, and cold)
+75. **Offline Blob Storage Tiers**: blob storage tiers that require hours to access (archive)
+76. **Hot Blob Storage Tier**: blob storage tier for frequently accessed data with highest storage cost/lowest access cost
+77. **Cool Blob Storage Tier**: blob storage tier for data accessed less frequently than every 30 days
+78. **Cold Blob Storage Tier**: blob storage tier for data accessed less frequently than every 90 days
+79. **Archive Blob Storage Tier**: blob storage tier for data rarely accessed that may not be accessed right away with lowest storage cost/highest access cost
+80. **AzCopy**: command-line tool for copying data to/from Azure Blob and File storage
+81. **Azure Storage Explorer**: a desktop app for managing Azure Storage resources including blobs, files, queues, and tables
+82. **Azure File Sync**: service that allows you to centralize your file shares in Azure Files while keeping it consistent across on-premises servers
+83. **Azure Data Box**: physical device for transferring large amounts of data to Azure when network transfer is not feasible
+84. **Azure Migrate**: service for assessing and migrating on-premises servers, infrastructure, applications, and data to Azure
+
+## Cost Management
+
+85.  **Total Cost of Ownership (TCO) Calculator**: tool for estimating the long-term financial difference between running on-premises vs in Azure
+86.  **Azure Pricing Calculator**: tool that lets you estimate the monthly cost of Azure services before deploying anything
+87.  **Azure Cost Management and Billing**: dashboard for monitoring your spending in Azure
+88.  **Budgets**: Cost Management and Billing feature for setting spending limits and alerting when you approach them
+89.  **Cost Analysis**: Cost Management and Billing feature for visualizing and analyzing your Azure spending over time
+90.  **Cost Alerts**: notifications triggered when your spending exceeds predefined thresholds
+91.  **Azure Advisor**: a feature that makes recommendations for optimizing your Azure costs e.g. by identifying idle resources
+92.  **Azure Tags**: name/value labels for categorizing Azure resources; can be used as a filter in billing reports
+93.  **Azure Reservations**: pricing model that offers a discount for committing to 1 or 3 years of usage of Azure services
+94.  **Cost Allocation Reports**: Azure cost breakdowns that allow for manipulation and export with Power BI
+
 
 - [ ] Load Banlancers
 - [ ] Front Door
