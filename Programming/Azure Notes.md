@@ -140,6 +140,13 @@ Blob, File, Queue, Table, Disk, Data Lake
 93.  **Azure Reservations**: pricing model that offers a discount for committing to 1 or 3 years of usage of Azure services
 94.  **Cost Allocation Reports**: Azure cost breakdowns that allow for manipulation and export with Power BI
 
+## Governance and Compliance
+
+1.   **tenant Root level**: the top-level scope for organizaation-wide management in Azure
+2.   **Azure Policy**: rules in Azure expressed as JSON that enforce conditions and effects on your resources
+3.   **Resource Locks**: *a way to prevent accidental deletion or modification of critical Azure resources*
+4.   {{c1::Resource Locks}} can be set to {{c2::CanNotDelete}} or {{c2::ReadOnly}}, can be applied to {{c3::Subscriptions}}, {{c3::Resource Groups}}, or {{c3::Resources}}
+
 
 - [ ] Load Banlancers
 - [ ] Front Door

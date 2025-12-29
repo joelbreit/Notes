@@ -82,6 +82,13 @@ Uninitialize a Git repo
     - `git stash drop [stash@{n}]`: Remove a specific stash
     - `git stash clear`: Remove all stashes
 
+**merge** - Merge changes from a branch into the current branch
+- `git merge [branch_name]` - Merge a branch into the current branch
+- Flags:
+  - `--no-ff`: Create a merge commit even if the merge could be fast-forwarded
+  - `--squash`: Combine all changes from the branch into a single commit
+  - `--abort`: Abort the merge process and return to the pre-merge state
+
 **clean** - Remove untracked files
 
 - `git clean [flags]`
