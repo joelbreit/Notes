@@ -14,11 +14,12 @@
 
 ## HTTP Headers
 
-10. **Range**:  Header indicating the part of a document that the server should return. This can be used to request only a portion of a large document, or to resume a download that was interrupted
-11.  **Upgrade**:  Header used to specify the preferred protocol to use when communicating with the server
-12. **Accept**:  Header specifying the media types that are acceptable for the response such as JSON or XML
-13. **Expect**:  Header indicating the expected behavior of the server such as whether it should return a 100 Continue response
-14. **Location**:  Header typically used for specifying new or updated URLs in response messages
+10.  **Range**:  Request header indicating the portion that the server should return; used to request part of a larger document, or to resume a download that was interrupted
+11.  **Upgrade**:  Request header indicating a client's preferred protocol; server may respond with 101 Switching Protocols and echo the header
+12. **Accept**:  Request header specifying the media types a client can handle e.g. JSON or XML
+13. **Expect**:  Request header indicating anticipated behavior e.g. returning a 100 Continue response
+14. **Location**:  Response (primarily) header indicating new or updated URLs e.g. in a 201 Created or 3xx Redirection response
+15. **Content-Range**: Response header indicating the range of bytes being sent
 
 ## HTTP Status Codes
 
@@ -81,7 +82,7 @@
 57. **414**: URI Too Long - The URI requested by the client is longer than the server is willing to interpret
 58. **415**: Unsupported Media Type - The request has a media type which the server or resource does not support
 59. **416**: Range Not Satisfiable - The client has asked for a portion of the file, but the server cannot supply that portion
-60. **417**: Expectation Failed - The server cannot meet the requirements of the Expect request-header field
+60. **417**: Expectation Failed - The server cannot meet the requirements of the Expect request-header field e.g. the client asked for 100-continue
 61. **418**: I'm a teapot - (an old April Fools' joke) Returned by teapots requested to brew coffee
 62. **421**: Misdirected Request - The request was directed at a server that is not able
 63. **422**: Unprocessable Entity - The request was well-formed but was unable to be followed due to logic errors in the data
