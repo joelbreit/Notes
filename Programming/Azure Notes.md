@@ -147,6 +147,18 @@ Blob, File, Queue, Table, Disk, Data Lake
 3.   **Resource Locks**: *a way to prevent accidental deletion or modification of critical Azure resources*
 4.   {{c1::Resource Locks}} can be set to {{c2::CanNotDelete}} or {{c2::ReadOnly}}, can be applied to {{c3::Subscriptions}}, {{c3::Resource Groups}}, or {{c3::Resources}}
 
+## Development Tools
+
+1. **Azure DevOps**: *a suite of development tools for planning, developing, testing, and deploying applications in Azure*
+2. **DevOps Dashboards**: *customizable dashboards for tracking project progress and metrics in Azure DevOps*
+3. **Azure Boards**: *a set of agile tools for planning and tracking work in Azure DevOps*
+4. **Azure Repos**: *a set of version control tools for managing code repositories in Azure DevOps*
+5. **Azure Pipelines**: *a continuous integration and continuous delivery (CI/CD) service for building, testing, and deploying applications in Azure DevOps*
+6. **Azure Test Plans**: *a set of tools for managing and executing test plans in Azure DevOps*
+7. **Azure Artifacts**: *a package management service for creating, hosting, and sharing packages in Azure DevOps*
+8. 
+
+
 
 - [ ] Load Banlancers
 - [ ] Front Door
