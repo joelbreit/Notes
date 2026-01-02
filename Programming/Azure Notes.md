@@ -142,32 +142,85 @@ Blob, File, Queue, Table, Disk, Data Lake
 
 ## Governance and Compliance
 
-1.   **tenant Root level**: the top-level scope for organizaation-wide management in Azure
-2.   **Azure Policy**: rules in Azure expressed as JSON that enforce conditions and effects on your resources
-3.   **Resource Locks**: *a way to prevent accidental deletion or modification of critical Azure resources*
-4.   {{c1::Resource Locks}} can be set to {{c2::CanNotDelete}} or {{c2::ReadOnly}}, can be applied to {{c3::Subscriptions}}, {{c3::Resource Groups}}, or {{c3::Resources}}
+95.   **Tenant Root Group**: the top-level scope above management groups and subscriptions for organizaation-wide management in Azure
+96.  **Azure Policy**: rules in Azure expressed as JSON that enforce conditions and effects on your resources
+97.  **resource locks**: guardrails that prevent accidental changes to Azure resources; override all role-based permissions; two types: ReadOnly and CanNotDelete
+98.  {{c1::Resource Locks}} can be set to {{c2::CanNotDelete}} or {{c2::ReadOnly}}, can be applied to {{c3::Subscriptions}}, {{c3::Resource Groups}}, or {{c3::Resources}}
+99.  **tenant**: an isolated identity and security boundary for an organization
+100. **Active Directory**: Microsoft's on-prem identity and access management service
+101. **Entra ID**: Azure's cloud-based identity and access management service (formerly Azure Active Directory)
+
+## Monitoring
+
+102. **Azure Monitor**: an umbrella service for managing logs/metrics which can create alerts and visualizations
+103. **Log Analytics**: a service within Azure Monitor where Azure logs live
 
 ## Development Tools
 
-1. **Azure DevOps**: *a suite of development tools for planning, developing, testing, and deploying applications in Azure*
-2. **DevOps Dashboards**: *customizable dashboards for tracking project progress and metrics in Azure DevOps*
-3. **Azure Boards**: *a set of agile tools for planning and tracking work in Azure DevOps*
-4. **Azure Repos**: *a set of version control tools for managing code repositories in Azure DevOps*
-5. **Azure Pipelines**: *a continuous integration and continuous delivery (CI/CD) service for building, testing, and deploying applications in Azure DevOps*
-6. **Azure Test Plans**: *a set of tools for managing and executing test plans in Azure DevOps*
-7. **Azure Artifacts**: *a package management service for creating, hosting, and sharing packages in Azure DevOps*
-8. 
+104. **Azure DevOps**: *a suite of development tools for planning, developing, testing, and deploying applications in Azure*
+105. **DevOps Dashboards**: *customizable dashboards for tracking project progress and metrics in Azure DevOps*
+106. **Azure Boards**: *a set of agile tools for planning and tracking work in Azure DevOps*
+107. **Azure Repos**: *a set of version control tools for managing code repositories in Azure DevOps*
+108. **Azure Pipelines**: *a continuous integration and continuous delivery (CI/CD) service for building, testing, and deploying applications in Azure DevOps*
+109. **Azure Test Plans**: *a set of tools for managing and executing test plans in Azure DevOps*
+110. **Azure Artifacts**: *a package management service for creating, hosting, and sharing packages in Azure DevOps*
+
+## General
+
+111. **Public Cloud model**: cloud model where a customer uses a hyper-scaler's hardware and accesses it over the internet
+112. **Private Cloud model**: cloud model where a customer uses dedicated hardware either on-premises or hosted by a third party
+113. **Infrastructure as a Service (Iaas)**: service where the provider manages the hardware, while the customer manages the OS and environment; if you touch the OS, it’s IaaS
+114. **Platform as a Service (PaaS)**: service where the provider manages the hardware and environment, while the customer manages the code; if you deploy code but don’t manage servers, it’s PaaS
 
 
-
-- [ ] Load Banlancers
-- [ ] Front Door
+- [ ] Azure Front Door
 - [ ] Cosmos DB
-- [ ] Entra ID
 - [ ] RBAC
-- [ ] Azure Monitor
 - [ ] Log Analytics Workspace
 - [ ] Azure Blueprints
 - [ ] Pricing Calculator
 - [ ] TCO Calculator
 - [ ] Service Level Agreements (SLAs)
+- [ ] Purview
+- [ ] Microsoft Defender for Cloud
+- [ ] Compliance Manager
+- [ ] Azure Resource Manager (ARM)
+- [ ] Azure Batch
+- [ ] Azure Load Balancer
+- [ ] Azure Application Gateway
+- [ ] Public IP
+- [ ] Private Endpoint
+- [ ] Redundancy options
+  - [ ] LRS
+  - [ ] ZRS
+  - [ ] GRS
+  - [ ] GZRS
+- [ ] Azure SQL Database
+- [ ] SQL Managed Instance
+- [ ] Azure Database
+- [ ] Cosmos DBCore (SQL) API
+  - [ ] Core (SQL) API
+  - [ ] MongoDB API
+  - [ ] Table API
+  - [ ] Cassandra API
+- [ ] Single Sign-On (SSO)
+- [ ] Conditional Access
+- [ ] RBAC (Role-Based Access Control)
+- [ ] Azure Defender
+- [ ] Microsoft Defender for Cloud
+- [ ] Azure Security Center
+- [ ] DDoS Protection
+- [ ] Key Vault
+- [ ] Azure Blueprints
+- [ ] Microsoft Trust Center
+- [ ] Service Level Agreement (SLA)
+- [ ] Preview vs GA
+- [ ] Support plans
+  - [ ] Basic
+  - [ ] Developer
+  - [ ] Standard
+  - [ ] Professional Direct
+- [ ] Azure Cloud Shell
+- [ ] Log Analytics
+- [ ] Service Health
+- [ ] Azure Arc 
