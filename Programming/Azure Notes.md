@@ -59,6 +59,7 @@
 34. Azure {{c1::VMs}} must have a {{c2::private IP address}}
 35. **VM Static IP Address**: a persistent IP address assigned to a VM for an extra cost
 36. **Azure DNS**: service that provides domain name resolution for Azure resources
+37. **Azure Front Door**: global, layer-7 (HTTP/HTTPS) load balancer and content acceleration service that routes users to the closest healthy backend
 
 ### CIDR Notation
 
@@ -126,6 +127,10 @@ Blob, File, Queue, Table, Disk, Data Lake
 82. **Azure File Sync**: service that allows you to centralize your file shares in Azure Files while keeping it consistent across on-premises servers
 83. **Azure Data Box**: physical device for transferring large amounts of data to Azure when network transfer is not feasible
 84. **Azure Migrate**: service for assessing and migrating on-premises servers, infrastructure, applications, and data to Azure
+85. **Locally Redundant Storage (LRS)**: redundancy option that keeps 3 copies of your data in 1 datacenter; cheapest/default option
+86. **Zone Redundant Storage (ZRS)**: redundancy option that keeps 3 copies of your data in 3 AZs in a region
+87. **Geo-Redundant Storage (GRS)**: redundancy option that keeps 3 copies of your data in 1 region and 3 copies in the paired region; both regions are (AZ agnostic); 2nd region is read-only until failover
+88. **Geo-Zone-Redundant Storage (GZRS)**: redundancy option that keeps 3 copies of your data in 3 AZs in 1 region and 3 copies in the paired region; 2nd region is (AZ agnostic); 2nd region is read-only until failover
 
 ## Cost Management
 
@@ -149,11 +154,17 @@ Blob, File, Queue, Table, Disk, Data Lake
 99.  **tenant**: an isolated identity and security boundary for an organization
 100. **Active Directory**: Microsoft's on-prem identity and access management service
 101. **Entra ID**: Azure's cloud-based identity and access management service (formerly Azure Active Directory)
+102. **Role-Based Access Control (RBAC)**: access controls that grant permissions, are scoped to Azure resources, and use least-privilege; consist of an actor (or sEcUrItY PrInCiPaL), a role, and a scope
+103. **Security Principle**: an identity that can be assigned roles in RBAC; can be a user, group, service principal, or managed identity
+104. **Owner Role**: RBAC role with full access to a resource including the ability to delegate access to others
+105. **Contributor Role**: RBAC role with access to manage a resource but not delegate access to others
+106. **Reader Role**: RBAC role for viewing, but not managing, a resource
 
 ## Monitoring
 
 102. **Azure Monitor**: an umbrella service for managing logs/metrics which can create alerts and visualizations
-103. **Log Analytics**: a service within Azure Monitor where Azure logs live
+103. **Log Analytics**: service within Azure Monitor that manages logs and allows querying with Kusto Query Language (KQL)
+104. **Log Analytics workspace**: region specific container for log data from multiple Azure resources
 
 ## Development Tools
 
@@ -172,14 +183,11 @@ Blob, File, Queue, Table, Disk, Data Lake
 113. **Infrastructure as a Service (Iaas)**: service where the provider manages the hardware, while the customer manages the OS and environment; if you touch the OS, it’s IaaS
 114. **Platform as a Service (PaaS)**: service where the provider manages the hardware and environment, while the customer manages the code; if you deploy code but don’t manage servers, it’s PaaS
 
+## TODO
 
-- [ ] Azure Front Door
-- [ ] Cosmos DB
-- [ ] RBAC
-- [ ] Log Analytics Workspace
+For AZ-900 exam prep:
+
 - [ ] Azure Blueprints
-- [ ] Pricing Calculator
-- [ ] TCO Calculator
 - [ ] Service Level Agreements (SLAs)
 - [ ] Purview
 - [ ] Microsoft Defender for Cloud
@@ -190,11 +198,6 @@ Blob, File, Queue, Table, Disk, Data Lake
 - [ ] Azure Application Gateway
 - [ ] Public IP
 - [ ] Private Endpoint
-- [ ] Redundancy options
-  - [ ] LRS
-  - [ ] ZRS
-  - [ ] GRS
-  - [ ] GZRS
 - [ ] Azure SQL Database
 - [ ] SQL Managed Instance
 - [ ] Azure Database
@@ -205,7 +208,6 @@ Blob, File, Queue, Table, Disk, Data Lake
   - [ ] Cassandra API
 - [ ] Single Sign-On (SSO)
 - [ ] Conditional Access
-- [ ] RBAC (Role-Based Access Control)
 - [ ] Azure Defender
 - [ ] Microsoft Defender for Cloud
 - [ ] Azure Security Center
@@ -224,3 +226,7 @@ Blob, File, Queue, Table, Disk, Data Lake
 - [ ] Log Analytics
 - [ ] Service Health
 - [ ] Azure Arc 
+
+Other terms that need definitions:
+
+- [ ] Managed Identity
