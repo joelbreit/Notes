@@ -454,7 +454,7 @@ Applications Cost Profiler -
 **Cloud9** - Web browser IDE
 - Write/debug code
 
-**CodeCommit** - AWS version of git
+**CodeCommit** - Legacy AWS version of git
 **CodeBuild** - Build and test your code (CI/CD)
 - Compiles code and runs tests
 - Produce ready-to-deploy build artifacts
@@ -641,7 +641,7 @@ How can you run X-Ray in ECS? - Run the X-Ray daemon on its own Docker image alo
 
 **Fargate** - Serverless compute engine for containers like Docker
 
-**Lightsail** - Service that allows you to quickly launch all the resources you need for small, simple projects as low as $3.50/month
+**Lightsail** - AWS service for simple single-server applications
 
 **AWS Outposts** - Service that allows you to run cloud services in your internal data center for compliance; AWS delivers and installs servers; works for hybrid solutions
 
@@ -685,7 +685,7 @@ How can you run X-Ray in ECS? - Run the X-Ray daemon on its own Docker image alo
 
 **Database Migration Service (DMS)** - Service that helps you migrate databases to or within AWS; has continuous data replication and virtually no downtime
 
-**Server Migration Service (SMS)** - Service that allows you to move on-premises instances to AWS as Amazon Machine Image (AMI) EC2 instances
+**Server Migration Service (SMS)** - Legacy service that allows you to move on-premises instances to AWS as Amazon Machine Image (AMI) EC2 instances; largely replaced by AWS Application Migration Service (MGN)
 
 **AWS Snowcone** - Smallest (5lb/8TB) physical data transfer device that can be mailed or use DataSync
 
@@ -725,7 +725,7 @@ How can you run X-Ray in ECS? - Run the X-Ray daemon on its own Docker image alo
 
 **Cloud9** - AWS branded web IDE
 
-**CodeCommit** - AWS branded git repository service
+**CodeCommit** - Legacy AWS branded git repository service
 
 **CodeBuild** - AWS branded CI/CD service for compiling source code, running automated tests, and producing build artifacts 
 

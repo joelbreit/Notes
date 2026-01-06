@@ -161,14 +161,14 @@ Well-Architected Tool - Service for reviewing and improving the architecture of 
 
 ### Flash Cards
 
-Database Migration Service (DMS) - Migration service for converting existing relational, NoSQL, or data warehouse databases to AWS
+Database Migration Service (DMS) - Service for moving or copying existing relational, NoSQL, or data warehouse databases to or within AWS
 Schema Conversion Tool (SCT) - DMS feature for converting DBs between different engine types
-SMS - Migration service for converting existing VMs to Amazon Machine Images
-Migration Hub - Single front-end for SMS and DMS
+SMS - Legacy service for converting existing VMs to Amazon Machine Images
+Migration Hub - Single front-end for MGN and DMS
 Application Migration Service (MGN) - Service for migrating on-premises applications to AWS
 DataSync - Service that uses an agent to move lots of data encrypted in transit using the internet, Direct Connect, or VPN best for one-time migrations
 Storage Gateway - Hybrid storage service for connecting on-premises storage to AWS
-Direct Connect - Service for connecting on-premises data centers to AWS via a dedicated AWS network connection
+Direct Connect - A dedicated physical network connection from your on-prem data center to AWS which bypasses the public internet for better connection
 Application Discovery Service - Service for discovering on-premises applications and their dependencies
 Open Virtualization Format (OVF) - File format for exporting VMs
 Application Migration Service (MGN) - Service for migrating on-premises applications to AWS

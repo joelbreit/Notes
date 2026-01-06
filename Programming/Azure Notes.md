@@ -159,6 +159,7 @@ Blob, File, Queue, Table, Disk, Data Lake
 104. **Owner Role**: RBAC role with full access to a resource including the ability to delegate access to others
 105. **Contributor Role**: RBAC role with access to manage a resource but not delegate access to others
 106. **Reader Role**: RBAC role for viewing, but not managing, a resource
+107. **Purview**: Azure service to help discover, classify, and govern data
 
 ## Monitoring
 
@@ -182,17 +183,17 @@ Blob, File, Queue, Table, Disk, Data Lake
 112. **Private Cloud model**: cloud model where a customer uses dedicated hardware either on-premises or hosted by a third party
 113. **Infrastructure as a Service (Iaas)**: service where the provider manages the hardware, while the customer manages the OS and environment; if you touch the OS, it’s IaaS
 114. **Platform as a Service (PaaS)**: service where the provider manages the hardware and environment, while the customer manages the code; if you deploy code but don’t manage servers, it’s PaaS
+115. **Azure Resource Manager (ARM)**: the management layer that deploys, updates, and manages Azure resources
+116. **ARM Templates**: IaC JSON files that define Azure resources and deploy them automatically
+117. **Azure Blueprints**: service for defining repeatable sets of Azure resources, Policies, or RBAC role assignments
+118. **Service Level Agreements (SLAs)**: formal per-service agreements that define guaranteed availability/uptime percentages from Azure and what credits are provided if they are not met
+119. 
 
 ## TODO
 
 For AZ-900 exam prep:
 
-- [ ] Azure Blueprints
-- [ ] Service Level Agreements (SLAs)
-- [ ] Purview
-- [ ] Microsoft Defender for Cloud
 - [ ] Compliance Manager
-- [ ] Azure Resource Manager (ARM)
 - [ ] Azure Batch
 - [ ] Azure Load Balancer
 - [ ] Azure Application Gateway
@@ -213,9 +214,7 @@ For AZ-900 exam prep:
 - [ ] Azure Security Center
 - [ ] DDoS Protection
 - [ ] Key Vault
-- [ ] Azure Blueprints
 - [ ] Microsoft Trust Center
-- [ ] Service Level Agreement (SLA)
 - [ ] Preview vs GA
 - [ ] Support plans
   - [ ] Basic
@@ -223,7 +222,6 @@ For AZ-900 exam prep:
   - [ ] Standard
   - [ ] Professional Direct
 - [ ] Azure Cloud Shell
-- [ ] Log Analytics
 - [ ] Service Health
 - [ ] Azure Arc 
 
