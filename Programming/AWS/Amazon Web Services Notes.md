@@ -459,7 +459,7 @@ Applications Cost Profiler -
 - Compiles code and runs tests
 - Produce ready-to-deploy build artifacts
 
-**CodeDeploy** - Deploy code to EC2, Fargate, Lambda, and on-premises
+**CodeDeploy** - Deploy code to EC2, Fargate, Lambda, and on-prem
 - Rolling deployments
 
 **CodePipeline** - Automated software release process
@@ -476,7 +476,7 @@ Applications Cost Profiler -
 - Not on premises
 
 **OpsWorks** - use Chef or Puppet to automate server configuration
-- Can be used for on-premises
+- Can be used for on-prem
 
 ### Messaging and Integration Services
 
@@ -685,7 +685,7 @@ How can you run X-Ray in ECS? - Run the X-Ray daemon on its own Docker image alo
 
 **Database Migration Service (DMS)** - Service that helps you migrate databases to or within AWS; has continuous data replication and virtually no downtime
 
-**Server Migration Service (SMS)** - Legacy service that allows you to move on-premises instances to AWS as Amazon Machine Image (AMI) EC2 instances; largely replaced by AWS Application Migration Service (MGN)
+**Server Migration Service (SMS)** - Legacy service that allows you to move on-prem instances to AWS as Amazon Machine Image (AMI) EC2 instances; largely replaced by AWS Application Migration Service (MGN)
 
 **AWS Snowcone** - Smallest (5lb/8TB) physical data transfer device that can be mailed or use DataSync
 

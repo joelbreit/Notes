@@ -30,7 +30,7 @@
 11. **Ultra Disk VM Storage**: expensive high-IOPS VM storage type for specialized workloads
 12. **Reserved Instance VMs**: discounted VMs that you commit to using for 1-3 years
 13. **Spot VMs**: deeply discounted VMs that can be interrupted by Azure when capacity is needed
-14. **Azure Hybrid Benefit**: VM option for reusing on-premises Windows Server and SQL Server licenses in Azure
+14. **Azure Hybrid Benefit**: VM option for reusing on-prem Windows Server and SQL Server licenses in Azure
 15. **Scale Sets**: a group of identical VMs managed as a single resource that can automatically scale up/down based on demand
 16. **Availability Sets**: a way to run multiple differing VMs so that no single hardware or rack failure can take them all down
 17. **Fault Domains**: physical groupings of hardware (racks/power) inside a datacenter so VMs don’t all fail together
@@ -92,9 +92,9 @@
 57. All Azure VPN configurations require a {{c1::local gateway}}, a {{c1::VPN Gateway}}, and a dedicated subnet called {{c2::GatewaySubnet}} that is used to host the gateway resources
 58. **Policy-Based VPN**: a routing method that uses static routing for connection to a single site that is more backwards compatible but does not support Point-to-Site VPNs
 59. **Route-Based VPN**: a routing method that uses dynamic routing for connection to 1 or more sites that supports Point-to-Site VPNs but is less backwards compatible
-60. **Site-to-Site (S2S) VPN**: VPN option for connecting an on-premises network to an Azure VNet
+60. **Site-to-Site (S2S) VPN**: VPN option for connecting an on-prem network to an Azure VNet
 61. **Point-to-Site (P2S) VPN**: VPN option for connecting a single device to an Azure VNet
-62. **ExpressRoute**: a paid direct connection from your on-premises network to Azure over a private connection; faster than VPN
+62. **ExpressRoute**: a paid direct connection from your on-prem network to Azure over a private connection; faster than VPN
 
 ## Storage
 
@@ -124,9 +124,9 @@ Blob, File, Queue, Table, Disk, Data Lake
 79. **Archive Blob Storage Tier**: blob storage tier for data rarely accessed that may not be accessed right away with lowest storage cost/highest access cost
 80. **AzCopy**: command-line tool for copying data to/from Azure Blob and File storage
 81. **Azure Storage Explorer**: a desktop app for managing Azure Storage resources including blobs, files, queues, and tables
-82. **Azure File Sync**: service that allows you to centralize your file shares in Azure Files while keeping it consistent across on-premises servers
+82. **Azure File Sync**: service that allows you to centralize your file shares in Azure Files while keeping it consistent across on-prem servers
 83. **Azure Data Box**: physical device for transferring large amounts of data to Azure when network transfer is not feasible
-84. **Azure Migrate**: service for assessing and migrating on-premises servers, infrastructure, applications, and data to Azure
+84. **Azure Migrate**: service for assessing and migrating on-prem servers, infrastructure, applications, and data to Azure
 85. **Locally Redundant Storage (LRS)**: redundancy option that keeps 3 copies of your data in 1 datacenter; cheapest/default option
 86. **Zone Redundant Storage (ZRS)**: redundancy option that keeps 3 copies of your data in 3 AZs in a region
 87. **Geo-Redundant Storage (GRS)**: redundancy option that keeps 3 copies of your data in 1 region and 3 copies in the paired region; both regions are (AZ agnostic); 2nd region is read-only until failover
@@ -134,7 +134,7 @@ Blob, File, Queue, Table, Disk, Data Lake
 
 ## Cost Management
 
-85.  **Total Cost of Ownership (TCO) Calculator**: tool for estimating the long-term financial difference between running on-premises vs in Azure
+85.  **Total Cost of Ownership (TCO) Calculator**: tool for estimating the long-term financial difference between running on-prem vs in Azure
 86.  **Azure Pricing Calculator**: tool that lets you estimate the monthly cost of Azure services before deploying anything
 87.  **Azure Cost Management and Billing**: dashboard for monitoring your spending in Azure
 88.  **Budgets**: Cost Management and Billing feature for setting spending limits and alerting when you approach them
@@ -180,7 +180,7 @@ Blob, File, Queue, Table, Disk, Data Lake
 ## General
 
 111. **Public Cloud model**: cloud model where a customer uses a hyper-scaler's hardware and accesses it over the internet
-112. **Private Cloud model**: cloud model where a customer uses dedicated hardware either on-premises or hosted by a third party
+112. **Private Cloud model**: cloud model where a customer uses dedicated hardware either on-prem or hosted by a third party
 113. **Infrastructure as a Service (Iaas)**: service where the provider manages the hardware, while the customer manages the OS and environment; if you touch the OS, it’s IaaS
 114. **Platform as a Service (PaaS)**: service where the provider manages the hardware and environment, while the customer manages the code; if you deploy code but don’t manage servers, it’s PaaS
 115. **Azure Resource Manager (ARM)**: the management layer that deploys, updates, and manages Azure resources
