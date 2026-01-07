@@ -125,10 +125,10 @@
 **Developer Tools 🧑‍💻**
 * AWS CLI
 * AWS Mangement Console
-* Cloud9
+* ~~Cloud9~~
 * CloudShell
 * CodeStar*
-* CodeCommit
+* ~~CodeCommit~~
 * CodePipeline
 * CodeBuild
 * CodeDeploy
@@ -167,8 +167,6 @@
 * QuickSight
 * Glue
 * Lake Formation*
-* Data Pipeline*
-* CloudSearch*
 * Amazon MSK*
 * Amazon OpenSearch Service*
 * Data Firehose*
@@ -373,6 +371,7 @@ Content delivery network (CDN) - method of distributing content
 **CloudSearch** - Search function APIs such as highlighting, autocomplete, and geospatial search 
 - Works with S3 and CloudDrive
 - Primarily for AWS users to utilize but can be integrated into products for end users to utilize
+- Legacy - being replaced by OpenSearch
 
 **EMR** - (Elastic map reduce) AWS’s big data platform
 - Works with common big data platforms
@@ -400,9 +399,10 @@ Content delivery network (CDN) - method of distributing content
 - Visualize your data
 
 **Data Exchange** - Way to subscribe to third-party data in the cloud
-Data Pipeline - Service for moving data between AWS storage and compute services
+Data Pipeline - Deprecated service for moving data between AWS storage and compute services
 - Move based on conditions or time intervals
 - Sends notifications about success/failure
+- Sidelined in favor of AWS Glue and Step Functions
 
 **Glue** - ETL service for easily? loading prepared data
 **Lake Formation** - Management service for data lakes
@@ -453,6 +453,7 @@ Applications Cost Profiler -
 
 **Cloud9** - Web browser IDE
 - Write/debug code
+- Discontinued
 
 **CodeCommit** - Legacy AWS version of git
 **CodeBuild** - Build and test your code (CI/CD)
@@ -723,7 +724,7 @@ How can you run X-Ray in ECS? - Run the X-Ray daemon on its own Docker image alo
 
 **Lex** - AI service for chatbots that powers Alexa
 
-**Cloud9** - AWS branded web IDE
+**Cloud9** - Discontinued AWS branded web IDE
 
 **CodeCommit** - Legacy AWS branded git repository service
 

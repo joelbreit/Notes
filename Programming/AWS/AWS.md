@@ -102,7 +102,7 @@ Flashcards should work both ways
 17. **Account Factory**: Control Tower tool for creating new accounts
 18. **Compute Optimizer**: Service for usage of and recommending configurations for EC2, EBS, Lambda, and Fargate
 19. **Service Catalog**: Service for creating and managing catalogs of cloud solutions with CloudFormation templates for use within your Organization
-20. **Proton**: Service for managing and deploying microservices with CI/CD integration
+20. **Proton**: Legacy service for managing and deploying microservices with CI/CD integration
 21. **Well-Architected Tool**: Service for reviewing and improving the architecture of cloud solutions in AWS
 
 ### Notes
@@ -215,7 +215,7 @@ OVA file
 
 1. **AWS Textract**: AWS OCR AI service that automatically extracts text, handwriting, and data from scanned documents and tries to recognize the relationships among data fields
 2. **Kendra**: AI service for enterprise search that uses natural language processing to search across multiple data sources
-3. **Amazon Forecast**: AI service for time-series forecasting for predicting future trends
+3. **Amazon Forecast**: Discontinued AI service for time-series forecasting for predicting future trends
 4. **Transcribe**: AI service for converting speech to text
 5. **Lex**: AI service for building conversational interfaces (chatbots)
 6. **Polly**: AI service for converting text to speech
