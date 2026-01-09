@@ -647,6 +647,8 @@ var adults = people
 - [ ] Use of structs vs classes
 - [ ] `yield`
 - [ ] `internal`
+- [ ] Attribute decorators
+- [ ] Directives
 
 
 - [x] How do I get started compiling and running C# code in VSCode?

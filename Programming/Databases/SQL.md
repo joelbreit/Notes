@@ -239,3 +239,6 @@ FROM user;
 - [ ] All NOT NULL contexts
 - [ ] Datatypes that IS, etc can be used
 - [ ] SQL Server naming conventions
+- [ ] DECLARE
+- [ ] COELESCE
+- [ ] IIF
