@@ -187,6 +187,12 @@ Uninitialize a Git repo
 - `git describe --dirty` - Append "-dirty" if the working directory has uncommitted changes
 - Best: `git describe --tags --always --dirty`
 
+**rebase** - Reapply commits on top of a different starting point
+
+- `git rebase [base_branch]` - Reapply commits on top of the specified base branch
+- `git rebase -i [base_branch]` - Interactively rebase commits on top of the specified base branch
+- `git rebase --onto [new_base] [old_base] [branch]` - Take commits from branch that came after old_base and rebase them onto new_base
+
 ## Esoteric Commands I Like
 
 Display the name, commit hash, and date of every tag in the repo:

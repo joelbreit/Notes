@@ -9,6 +9,7 @@
 - [ ] Strategy Pattern
 - [ ] Dependency Injection
 - [ ] Adapter Pattern
+- [ ] messenger/event-bus patterns
 
 # *Design Patterns* All Below Needs Review
 

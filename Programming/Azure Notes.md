@@ -183,11 +183,14 @@ Blob, File, Queue, Table, Disk, Data Lake
 112. **Private Cloud model**: cloud model where a customer uses dedicated hardware either on-prem or hosted by a third party
 113. **Infrastructure as a Service (Iaas)**: service where the provider manages the hardware, while the customer manages the OS and environment; if you touch the OS, it’s IaaS
 114. **Platform as a Service (PaaS)**: service where the provider manages the hardware and environment, while the customer manages the code; if you deploy code but don’t manage servers, it’s PaaS
-115. **Azure Resource Manager (ARM)**: the management layer that deploys, updates, and manages Azure resources
+108. **Azure Resource Manager (ARM)**: the management layer of Azure that enables deploying, updating, and managing resources
 116. **ARM Templates**: IaC JSON files that define Azure resources and deploy them automatically
 117. **Azure Blueprints**: service for defining repeatable sets of Azure resources, Policies, or RBAC role assignments
 118. **Service Level Agreements (SLAs)**: formal per-service agreements that define guaranteed availability/uptime percentages from Azure and what credits are provided if they are not met
-119. 
+119. **Azure Portal**: the web-based interface for managing Azure resources
+120. **Azure CLI**: text-based, platform-agnostic interface with UNIX-like commands for managing Azure resources
+121. **Azure Cloud Shell**: browser-accessible terminal for managing Azure resources using either Bash or PowerShell
+122. **Bicep**: Azure specific YAML-like syntax for ARM Templates that can be transpiled into ARM JSON templates
 
 ## TODO
 
