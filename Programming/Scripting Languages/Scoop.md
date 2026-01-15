@@ -9,7 +9,12 @@ Scoop is a user-space package manager CLI for Windows.
 
 ## General Workflow
 
-1. **Install Scoop** - 
+1. **Install Scoop**
+   1. PowerShell:
+   ```powershell
+   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+   Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+   ```
 2. (**Add Buckets**)
    - Scoop comes with a default bucket, but you can add more buckets to access additional packages.
    - Example: `scoop bucket add extras`
@@ -19,7 +24,7 @@ Scoop is a user-space package manager CLI for Windows.
 6. (**Update Packages**) - `scoop update <package>` to update a specific package or `scoop update` to update all packages
 7. **Copy Buckets and Cache** - `cp -r ~/.scoop/buckets <destination>` to copy buckets, and `cp -r ~/.scoop/cache <destination>` to copy the cache for offline installations
 8. **Install Package Offline** - `scoop install <package> -u` to install a package using the offline cache
-9. (**Uninstall Packages**) - `scoop uninstall <package>` to remove a package
+9.  (**Uninstall Packages**) - `scoop uninstall <package>` to remove a package
 
 ## Commands
 
@@ -37,7 +42,9 @@ scoop install go
 scoop install python
 scoop install pandoc # For markdown to PDF/DOCX conversion
 scoop install tokei # For codebase statistics e.g. lines of code
+scoop install starship # For a customizable terminal prompt
 scoop install pwsh # PowerShell v7
+scoop install dotnet-sdk # .NET SDK for C# development
 scoop install dust # Disk usage analyzer
 scoop install btm # Better top - system monitor
 ```
