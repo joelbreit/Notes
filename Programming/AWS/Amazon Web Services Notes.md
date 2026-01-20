@@ -455,7 +455,7 @@ Applications Cost Profiler -
 - Write/debug code
 - Discontinued
 
-**CodeCommit** - Legacy AWS version of git
+**CodeCommit** - Legacy AWS branded git repository service
 **CodeBuild** - Build and test your code (CI/CD)
 - Compiles code and runs tests
 - Produce ready-to-deploy build artifacts
