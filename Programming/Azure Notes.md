@@ -112,7 +112,7 @@ Blob, File, Queue, Table, Disk, Data Lake
 67. **Azure Tables**: Azure's own NoSQL key-value storage service
 68. **Azure Disks**: block storage service for Azure VMs; not managed via Storage Accounts
 69. {{c1::Storage Accounts}} must have a globally unique name with containing only {{c2::lowercase letters and numbers}}
-70. **Blob Storage File Address Format**: https://<storage_account_name>.blob.core.windows.net/<container_name>/<folder>(optional)/<blob_name>
+70. **Blob Storage File Address Format**: `https://<storage_account_name>.blob.core.windows.net/<container_name>/<folder>(optional)/<blob_name>`
 71. **Block Blobs**: blob type for text or binary data up to about 4TB
 72. **Append Blobs**: blob type optimized for when data is frequently added to e.g. log files
 73. **Page Blobs**: blob type for random read/write operations up to 8TB often used for Azure VM disks
@@ -134,16 +134,16 @@ Blob, File, Queue, Table, Disk, Data Lake
 
 ## Cost Management
 
-85.  **Total Cost of Ownership (TCO) Calculator**: tool for estimating the long-term financial difference between running on-prem vs in Azure
-86.  **Azure Pricing Calculator**: tool that lets you estimate the monthly cost of Azure services before deploying anything
-87.  **Azure Cost Management and Billing**: dashboard for monitoring your spending in Azure
-88.  **Budgets**: Cost Management and Billing feature for setting spending limits and alerting when you approach them
-89.  **Cost Analysis**: Cost Management and Billing feature for visualizing and analyzing your Azure spending over time
-90.  **Cost Alerts**: notifications triggered when your spending exceeds predefined thresholds
-91.  **Azure Advisor**: a feature that makes recommendations for optimizing your Azure costs e.g. by identifying idle resources
-92.  **Azure Tags**: name/value labels for categorizing Azure resources; can be used as a filter in billing reports
-93.  **Azure Reservations**: pricing model that offers a discount for committing to 1 or 3 years of usage of Azure services
-94.  **Cost Allocation Reports**: Azure cost breakdowns that allow for manipulation and export with Power BI
+89.  **Total Cost of Ownership (TCO) Calculator**: tool for estimating the long-term financial difference between running on-prem vs in Azure
+90.  **Azure Pricing Calculator**: tool that lets you estimate the monthly cost of Azure services before deploying anything
+91.  **Azure Cost Management and Billing**: dashboard for monitoring your spending in Azure
+92.  **Budgets**: Cost Management and Billing feature for setting spending limits and alerting when you approach them
+93.  **Cost Analysis**: Cost Management and Billing feature for visualizing and analyzing your Azure spending over time
+94.  **Cost Alerts**: notifications triggered when your spending exceeds predefined thresholds
+95.  **Azure Advisor**: a feature that makes recommendations for optimizing your Azure costs e.g. by identifying idle resources
+96.  **Azure Tags**: name/value labels for categorizing Azure resources; can be used as a filter in billing reports
+97.  **Azure Reservations**: pricing model that offers a discount for committing to 1 or 3 years of usage of Azure services
+98.  **Cost Allocation Reports**: Azure cost breakdowns that allow for manipulation and export with Power BI
 
 ## Governance and Compliance
 

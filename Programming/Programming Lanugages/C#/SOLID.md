@@ -7,3 +7,4 @@
 5. **Dependency Inversion Principle (DIP)**: *High-level modules should not depend on low-level modules. Both should depend on abstractions.*
 6. **5 Principles of SOLID**: *SRP, OCP, LSP, ISP, DIP*
 7. **Pain Driven Development (PDD)**: *Focus on solving real problems and pain points in the system rather than optimizing prematurely.*
+8. **"New is Glue"**: *aphorism emphasizing that using `new` to create instances can lead to tight coupling; prefer dependency injection instead*

@@ -4,3 +4,11 @@
 # .NET Files
 bin/
 obj/
+
+# Obsidian Vault Files
+.vault/
+.obsidian/
+*.md.bak
+*.md.tmp
+*.sync/
+*.autosave
