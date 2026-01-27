@@ -75,6 +75,20 @@ code $PROFILE
 ```
 Add `Import-Module posh-git`
 
+## PowerShell Profile
+
+```powershell
+# "Dumb" terminals cause a warning
+# Cursor agents use dumb terminals
+# This check prevents the warnings
+if ($env:TERM -ne "dumb") {
+	# Initialize Starship prompt by default
+	Invoke-Expression (&starship init powershell)
+}
+# Allows for git command autocompletion in PowerShell
+Import-Module posh-git
+```
+
 ## Commands I Find Useful
 
 Delete all .orig files from a repo
