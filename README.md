@@ -6,7 +6,7 @@ I keep this repository for notes on all kinds of technical things I am learning 
 
 ## Flashcards Philosophy
 
-Flashcards, when designed well and used frequently with spaced repetition, are an incredible way to learn and retain new information. This repo contains a ton (thousands+) of flashcards for technical concepts that I've learned over the years.
+Flashcards, when designed well, and used frequently with spaced repetition, are an incredible way to learn and retain new information. This repo contains a ton (thousands+) of flashcards for technical concepts that I've learned over the years.
 
 ### Markdown Formatting
 
@@ -45,6 +45,59 @@ The expanded version of acronyms should always be included in either the term or
 
 #### Length
 
+The ability to quickly review cards without unnecessarily bloated language reduces the burden of each card which adds up significantly over time.
+
+Therefore, it can be worth cutting card language down to very terse language when all the information needed is available from context.
+
 Flashcards should be as concise as possible while preserving other priorities like clarity, completeness, accuracy, sufficiency, etc
 
 #### Difficulty
+
+Cards that are easy to guess a priori are useless. The effort of remembering and fact of sometimes failing to recall the answer is what strengthens memory.
+
+#### Reversibility
+
+Making flashcards reversible where each side of the card is specific enough to necessitate the reverse but not so specific that it gives away the answer is ideal.
+
+Creating reversible cards reduces the investment of creating cards before the learning process.
+
+Learning cards in both directions helps reinforce memory and ensures a deeper understanding of the material.
+
+However, this only works for a term -> definition model which is not the only kind of information that you may want to capture with flashcards.
+
+For example, statistics or lists of items may not be easily reversible but they still may be useful as flashcards.
+
+#### Repeating Terms
+
+Using key words from one side of a card on the other side makes the card too easy to guess and bypasses the effort of recall.
+
+It is better to have tortured language to avoid reusing wording from a term in its definition.
+
+It is however, entirely appropriate to reuse the term that just specifies the context of the content e.g. "AWS", "Azure", or "HTTP".
+
+## Examples
+
+### Remove Redundant Wording
+
+- "ability to automatically scale resources up or down" to "ability to scale resources"
+
+### Use Active Language to Avoid Verbosity
+
+- "design approach that ensures" -> "ensuring"
+
+### Being Concise is Sometimes Better than Being Exact
+
+- "when one or more components fail" -> "when components fail"
+
+### Some Details Are Implicit in the Context
+
+- "the ability of a system to continue operating" -> "the ability to continue operating"
+
+### Replacing Terms with Synonyms Can Be Awkward but Necessary
+
+This wording: "**Shared Responsibility Model**: which responsibilities belong to the cloud provider and which belong to the customer" is too easy and therefore useless, so I replaced it "security framework defining what needs to be done by the cloud provider and by the customer". In this case "what needs to be done" is wordy, but worth making the card an actual challenge to recall.
+
+### Too Vague
+
+- **Microsoft Defender for Cloud**: Azure service that provides security posture management and threat protection
+- **Azure Batch**: managed service for running large-scale parallel and high-performance computing (HPC) workloads
