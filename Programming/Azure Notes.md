@@ -204,16 +204,16 @@ Blob, File, Queue, Table, Disk, Data Lake
 151. **Private Preview**: lifecycle stage with limited-access features for select customers and no SLA
 152. **Public Preview**: lifecycle stage with features available to all customers for testing but no SLA
 153. **General Availability (GA)**: lifecycle stage with full service support and SLA
-154. **DDoS Protection**: Azure service that protects applications from DDoS attacks
+154. **DDoS Protection**: Azure service that protects applications against large, common attacks for free (Basic) and sophisticated, targeted attacks as a paid service (Standard)
 155. **Zero Trust Model**: security model that enforces verification for every access request
 156. **Conditional Access**: Entra ID feature that enforces access rules based on criteria like user, device, or location
 157. **Azure Load Balancer**: Azure service for distributing layer-4 (TCP/UDP) network traffic
 158. **Azure Application Gateway**: regional, layer-7 (HTTP/HTTPS) load balancer with web application firewall (WAF)
 159. **Azure Support Plans**: paid Azure subscription tiers that provide access to Microsoft engineers
-160. **Basic Support**: assistance included with all Azure accounts; billing and documentation only
-161. **Developer Support**: business-hours technical Azure assistance for non-production workloads
-162. **Standard Support**: production workload Azure assistance with faster response times
-163. **Professional Direct Support**: highest Azure assistance tier with proactive guidance and fastest response times
+160. **Azure Basic Support Plan**: assistance included with all Azure accounts; billing and documentation only
+161. **Azure Developer Support Plan**: business-hours technical Azure assistance for non-production workloads
+162. **Azure Standard Support Plan**: production workload Azure assistance with faster response times
+163. **Azure Professional Direct Support Plan**: highest Azure assistance tier with proactive guidance and fastest response times
 164. **Azure Marketplace**: online store for third-party and Microsoft-built applications and services
 165. **Enterprise Agreement (EA)**: volume-based Azure purchasing for large organizations
 166. **Azure Batch**: managed service for running large-scale parallel and high-performance computing (HPC) workloads
@@ -231,12 +231,12 @@ Blob, File, Queue, Table, Disk, Data Lake
 178. **Azure SQL Database**: fully managed PaaS relational database service based on SQL Server
 179. **Azure Cosmos DB**: globally distributed, multi-model NoSQL database with single-digit millisecond latency
 180. **Azure Database for MySQL**: fully managed MySQL database service
-181. **Azure Database for PostgreSQL**: fully managed PostgreSQL database service
+181. **Azure Database for PostgreSQL**: fully managed database service for the fastest-growing open-source DB
 182. **Azure Synapse Analytics**: integrated data service combining data warehousing and big data analysis
 183. **Azure HDInsight**: managed Hadoop, Spark, and Kafka clusters for big data processing
 184. **Azure Databricks**: managed Apache Spark-based analytics platform optimized for Azure
 185. **Azure Logic Apps**: low-code workflow automation service for integrating systems, data, and services
-186. **Azure Event Grid**: routing service for building responsive architectures
+186. **Azure Event Grid**: pub/sub service for routing “something happened” notifications to/from other services
 187. **Azure IoT Hub**: managed service for bi-directional communication between smart devices and the cloud
 188. **Azure IoT Central**: fully managed SaaS solution for building smart device applications without cloud expertise
 189. **Azure DevOps**: suite of Azure services for CI/CD, version control, project management, and testing
@@ -246,8 +246,8 @@ Blob, File, Queue, Table, Disk, Data Lake
 193. **Azure Managed Disks**: block storage for Azure VMs with built-in redundancy and management
 194. **Azure NetApp Files**: enterprise-grade file storage service for high-performance workloads
 195. **Microsoft Privacy Statement**: document explaining what data Microsoft collects and how it's used
-196. **Trust Center**: website providing information about Microsoft's security, privacy, and compliance practices
-197. **Service Trust Portal**: dashboard with audit reports, compliance guides, and documents for Microsoft cloud resources
+196. **Trust Center**: public website providing information about Microsoft's security, privacy, and compliance practices
+197. **Service Trust Portal**: where Microsoft publishes the actual audit reports and legal documents that customers, auditors, and regulators ask for
 198. **SOC (Service Organization Controls)**: audit reports for security, availability, and confidentiality of cloud resources
 
 ## TODO
