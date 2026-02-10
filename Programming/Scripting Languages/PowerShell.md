@@ -53,7 +53,19 @@ Commands:
 **Tee-Object** - `<command> | Tee-Object -FilePath <file_path>`
 - Send output to both the console and a file at the same time.
 
-**Tree** - `tree TODO
+**Tree** - TODO
+
+**Get-History** - `Get-History` or `history` or `h`
+- Show a list of previously executed commands in the current session.
+- > Note: Only for the current session. To get history across sessions, you can use: `Get-Content (Get-PSReadLineOption).HistorySavePath`
+
+**Set-Clipboard** - `<command> | Set-Clipboard`
+- Copy the output of a command to the clipboard:
+
+## Command Help
+
+- `Get-Help <command>` - Get detailed help about a specific command
+- `Get-Help <command> -Examples` - Get examples of how to use a specific command
 
 
 ## Notes About Paths

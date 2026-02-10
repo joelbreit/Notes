@@ -2,28 +2,80 @@
 
 ## Terminology
 
-### Places in Git
-
 1. **local directory**: the saved files currently on your computer
 2. **staging area**: set of files that have been added but not committed; same as the index
 3. **index**: set of files that have been added but not committed; same as the staging area
 4. **local repository**: set of files that have been committed even if they are not yet pushed remotely
 5. **remote repository**: the files that exist on the remote git server
-6. **HEAD**: the commit that is currently checked out (usually the most recent commit on the current branch)
+6. **HEAD**: (a ref to) the commit that is currently checked out (usually the most recent commit on the current branch)
 7. **detached HEAD**: when your current repo is pointed to a commit that is not the most recent commit on a branch
+8. **WIP** - "Work In Progress"; signals that a commit is not final and might be updated later
+9. **untracked** - changes that are not in prior commits or the staging area
+10. **stale branch**: a remote-tracking branch whose upstream remote branch no longer exists
+11. **upstream**: the (usually) remote branch that a local branch is tracking and can push to / pull from
+12. **origin**: the default name for the remote repository that a local repository is cloned from; can be changed
+13. **orphaned branch**: a local branch that tracked a remote branch that has since been deleted
+14. **dangling commit**: a commit that is not reachable from any reference and is therefore eligible for garbage collection
+15. **remote-tracking branch**: a local reference to a branch in a remote repository; used to track the state of the remote branch
+16. **prune**: *to remove references to remote branches that have been deleted*
+17. **git reference (ref)**: a pointer to a commit; can be a branch, tag, HEAD, or other pointer
+18. **branch tip**: the most recent commit on a branch
+
+## Diagrams
 
 ```mermaid
 graph TD
-  A[local directory] --> B[staging area]
-  B --> C[local repository]
-  C --> D[remote repository]
-  C --> E[HEAD]
+  subgraph Local Repository
+    WorkingDirectory[Working Directory]
+    StagingArea[Staging Area / Index]
+    LocalBranches[Local Branches]
+    RemoteTrackingBranches[Remote-Tracking Branches]
+  end
+
+  WorkingDirectory --> StagingArea
+  StagingArea --> LocalBranches
+
+  RemoteRepository[Remote Repository] -->|git fetch| RemoteTrackingBranches
+  LocalBranches -->|git push| RemoteRepository
+
+  RemoteTrackingBranches -->|merge / rebase| LocalBranches
 ```
 
-### Other
+```mermaid
+sequenceDiagram
+  participant WD as Working Directory
+  participant SA as Staging Area / Index
+  participant LB as Local Branches
+  participant RTB as Remote-Tracking Branches
+  participant RR as Remote Repository
 
-1. **WIP** - "Work In Progress"; signals that a commit is not final and might be updated later
-2. **Untracked** - "Untracked" just refers to files that are not in prior commits or the staging area. Everything else is "tracked" by Git.
+  WD->>SA: git add
+  SA->>LB: git commit
+  LB->>+RTB: git push
+  RTB->>-RR: git push (if no conflicts)
+  RR->>+RTB: git fetch
+  RTB->>-LB: git fetch (if no conflicts)
+  LB->>LB: git merge / rebase
+  RTB->>LB: git merge / rebase w/ <origin/branch>
+```
+> 
+
+## Notes
+
+Data types / concepts in Git:
+- **blob**: *a file's contents*
+- **tree**: *a directory, which contains blobs and other trees*
+- **commit**: *a snapshot of the repository at a point in time, which points to a tree and has metadata (author, message, etc.)*
+- **tag**: *a reference to a specific commit, often used for releases*
+- **DAG**: *Directed Acyclic Graph; the structure of commits in Git, where each commit points to its parent(s) and there are no cycles*
+- **SHA**: *a unique identifier for a Git object (blob, tree, commit, or tag), computed as a hash of the object's contents*
+- **delta**: *a representation of the changes between two Git objects, used for efficient storage*
+- **hunk**: *a contiguous block of changes in a diff, often used for staging parts of a file*
+
+- Commits are objects
+- Branches and tags are references to commits
+- HEAD is a reference to the currently checked out commit (usually the most recent commit on the current branch)
+- 
 
 ## Configuration
 
@@ -59,7 +111,8 @@ Uninitialize a Git repo
 - `git branch` - Display the current branch
 - Flags:
   - `-a`: List all branches `git branch -a`
-  - `-d`: Delete a branch `git branch -d old_branch`
+  - `-d`: Delete a branch safely `git branch -d old_branch`
+  - `-D`: Force delete a branch `git branch -D old_branch`
   - `-m`: Rename a branch
     - Current branch: `git branch -m new_branch`
     - Different branch: `git branch -m old_branch new_branch`

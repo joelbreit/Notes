@@ -904,15 +904,15 @@ How can you run X-Ray in ECS? - Run the X-Ray daemon on its own Docker image alo
 
 **HTTP Code 429** - Too many request error code thrown when an app exceeds its quota
 
-**AWS Step Functions** - Visual workflow service for coordinating distributed applications and microservices
+**AWS Step Functions** - Visual workflow service for coordinating distributed applications and microservices; pieces must be designed to be idempotent because they may be retried
 
-**Standard Workflow Step Function ** - Step function workflow that can take up to 1 year, executes exactly-once, and is idempotent
+**Standard Workflow Step Function** - Durable workflow (up to 1 year) with exactly-once state progression and at-least-once task execution
 
-**Synchronous Express Workflow Step Function** - Step function workflow that must complete before the next step begins
+**Express Workflow Step Function** - High-throughput, short-lived workflow (up to 5 minutes) with at-least-once execution semantics, optimized for low latency and high volume
 
-**Express Workflow Step Function** - Short lived (up to 5 minutes) at-least-once, idempotent step function workflow
+**Synchronous Express Workflow Step Function** - Express workflow where the caller blocks until the execution completes and receives the result
 
-**Asynchronous Express Workflow Step Function** - Step function workflow for when other tasks do not depend on the completion of the workflow
+**Asynchronous Express Workflow Step Function** - Express workflow where execution is fire-and-forget, and the caller does not wait for the result
 
 **Lambda Reserved Concurrency** - Lambda service that guarantees a set number of simultaneous executions for a function
 

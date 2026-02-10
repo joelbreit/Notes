@@ -190,7 +190,7 @@ Blob, File, Queue, Table, Disk, Data Lake
 140. **Azure Portal**: the web-based interface for managing Azure resources
 141. **Azure CLI**: text-based, platform-agnostic interface with UNIX-like commands for managing Azure resources
 142. **Azure Cloud Shell**: browser-accessible terminal for managing Azure resources using either Bash or PowerShell
-143. **Bicep**: Azure specific YAML-like syntax for ARM Templates that can be transpiled into ARM JSON templates
+143. **Bicep**: Azure specific structured text syntax for ARM Templates that can be transpiled into ARM JSON templates
 
 ## New
 
@@ -232,7 +232,7 @@ Blob, File, Queue, Table, Disk, Data Lake
 179. **Azure Cosmos DB**: globally distributed, multi-model NoSQL database with single-digit millisecond latency
 180. **Azure Database for MySQL**: fully managed MySQL database service
 181. **Azure Database for PostgreSQL**: fully managed database service for the fastest-growing open-source DB
-182. **Azure Synapse Analytics**: integrated data service combining data warehousing and big data analysis
+182. **Azure Synapse Analytics**: Azure’s combined service for storing massive datasets and querying them with SQL or Spark for large-scale analytics
 183. **Azure HDInsight**: managed Hadoop, Spark, and Kafka clusters for big data processing
 184. **Azure Databricks**: managed Apache Spark-based analytics platform optimized for Azure
 185. **Azure Logic Apps**: low-code workflow automation service for integrating systems, data, and services

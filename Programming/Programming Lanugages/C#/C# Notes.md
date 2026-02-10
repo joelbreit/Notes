@@ -649,6 +649,9 @@ var adults = people
 - [ ] `internal`
 - [ ] Attribute decorators
 - [ ] Directives
+- [ ] null-conditional (?.) and null-coalescing (??)
+- [ ] Task<>
+- [ ] HashSet<>
 
 
 - [x] How do I get started compiling and running C# code in VSCode?
