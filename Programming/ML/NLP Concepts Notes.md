@@ -31,80 +31,80 @@
 
 ### Classical Text Processing
 
-1. **corpus**: the entirety of a collection of text
-4. **text normalization**: converting text into a consistent form that can be used for further processing
-5. ~~**word normalization**: the task of reducing words/tokens to a standard format~~
-6. **case folding**: converting all text to lowercase
-7. **stemming**: removing prefixes and suffixes of words for simplification
-8. **lemmatization**: the task of determining that two words have the same root (the words am, are, and is have the shared lemma be)
-9. **sentence segmentation**: breaking up a text into individual sentences, using cues like periods or exclamation points
-10. **edit distance**: a measurement of the number of operations needed to transform one string into another
-11. **byte-pair encoding / BPE algorithm**: a method for tokenizing text by iteratively merging the most frequent pairs of tokens into a single token (starting with characters) until a desired vocabulary size is reached
+25. **corpus**: the entirety of a collection of text
+26. **text normalization**: converting text into a consistent form that can be used for further processing
+27. ~~**word normalization**: the task of reducing words/tokens to a standard format~~
+28. **case folding**: converting all text to lowercase
+29. **stemming**: removing prefixes and suffixes of words for simplification
+30. **lemmatization**: the task of determining that two words have the same root (the words am, are, and is have the shared lemma be)
+31. **sentence segmentation**: breaking up a text into individual sentences, using cues like periods or exclamation points
+32. **edit distance**: a measurement of the number of operations needed to transform one string into another
+33. **byte-pair encoding / BPE algorithm**: a method for tokenizing text by iteratively merging the most frequent pairs of tokens into a single token (starting with characters) until a desired vocabulary size is reached
 
-12. **stop words**: common words that are often removed from text before processing
+34. **stop words**: common words that are often removed from text before processing
 
 ### Tokenization
 
-1. **token**: a unit of text that can be a word or a part of a word
-2. **tokenization**: the task of breaking up text into a predefined vocabulary
-3. **byte-pair encoding / BPE algorithm**: a method for tokenizing text by iteratively merging the most frequent pairs of tokens into a single token (starting with characters) until a desired vocabulary size is reached
+35. **token**: a unit of text that can be a word or a part of a word
+36. **tokenization**: the task of breaking up text into a predefined vocabulary
+37. **byte-pair encoding / BPE algorithm**: a method for tokenizing text by iteratively merging the most frequent pairs of tokens into a single token (starting with characters) until a desired vocabulary size is reached
 
 ### Vector Semantics
 
-1. **vector semantics**: NLP method of representing word meanings as vectors of numbers in a high-dimensional space
-2. **embeddings**: representations of discrete data, like words, as continuous vectors that capture semantic meaning
-3. **static embeddings**: word embeddings represented by a single fixed vector, regardless of the context in which the word appears
-4. **contexual embeddings**: advanced embeddings that generate different vectors for a word depending on its context
-5.  **sparse vector**: a vector with mostly zero values
-6.  **dense vector**: a vector with many non-zero values
-7.  **similarity metric**: a measure of how alike two vectors are
-8.  **vector magnitude**: the length of a vector, calculated as the square root of the sum of the squares of its values
-9.  **dot product/inner product**: the sum of the products of the corresponding elements of two vectors
-10. **parallel/collinear vectors**: vectors that point in the same direction or lie on the same line
-11. **cosine metric**: a vector similarity metric that ignores vector magnitude that measures the angle between them (1 when they point in the same direction (colinear), -1 when they point in opposite directions (negatively parallel), 0 when they are orthogonal)
-12. **formula for cosine of vectors**: (v1 • v2) / (|v1| * |v2|)
-13. **tf-idf (term frequency - inverse document frequency) weighting**: a simple method for weighting the importance of words in a document based on their frequency in the document and their rarity in the corpus
-14. **formula for idf of a term**: log(10) (number of documents in the collection / number of documents containing the term)
-15. **formula for tf**: log(10) (number of times the term appears in the document + 1)
-16. **formula for tf-idf**: tf * idf ()
-17. **pointwise mutual information**: a measure of how much more likely two words are to co-occur than if they were independent
-18. **centroid**: the multidimensional version of the mean - the single vector that has the minimum sum of squared distances to each vector in a set
+38. **vector semantics**: NLP method of representing word meanings as vectors of numbers in a high-dimensional space
+39. **embeddings**: representations of discrete data, like words, as continuous vectors that capture semantic meaning
+40. **static embeddings**: word embeddings represented by a single fixed vector, regardless of the context in which the word appears
+41. **contexual embeddings**: advanced embeddings that generate different vectors for a word depending on its context
+42. **sparse vector**: a vector with mostly zero values
+43. **dense vector**: a vector with many non-zero values
+44. **similarity metric**: a measure of how alike two vectors are
+45. **vector magnitude**: the length of a vector, calculated as the square root of the sum of the squares of its values
+46. **dot product/inner product**: the sum of the products of the corresponding elements of two vectors
+47. **parallel/collinear vectors**: vectors that point in the same direction or lie on the same line
+48. **cosine metric**: a vector similarity metric that ignores vector magnitude that measures the angle between them (1 when they point in the same direction (colinear), -1 when they point in opposite directions (negatively parallel), 0 when they are orthogonal)
+49. **formula for cosine of vectors**: (v1 • v2) / (|v1| * |v2|)
+50. **tf-idf (term frequency - inverse document frequency) weighting**: a simple method for weighting the importance of words in a document based on their frequency in the document and their rarity in the corpus
+51. **formula for idf of a term**: log(10) (number of documents in the collection / number of documents containing the term)
+52. **formula for tf**: log(10) (number of times the term appears in the document + 1)
+53. **formula for tf-idf**: tf * idf ()
+54. **pointwise mutual information**: a measure of how much more likely two words are to co-occur than if they were independent
+55. **centroid**: the multidimensional version of the mean - the single vector that has the minimum sum of squared distances to each vector in a set
 
-19. **Backoff**: A technique used in language modeling to estimate the probability of unseen n-grams by using lower-order n-grams
-20. **Named Entity Recognition (NER)**: The task of finding a labeling things like persons, organizations, locations, quantities, etc in text
+56. **Backoff**: A technique used in language modeling to estimate the probability of unseen n-grams by using lower-order n-grams
+57. **Named Entity Recognition (NER)**: The task of finding and labeling things like persons, organizations, locations, quantities, etc in text
 
 ## Regular Expressions
 
 ### Basics
 
-1. **regular expressions**: a language for specifying text search strings
-2. **anchors**: special characters in a regular expression for specifying particular places such as `^` and `$` for the beginning and end of a line, respectively
-3. **disjunction**: regex operator for specifying alternatives, using `|` to separate them
-4. **greedy matching**: regex matching that tries to match as much as possible
-5. **lazy matching**: regex matching that tries to match as little as possible (like the `*?` and `+?` operators)
-6. **Kleene star ("cleany star")**: the `*` operator in regex for matching zero or more occurrences of a pattern
-7. **Kleene plus ("cleany plus")**: the `+` operator in regex for matching one or more occurrences of a pattern
+58. **regular expressions**: a language for specifying text search strings
+59. **anchors**: special characters in a regular expression for specifying particular places such as `^` and `$` for the beginning and end of a line, respectively
+60. **disjunction**: regex operator for specifying alternatives, using `|` to separate them
+61. **greedy matching**: regex matching that tries to match as much as possible
+62. **lazy matching**: regex matching that tries to match as little as possible (like the `*?` and `+?` operators)
+63. **Kleene star ("cleany star")**: the `*` operator in regex for matching zero or more occurrences of a pattern
+64. **Kleene plus ("cleany plus")**: the `+` operator in regex for matching one or more occurrences of a pattern
 
-8. **regex flags**: special characters that modify the behavior of a regex pattern (e.g. `re.IGNORECASE` for case-insensitive matching)
-9.  **regex escape sequences**: special characters that match specific characters (e.g. `\d` for any digit)
+65. **regex flags**: special characters that modify the behavior of a regex pattern (e.g. `re.IGNORECASE` for case-insensitive matching)
+66. **regex escape sequences**: special characters that match specific characters (e.g. `\d` for any digit)
 
 ### Registers and Groups
 
-8. **substitution**: replacing a matched pattern with another pattern
-9.  **capture group**: a part of a regex pattern that is enclosed in parentheses and can be referred to later
-10. **register**: a numbered list of capture groups in a regex pattern
-11. **non-capturing group**: a group in a regex pattern that is not stored in a register e.g. `(?:pattern)`
-12. **lookahead assertion**: a regex operator for matching a pattern only if it is followed by another pattern e.g. `(?=pattern)`
-13. **zero-width assertion**: a regex operator for matching a pattern without consuming any characters
-14. **negative lookahead assertion**: a regex operator for matching a pattern only if it is not followed by another pattern e.g. `(?!pattern)`
+67. **substitution**: replacing a matched pattern with another pattern
+68. **capture group**: a part of a regex pattern that is enclosed in parentheses and can be referred to later
+69. **register**: a numbered list of capture groups in a regex pattern
+70. **non-capturing group**: a group in a regex pattern that is not stored in a register e.g. `(?:pattern)`
+71. **lookahead assertion**: a regex operator for matching a pattern only if it is followed by another pattern e.g. `(?=pattern)`
+72. **zero-width assertion**: a regex operator for matching a pattern without consuming any characters
+73. **negative lookahead assertion**: a regex operator for matching a pattern only if it is not followed by another pattern e.g. `(?!pattern)`
 
-15. **regex groups**: a way to group parts of a regex pattern together (e.g. `(a|b)` for matching either "a" or "b")
+74. **regex groups**: a way to group parts of a regex pattern together (e.g. `(a|b)` for matching either "a" or "b")
 
 ### Needs Review
 
-17. **regex quantifiers**: special characters that specify how many times a pattern should be matched (e.g. `*` for zero or more occurrences)
-18. **regex character classes**: a way to match a set of characters (e.g. `[a-z]` for any lowercase letter)
-19. **regex backreferences**: a way to refer to a previously matched group in a regex pattern (e.g. `\1` for the first group)
-20. **regex lookbehind assertions**: a way to match a pattern only if it is preceded by another pattern (e.g. `(?<=pattern)`)
-21. **regex named groups**: a way to refer to a group by name in a regex pattern (e.g. `(?P<name>pattern)`)
-22. **regex named backreferences**: a way to refer to a named group in a regex pattern (e.g. `(?P=name)`)
+75. **regex quantifiers**: special characters that specify how many times a pattern should be matched (e.g. `*` for zero or more occurrences)
+76. **regex character classes**: a way to match a set of characters (e.g. `[a-z]` for any lowercase letter)
+77. **regex backreferences**: a way to refer to a previously matched group in a regex pattern (e.g. `\1` for the first group)
+78. **regex lookbehind assertions**: a way to match a pattern only if it is preceded by another pattern (e.g. `(?<=pattern)`)
+79. **regex named groups**: a way to refer to a group by name in a regex pattern (e.g. `(?P<name>pattern)`)
+80. **regex named backreferences**: a way to refer to a named group in a regex pattern (e.g. `(?P=name)`)
