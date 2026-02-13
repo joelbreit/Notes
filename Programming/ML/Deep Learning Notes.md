@@ -88,17 +88,17 @@ Flashcards should work both ways
 
 ### October 23rd
 
-59. **Weight Initialization**: The process of pre-setting parameter values in a neural network before training which can help speed up convergence and can help avoid vanishing/exploding gradients
-60. **Probabolistic Normalization**: Dividing by some total count so that the results fall between 0 and 1 and sum to 1
-61. **Chain Rule of Probability**: The probability of multiple events cooccurring is the product of the probabilities of each event occurring
-62. **Maximum Likelihood Estimation (MLE)**: Statistical method for optimizing the parameters of a model by maximizing the likelihood of the observed data
-63. **Relative Frequency**: The number of times an event occurs divided by the total number of events
-64. **Extrinsic Evaluation**: Evaluating an improvement in a system by its effect on the final performance of the desired task
-65. **Perplexity**: A measure of how confused a prediction model is by real data that ranges from 1 to ∞ where 1 is perfect/correct confidence in every prediction, 4 is an average confidence of 1/4, etc.
-66. **Underflow**: When a number is too small to be represented in a computer's memory often caused by multiplying many probabilities together
-67. **Vanishing/Exploding Gradient Problem**: When the gradients in a deep neural network become too small or too large, making learning difficult
-68. **Retrieval Augmented Generation (RAG)**: A model that combines relevant context from a knowledge base with input to produce better output
-69. **Circuit**: A path or series of connections in a neural network contributing to its ability to perform tasks such as pattern recognition or classification
+1. **Weight Initialization**: The process of pre-setting parameter values in a neural network before training which can help speed up convergence and can help avoid vanishing/exploding gradients
+2.  **Probabolistic Normalization**: Dividing by some total count so that the results fall between 0 and 1 and sum to 1
+3.  **Chain Rule of Probability**: The probability of multiple events cooccurring is the product of the probabilities of each event occurring
+4.  **Maximum Likelihood Estimation (MLE)**: Statistical method for optimizing the parameters of a model by maximizing the likelihood of the observed data
+5.  **Relative Frequency**: The number of times an event occurs divided by the total number of events
+6.  **Extrinsic Evaluation**: Evaluating an improvement in a system by its effect on the final performance of the desired task
+7.  **Perplexity**: A measure of how confused a prediction model is by real data that ranges from 1 to ∞ where 1 is perfect/correct confidence in every prediction, 4 is an average confidence of 1/4, etc.
+8.  **Underflow**: When a number is too small to be represented in a computer's memory often caused by multiplying many probabilities together
+9.  **Vanishing/Exploding Gradient Problem**: When the gradients in a deep neural network become too small or too large, making learning difficult
+10. **Retrieval Augmented Generation (RAG)**: A model that combines relevant context from a knowledge base with input to produce better output
+11. **Circuit**: A path or series of connections in a neural network contributing to its ability to perform tasks such as pattern recognition or classification
 
 ## Logistic Regression
 

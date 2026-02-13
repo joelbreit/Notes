@@ -40,7 +40,6 @@
 31. **sentence segmentation**: breaking up a text into individual sentences, using cues like periods or exclamation points
 32. **edit distance**: a measurement of the number of operations needed to transform one string into another
 33. **byte-pair encoding / BPE algorithm**: a method for tokenizing text by iteratively merging the most frequent pairs of tokens into a single token (starting with characters) until a desired vocabulary size is reached
-
 34. **stop words**: common words that are often removed from text before processing
 
 ### Tokenization
@@ -69,42 +68,69 @@
 53. **formula for tf-idf**: tf * idf ()
 54. **pointwise mutual information**: a measure of how much more likely two words are to co-occur than if they were independent
 55. **centroid**: the multidimensional version of the mean - the single vector that has the minimum sum of squared distances to each vector in a set
-
-56. **Backoff**: A technique used in language modeling to estimate the probability of unseen n-grams by using lower-order n-grams
-57. **Named Entity Recognition (NER)**: The task of finding and labeling things like persons, organizations, locations, quantities, etc in text
+56. **backoff**: technique used in language modeling to estimate the probability of unseen n-grams by using lower-order n-grams
+57. **Named Entity Recognition (NER)**: the task of finding and labeling things like persons, organizations, locations, quantities, etc in text
 
 ## Regular Expressions
 
 ### Basics
 
 58. **regular expressions**: a language for specifying text search strings
-59. **anchors**: special characters in a regular expression for specifying particular places such as `^` and `$` for the beginning and end of a line, respectively
-60. **disjunction**: regex operator for specifying alternatives, using `|` to separate them
+59. **regex anchors**: regex symbols used to specify positions in a string, e.g. `^`, `$`, `\b`, and `\B` (beginning of line, end of line, word boundary, non-word boundary)
+60. **regex disjunction**: regex operator for specifying alternatives, using `|` to separate them
 61. **greedy matching**: regex matching that tries to match as much as possible
 62. **lazy matching**: regex matching that tries to match as little as possible (like the `*?` and `+?` operators)
-63. **Kleene star ("cleany star")**: the `*` operator in regex for matching zero or more occurrences of a pattern
-64. **Kleene plus ("cleany plus")**: the `+` operator in regex for matching one or more occurrences of a pattern
-
-65. **regex flags**: special characters that modify the behavior of a regex pattern (e.g. `re.IGNORECASE` for case-insensitive matching)
-66. **regex escape sequences**: special characters that match specific characters (e.g. `\d` for any digit)
+63. **Kleene star ("cleany star")**: the `*` quantifier in regex for matching zero or more occurrences of a pattern
+64. **Kleene plus ("cleany plus")**: the `+` quantifier in regex for matching one or more occurrences of a pattern
 
 ### Registers and Groups
 
-67. **substitution**: replacing a matched pattern with another pattern
-68. **capture group**: a part of a regex pattern that is enclosed in parentheses and can be referred to later
-69. **register**: a numbered list of capture groups in a regex pattern
-70. **non-capturing group**: a group in a regex pattern that is not stored in a register e.g. `(?:pattern)`
+65. **regex groups**: a way to treat part of a regular expression as a single unit created by enclosing a subpattern in parentheses
+66. **regex substitution**: replacing matched regex patterns with other patterns
+67. **capture group**: a part of a regex pattern that is enclosed in parentheses and can be referred to later (...)
+68. **regex register**: a numbered list of capture groups in a regex pattern
+69. **non-capturing group**: a group in a regex pattern explicitly excluded from the register `(?:pattern)`
+70. **regex assertion**: a regex operator for matching a pattern without consuming any characters
 71. **lookahead assertion**: a regex operator for matching a pattern only if it is followed by another pattern e.g. `(?=pattern)`
-72. **zero-width assertion**: a regex operator for matching a pattern without consuming any characters
-73. **negative lookahead assertion**: a regex operator for matching a pattern only if it is not followed by another pattern e.g. `(?!pattern)`
+72. **negative lookahead assertion**: a regex operator for matching a pattern only if it is not followed by another pattern e.g. `(?!pattern)`
 
-74. **regex groups**: a way to group parts of a regex pattern together (e.g. `(a|b)` for matching either "a" or "b")
+### Advanced
 
-### Needs Review
-
-75. **regex quantifiers**: special characters that specify how many times a pattern should be matched (e.g. `*` for zero or more occurrences)
-76. **regex character classes**: a way to match a set of characters (e.g. `[a-z]` for any lowercase letter)
-77. **regex backreferences**: a way to refer to a previously matched group in a regex pattern (e.g. `\1` for the first group)
+73. **regex flag/modifier**: regex syntax used outside of the expression that modifies how it is interpreted (e.g. case sensitivity or multiline matching)
+74. **regex escape sequences**: special symbols that match specific characters (e.g. `\d` for any digit)
+75. **regex quantifier**: regex syntax that specifies how many instances of a character, group, or character class are expected in the input for a match to be found
+76. **regex character class**: a regex definition of a set (or range) of characters enclosed in square brackets [...] that matches 1 character from the set
+77. **regex backreferences**: regex symbols used to recall prior cature groups in the pattern (e.g. `\1` for the first group and `\k<name>` for a named group)
 78. **regex lookbehind assertions**: a way to match a pattern only if it is preceded by another pattern (e.g. `(?<=pattern)`)
-79. **regex named groups**: a way to refer to a group by name in a regex pattern (e.g. `(?P<name>pattern)`)
-80. **regex named backreferences**: a way to refer to a named group in a regex pattern (e.g. `(?P=name)`)
+79. **regex negative lookbehind assertions**: a way to match a pattern only if it is not preceded by another pattern (e.g. `(?<!pattern)`)
+80. **regex named groups**: a way to assign an identifier to a regex capture group (e.g. `(?<name>pattern)`)
+81. **regex named backreferences**: regex symbols used to recall prior named groups in the pattern (e.g. `\k<name>`)
+82. **regex word boundary**: a regex assertion for matching the position between a word character and a non-word character (`\b`)
+
+```mermaid
+graph LR
+    A[Regex Components] --> B[Groups]
+    A --> C[Assertions]
+    A --> D[Backreferences]
+    
+    B --> E[Capturing Groups]
+    B --> F["Non-Capturing Groups<br/>(?:...)"]
+    
+    E --> G["Numbered/Unnamed<br/>(...)"]
+    E --> H["Named<br/>(?&lt;name&gt;...) or (?P&lt;name&gt;...)"]
+    
+    C --> I[Anchors]
+    C --> J[Word Boundaries]
+    C --> K[Lookarounds]
+    
+    I --> L["^ $ \A \Z \z"]
+    
+    J --> M["\b \B"]
+    
+    K --> N["Positive Lookahead<br/>(?=...)"]
+    K --> O["Negative Lookahead<br/>(?!...)"]
+    K --> P["Positive Lookbehind<br/>(?<=...)"]
+    K --> Q["Negative Lookbehind<br/>(?<!...)"]
+    
+    D --> R["\1 \2 \k&lt;name&gt; etc."]
+```
