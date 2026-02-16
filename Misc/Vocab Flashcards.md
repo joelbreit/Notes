@@ -22,7 +22,7 @@
 **extrapolate**: extend an existing trend to an unknown situation by assuming that similar methods will be applicable
 **Jevons Paradox**: phenomena where increases in the efficiency of producing X tends to increase (rather than decrease) the rate of consumption of X
 **eponymous**: being the person whom something is named after or a thing named after a particular person
-**eponym**: a person after whom something is named a thing named after a particular person
+**eponym**: a person after whom something is named; a thing named after a particular person
 **desiderata**: something that is needed or wanted
 **equanimity**: mental calmness, composure, and evenness of temper, especially in a difficult situation
 **sanguine**: optimistic or positive, especially in an apparently bad or difficult situation

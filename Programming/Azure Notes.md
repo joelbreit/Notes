@@ -208,7 +208,7 @@ Blob, File, Queue, Table, Disk, Data Lake
 155. **Zero Trust Model**: security model that enforces verification for every access request
 156. **Conditional Access**: Entra ID feature that enforces access rules based on criteria like user, device, or location
 157. **Azure Load Balancer**: Azure service for distributing layer-4 (TCP/UDP) network traffic
-158. **Azure Application Gateway**: regional, layer-7 (HTTP/HTTPS) load balancer with web application firewall (WAF)
+158. **Azure Application Gateway**: region-specific, layer-7 (HTTP/HTTPS) load balancer with web application firewall (WAF)
 159. **Azure Support Plans**: paid Azure subscription tiers that provide access to Microsoft engineers
 160. **Azure Basic Support Plan**: assistance included with all Azure accounts; billing and documentation only
 161. **Azure Developer Support Plan**: business-hours technical Azure assistance for non-production workloads

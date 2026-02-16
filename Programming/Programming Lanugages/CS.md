@@ -63,7 +63,7 @@ Flashcards should work both ways
 
 1. **stack**: region of memory that grows and shrinks automatically as functions are called and return
 2. **heap**: flexible region of memory for objects that outlive their immediate scope; requiring explicit freeing (manual memory) or runtime tracking (GC, ARC, etc.)
-3. **reference counting**: a garbage collection technique that counts the number of references to an object and deallocates it when the count reaches zero
+3. **reference counting**: a garbage collection technique that tracks the number of references to an object and deallocates it when the count reaches zero
 4. **unique pointer**: a smart pointer that owns the object it points to and deallocates the object when it goes out of scope
 5. **shared pointer**: a smart pointer that uses reference counting and deallocates the object when the count reaches zero
 6. **weak reference**: a reference that does not prevent its subject from being deallocated
@@ -71,7 +71,7 @@ Flashcards should work both ways
 8.  **reference cycle**: a situation where two or more objects reference each other, preventing them from being deallocated
 9.  **manual memory management**: a memory management model where the programmer is responsible for allocating and deallocating memory (C)
 10. **garbage collection (GC)**: memory management via a background process that automatically finds and frees unused (unreachable) memory (Java, Python)
-11. **automatic reference counting (ARC)**: a garbage collection technique primarily relies on reference counting to free up memory (Swift)
+11. **automatic reference counting (ARC)**: a garbage collection technique that primarily relies on reference counting to free up memory (Swift)
 12. **resource acquisition is initialization (RAII)**: a programming idiom where cleanup of resources is tied to the lifespan of an object
 
 ## Programming Paradigms
@@ -81,7 +81,7 @@ Flashcards should work both ways
 3. **procedural programming**: subset of imperative programming using reusable blocks
 4. **object-oriented programming**: programming paradigm based on classes and instances that contain data and methods
 5. **declarative programming**: programming paradigm focused on describing the desired result without specifying the step-by-step instructions
-6. **functional programming**: subset of declarative programming focused on functions as first-class citizens and immutable data
+6. **functional programming**: subset of declarative programming focused on methods as first-class citizens and immutable data
 
 ## Execution Styles
 
@@ -89,7 +89,7 @@ Flashcards should work both ways
 2. **interpreted language**: a language that can be run without being fully compiled  (Python, Ruby, JavaScript)
 3. **just-in-time (JIT) compiler**: a program that compiles bytecode into machine code at runtime rather than ahead of time
 4. **virtual machine (VM)**: a program that runs or further compiles bytecode
-5. **transpiling**: when source code is converted from one high-level language to another (TypeScript and React transpile to JavaScript)
+5. **transpiling**: when source code is converted from one high-level language to another (e.g. TypeScript/React -> JavaScript)
 6. **bytecode**: platform-independent intermediate representation of a program that can be executed or further compiled by a virtual machine
 7. **machine code**: CPU-specific binary instructions that can be executed directly by hardware
 
