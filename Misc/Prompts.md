@@ -1,0 +1,3 @@
+# AI Prompts
+
+> Get the {unit tests} in this project running. Keep a record of every command you have to run to get there in a new {breadcrumbs.md} file. In that file, record what you expect each command to do, the command that you run, and the outcome. If anything surprises you or if anything doesn't work perfectly the first time you try it, record what happened. You do not have to record every read-only command that you run (e.g. ls commands for exploring files), but summarizing what you do with those commands (especially if you are surprised by the results) could be helpful.

@@ -89,7 +89,7 @@ Flashcards should work both ways
 2. **interpreted language**: a language that can be run without being fully compiled  (Python, Ruby, JavaScript)
 3. **just-in-time (JIT) compiler**: a program that compiles bytecode into machine code at runtime rather than ahead of time
 4. **virtual machine (VM)**: a program that runs or further compiles bytecode
-5. **transpiling**: when source code is converted from one high-level language to another (e.g. TypeScript/React -> JavaScript)
+5. **transpiling**: when source code is converted from one high-level language to another (e.g. TypeScript/React to JavaScript)
 6. **bytecode**: platform-independent intermediate representation of a program that can be executed or further compiled by a virtual machine
 7. **machine code**: CPU-specific binary instructions that can be executed directly by hardware
 

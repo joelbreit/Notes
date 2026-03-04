@@ -8,3 +8,5 @@
 - [ ] make
 - [ ] xargs
 - [ ] winget
+- [ ] Husky
+- [ ] Dixie
