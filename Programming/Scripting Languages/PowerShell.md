@@ -83,9 +83,38 @@ Commands:
 
 ```powershell
 Install-Module posh-git -Scope CurrentUser
-code $PROFILE
 ```
-Add `Import-Module posh-git`
+Add `Import-Module posh-git` [to your PowerShell profile](#open-and-edit-your-powershell-profile)
+
+## PSReadLine History Search
+
+PSReadLine allows you to search through your command history using the arrow keys or with `Ctrl+R`.
+
+### Remove a Bad History Entry
+
+When you type a command incorrectly and it can show up in suggestions over and over. You can remove it from the history by editing the history file located at `(Get-PSReadLineOption).HistorySavePath`.
+
+```powershell
+cursor $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+```
+
+## PowerShell Functions
+
+Add functions [to your PowerShell profile](#open-and-edit-your-powershell-profile)
+
+```powershell
+function Get-FileSize {
+    param (
+        [string]$Path
+    )
+    if (Test-Path $Path) {
+        $size = (Get-Item $Path).Length
+        Write-Host "File size of $Path is $size bytes"
+    } else {
+        Write-Host "File not found: $Path"
+    }
+}
+```
 
 ## PowerShell Profile
 
@@ -99,6 +128,12 @@ if ($env:TERM -ne "dumb") {
 }
 # Allows for git command autocompletion in PowerShell
 Import-Module posh-git
+```
+
+### Open and Edit Your PowerShell Profile
+
+```powershell
+cursor $PROFILE
 ```
 
 ## Commands I Find Useful
