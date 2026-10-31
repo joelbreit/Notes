@@ -150,7 +150,7 @@ Blob, File, Queue, Table, Disk, Data Lake
 109.   **Tenant Root Group**: the top-level scope above management groups and subscriptions for organizaation-wide management in Azure
 110. **Azure Policy**: rules in Azure expressed as JSON that enforce conditions and effects on your resources
 111. **resource locks**: guardrails that prevent accidental changes to Azure resources; override all role-based permissions; two types: ReadOnly and CanNotDelete
-112. {{c1::Resource Locks}} can be set to {{c2::CanNotDelete}} or {{c2::ReadOnly}}, can be applied to {{c3::Subscriptions}}, {{c3::Resource Groups}}, or {{c3::Resources}}
+112. {{c1::Resource Locks}} can be set to {{c2::CanNotDelete}} or {{c2::ReadOnly}} and can be applied to {{c3::Subscriptions}}, {{c3::Resource Groups}}, or {{c3::Resources}}
 113. **tenant**: an isolated identity and security boundary for an organization
 114. **Active Directory**: Microsoft's on-prem identity and access management service
 115. **Entra ID**: Azure's cloud-based identity and access management service (formerly Azure Active Directory)
@@ -249,6 +249,137 @@ Blob, File, Queue, Table, Disk, Data Lake
 196. **Trust Center**: public website providing information about Microsoft's security, privacy, and compliance practices
 197. **Service Trust Portal**: where Microsoft publishes the actual audit reports and legal documents that customers, auditors, and regulators ask for
 198. **SOC (Service Organization Controls)**: audit reports for security, availability, and confidentiality of cloud resources
+
+## AI-901
+
+### Responsible AI
+
+199. **Fairness**: responsible AI principle that AI systems treat all people equitably and don't advantage or disadvantage groups (e.g. a hiring model scoring one demographic lower for equal qualifications)
+200. **Reliability and Safety**: responsible AI principle that AI systems perform consistently as intended and minimize harm under unexpected or edge-case conditions
+201. **Privacy and Security**: responsible AI principle that AI systems protect personal data during training and use and resist misuse
+202. **Inclusiveness**: responsible AI principle that AI systems empower and engage people across abilities, languages, and backgrounds (e.g. accessibility features)
+203. **Transparency**: responsible AI principle that people understand an AI system's purpose, how it works, and its limitations, and know when they're interacting with AI
+204. **Accountability**: responsible AI principle that the humans and organizations who build and deploy an AI system answer for its behavior through governance
+205. Microsoft's 6 responsible AI principles are {{c1::Fairness}}, {{c1::Reliability and Safety}}, {{c1::Privacy and Security}}, {{c1::Inclusiveness}}, {{c1::Transparency}}, and {{c1::Accountability}}
+206. **Responsible AI Dashboard**: Azure Machine Learning tool for comparing a model's errors and performance across groups and explaining its predictions
+207. **Azure AI Content Safety**: Foundry service that detects harmful text and images (hate, sexual, violence, self-harm) in model inputs and outputs
+208. **Content Filters**: severity-threshold rules attached to a model deployment that block harmful prompts and completions
+209. **Prompt Shields**: Content Safety feature that detects jailbreak attempts and prompt-injection attacks hidden in documents
+210. **Groundedness Detection**: Content Safety feature that flags model responses not supported by the supplied source material
+
+### Generative AI Concepts
+
+211. **Generative AI**: AI workload that creates new content (text, code, images, audio) from a natural-language prompt
+212. **Large Language Model (LLM)**: neural network trained on massive text corpora that generates text by repeatedly predicting the most likely next token
+213. **Token**: unit of text a language model reads and generates (roughly ¾ of an English word); basis for context limits and per-use billing
+214. **Transformer**: neural network architecture that uses attention to weigh how each token in a sequence relates to every other token
+215. **Embeddings**: numeric vectors representing the meaning of text so that semantically similar content sits close together
+216. **Small Language Model (SLM)**: lighter, cheaper, faster language model suited to narrow tasks (e.g. Microsoft Phi)
+217. **Multimodal Model**: model that accepts and/or produces more than one content type (text, images, audio) in a single request (e.g. GPT-4o)
+218. **Image-Generation Model**: model that creates a new image from a text description (e.g. DALL-E)
+219. **Hallucination**: fluent but fabricated or factually wrong model output
+220. **Grounding**: supplying a model with trusted source data in its prompt so its responses are based on that data
+221. **Retrieval-Augmented Generation (RAG)**: pattern that searches a data source for relevant content and inserts it into the prompt before generation
+222. **Fine-Tuning**: further training a pretrained model on your own examples to specialize its behavior
+223. Chat models are {{c1::stateless}}, so the client app must resend the {{c2::conversation history}} with every request
+
+### Prompts and Parameters
+
+224. **System Prompt (System Message)**: instructions that set a model's role, tone, and rules for an entire conversation
+225. **User Prompt**: the specific request or question for a single conversation turn
+226. **Prompt Engineering**: crafting instructions, context, and examples in a prompt to improve model output
+227. **Zero-Shot Prompting**: prompting with instructions but no examples
+228. **Few-Shot Prompting**: prompting with one or more input/output examples for the model to imitate (one-shot = exactly one)
+229. **Temperature**: parameter controlling output randomness; low = focused and repeatable, high = varied and creative
+230. **Top P**: parameter that limits token choices to the smallest set whose cumulative probability reaches a threshold; an alternative randomness control (nucleus sampling)
+231. **Max Tokens**: parameter capping the length of a model's response
+232. **Stop Sequences**: strings that end generation as soon as the model produces them
+
+### Microsoft Foundry
+
+233. **Microsoft Foundry**: Azure's unified platform (formerly Azure AI Foundry/Azure AI Studio) for choosing models, building generative AI apps and agents, and using prebuilt AI services
+234. **Foundry Project**: workspace that groups a team's model deployments, agents, data, and connections
+235. **Model Catalog**: Foundry gallery for browsing and comparing models from Microsoft, OpenAI, and open-source providers by capability, cost, and benchmarks
+236. **Model Deployment**: hosting a chosen model behind an endpoint so applications can call it
+237. **Playground**: Foundry portal page for testing prompts, system messages, and parameters against a deployment without writing code
+238. **Endpoint**: URL an application calls to reach a deployed model or service; authenticated with a key or Entra ID
+239. **Standard Deployment**: pay-per-token deployment type on shared capacity; suits variable traffic
+240. **Global Standard Deployment**: pay-per-token deployment type that routes requests to any Azure region for the highest availability
+241. **Provisioned Throughput (PTU)**: deployment type that reserves dedicated model capacity for steady, high-volume, low-latency workloads
+242. **Batch Deployment**: discounted, asynchronous deployment type for large jobs with roughly 24-hour turnaround
+243. **Foundry SDK**: client libraries (Python package `azure-ai-projects`) for connecting applications to a Foundry project's models and agents
+244. **AIProjectClient**: main Python Foundry SDK class, built from a project endpoint and a credential, used to reach models and agents
+245. **DefaultAzureCredential**: `azure-identity` class that tries environment variables, managed identity, and Azure CLI login in turn to authenticate with Entra ID without hard-coded keys
+246. Keys and endpoints belong in {{c1::environment variables or Key Vault}}, never {{c2::hard-coded}} in application source
+
+### Agents
+
+247. **Agentic AI**: AI workload in which a model plans and takes actions toward a goal using tools, rather than only responding
+248. **AI Agent**: software that uses a model, instructions, and tools to autonomously complete tasks
+249. An AI agent combines a {{c1::model}}, {{c1::instructions}}, and {{c1::tools}}, optionally plus {{c2::knowledge}} for grounding
+250. **Foundry Agent Service**: managed Foundry service for building, hosting, and running AI agents
+251. **Agent Instructions**: system-prompt-like text defining an agent's purpose, persona, and rules
+252. **Agent Tools**: capabilities an agent decides on its own to invoke (e.g. running code, searching files or the web, calling APIs)
+253. **Code Interpreter**: agent tool that writes and runs Python in a sandbox for math, data analysis, and charts
+254. **File Search**: agent tool that vector-indexes uploaded files so the agent can retrieve relevant passages (built-in RAG)
+255. **Function Calling**: agent tool where the model returns a structured request to run code you define; your app executes it and returns the result
+256. **Agent Knowledge**: grounding data sources attached to an agent (uploaded files, Azure AI Search indexes, web search)
+257. **Thread**: stored message history of one agent conversation, managed by the agent service rather than resent by the client
+
+### Text Analysis
+
+258. **Natural Language Processing (NLP)**: AI field concerned with interpreting and generating human language
+259. **Foundry Tools**: current name for Azure's prebuilt, no-training-needed AI services (Language, Speech, Vision, Content Understanding); formerly Azure AI services/Cognitive Services
+260. **Azure Language in Foundry Tools**: prebuilt service for sentiment, key phrases, entities, PII, language detection, and summarization
+261. **Key Phrase Extraction**: text analysis technique that pulls out the main talking points of a document
+262. **Named Entity Recognition (NER)**: text analysis technique that finds and categorizes people, places, organizations, dates, and quantities
+263. **Entity Linking**: text analysis technique that disambiguates entities by linking them to a knowledge base entry (e.g. Wikipedia)
+264. **PII Detection**: text analysis technique that finds and redacts personal information like names, phone numbers, and SSNs
+265. **Sentiment Analysis**: text analysis technique that labels text positive, negative, neutral, or mixed with confidence scores at the document and sentence level
+266. **Opinion Mining**: aspect-level sentiment that ties opinions to specific targets (e.g. "food" positive, "service" negative)
+267. **Language Detection**: text analysis technique that identifies which language text is written in, with a confidence score
+268. **Extractive Summarization**: summarization that selects the most important original sentences verbatim
+269. **Abstractive Summarization**: summarization that generates new sentences capturing the main ideas
+270. **Conversational Language Understanding (CLU)**: custom-trained Language feature that predicts a user's intent and extracts entities from utterances
+
+### Speech
+
+271. **Azure Speech in Foundry Tools**: prebuilt service for transcription, voice synthesis, and spoken-language translation
+272. **Speech Recognition (Speech-to-Text)**: converting spoken audio into written text (audio in → text out)
+273. **Speech Synthesis (Text-to-Speech)**: generating spoken audio from written text (text in → audio out)
+274. **Neural Voices**: lifelike prebuilt synthetic voices selectable by language and style for speech synthesis
+275. **Speech Synthesis Markup Language (SSML)**: XML markup that controls pronunciation, pitch, rate, and pauses in generated speech
+276. **Speech Translation**: recognizing speech in one language and outputting text or audio in another
+277. **Batch Transcription**: asynchronous transcription of stored audio files (vs. real-time transcription of a live stream)
+278. **Speaker Diarization**: labeling which speaker said what, and when, in a recording
+279. A {{c1::multimodal model}} can take spoken audio directly, replacing a chain of {{c2::speech-to-text → LLM → text-to-speech}}
+
+### Computer Vision
+
+280. **Computer Vision**: AI workload that interprets the content of images and video
+281. **Azure Vision in Foundry Tools**: prebuilt service for image captioning, tagging, object detection, and OCR
+282. **Image Classification**: vision technique that assigns one label to an entire image
+283. **Object Detection**: vision technique that finds multiple objects in an image and locates each with a bounding box
+284. **Semantic Segmentation**: vision technique that labels every pixel with the class it belongs to
+285. **Bounding Box**: rectangle coordinates marking where an object sits in an image
+286. **Optical Character Recognition (OCR)**: extracting printed and handwritten text from images and documents
+287. **Image Analysis**: Vision feature that returns captions, tags, and detected objects for an image
+288. **Face Detection**: locating human faces in an image and returning their positions and attributes
+289. **Limited Access**: Microsoft policy requiring approval before using sensitive capabilities like facial identification/verification and custom synthetic voices
+290. Images are sent to a multimodal model as a {{c1::URL}} or as {{c1::base64-encoded data}} alongside a {{c2::text prompt}}
+
+### Information Extraction
+
+291. **Information Extraction**: AI workload that pulls structured data (fields, tables, JSON) out of unstructured documents, images, audio, and video
+292. **Azure Content Understanding in Foundry Tools**: service that extracts structured fields from documents, images, audio, and video using generative AI
+293. Content Understanding processes {{c1::documents}}, {{c1::images}}, {{c1::audio}}, and {{c1::video}}
+294. **Analyzer**: Content Understanding configuration specifying the content type and which fields to extract
+295. **Prebuilt Analyzer**: ready-made extraction configuration for common content types such as invoices and receipts
+296. **Custom Analyzer**: user-defined extraction configuration with your own field schema for your own layouts
+297. **Field Schema**: list of named fields, data types, and descriptions defining what to extract from content
+298. **Key-Value Pairs**: label/value associations extracted from forms (e.g. "Invoice #: 1042")
+299. **Azure Document Intelligence**: document-focused extraction service (formerly Form Recognizer) for forms, invoices, and layouts
+300. Content Understanding analyzes large files {{c1::asynchronously}}, so the client must {{c2::poll}} for results
 
 ## TODO
 

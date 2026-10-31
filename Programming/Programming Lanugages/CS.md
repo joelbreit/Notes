@@ -295,7 +295,7 @@ Flashcards should work both ways
 
 * **boxing**: placing a primitive type within an object so that the value can be used as a reference
 * **casting**: explicitly converting a value from one data type to another
-* **derive**: creating a new class based on an existing class (inheritance); literally "to obtain something from a specified source"
+* **derive**: computing values based on other data rather than by storing the values directly
 * **serialize**: converting data into a format that can be stored or transmitted
 * **hashing**: converting data into a fixed-size string of bytes
 * **deliminate**: *to separate or distinguish between two or more items*

@@ -121,8 +121,8 @@ Flashcards should work both ways
 3.  **Memory Cell**: A component of an RNN that maintains information over time, allowing for long-term dependencies
 4.  **Gated Recurrent Unit (GRU)**: A type of RNN that uses just uses the hidden state, with update and reset gates controlling memory
 5.  **Hadamard product**: The element-wise product of two matrices or vectors without any transposition
-6.  **Encoder-Decoder Architecture**: NN architecture used for sequence-to-sequence tasks that converts variable input into a fixed-length context vector and then decodes it into an output sequence step by step
-7.  **Attention Mechanism**: Attention Mechanism: A process in neural networks that dynamically focuses on specific parts of the input data, improving tasks like translation or summarization by weighting relevant information
+6.  **Encoder-Decoder Architecture**: NN architecture used for sequence-to-sequence tasks that converts variable input into a fixed-length context vector and then decodes it into an output sequence step by step until reaching a stop token
+7.  **Attention Mechanism**: A process in neural networks that dynamically focuses on specific parts of the input data, improving tasks like translation or summarization by weighting relevant information
 8.  **Bidirectional RNN**: An RNN architecture that processes sequences in both forward and backward directions, capturing past and future context simultaneously
 9.  **Sequence-to-Sequence Model**: A type of neural network that transforms an input sequence into an output sequence, often used in tasks like translation or summarization
 10. **Teacher Forcing**: Only using correct output from the previous time step rather than using a model's own output as input during training
