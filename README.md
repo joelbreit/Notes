@@ -10,16 +10,22 @@ Flashcards, when designed well, and used frequently with spaced repetition, are 
 
 ### Markdown Formatting
 
-The formatting that I've settled on for making flashcards readable in markdown notes is 1) used numbered lists, 2) bold terms, and 3) dash separated descriptions. E.g. this...
+The formatting that I've settled on for making flashcards readable in markdown notes is 1) numbered lists, 2) bold terms, and 3) colon separated descriptions. E.g. this...
 ```md
-1. **term** - description of that thing
+1. **term**: description of that thing
 ...
 ```
 will be formatted like...
 
-1. **term** - description of that thing
-2. **Proper Term** - a thing that is proper; capitalized appropriately
-3. **TLA (Three Letter Acronym)** - Describe your term. Avoid including the term or obvious parts of the term in the description
+1. **term**: description of that thing
+2. **Proper Term**: a thing that is proper; capitalized appropriately
+3. **TLA (Three Letter Acronym)**: Describe your term. Avoid including the term or obvious parts of the term in the description
+
+> Some older cards still use the dash format (`**term** - description`). When editing an existing file, match that file's existing format; converting the remaining dash-format cards is tracked in [TODO.md](TODO.md).
+
+### TSV Files
+
+Flashcards can also be kept as TSV files (`term<TAB>description`, one card per line). [flashcards.joelbreit.com](https://flashcards.joelbreit.com) accepts TSV files directly, and empty lines are okay.
 
 #### Cloze Deletions
 
